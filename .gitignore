@@ -6,12 +6,8 @@ logs/
 coverage/
 !.autod.conf.js
 
-service/node_modules/
-service/yarn-error.log
-service/yarn-debug.log*
-service/package-lock.json
-
-client/node_modules/
-client/yarn-error.log
-client/yarn-debug.log*
-client/package-lock.json
+*/dist/
+*/node_modules/
+*/yarn-error.log
+*/yarn-debug.log*
+*/package-lock.json
