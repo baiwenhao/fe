@@ -1,0 +1,23 @@
+{
+  "name": "egg",
+  "version": "1.0.0",
+  "description": "fe",
+  "scripts": {
+    "dev": "egg-bin dev -p 7001",
+    "test": "eggctl start --daemon",
+    "tiu": "EGG_SERVER_ENV=sit egg-bin dev",
+    "prod": "EGG_SERVER_ENV=tui egg-bin dev",
+    "start": "egg-scripts start --title=egg-server-ma-bff-server-demo"
+  },
+  "author": "wenhao",
+  "license": "ISC",
+  "dependencies": {
+    "egg": "^3.27.1",
+    "egg-view-nunjucks": "^2.3.0",
+    "moment": "^2.30.1"
+  },
+  "devDependencies": {
+    "egg-bin": "^6.10.0",
+    "egg-scripts": "^3.0.1"
+  }
+}
