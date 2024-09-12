@@ -4,9 +4,9 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "target": "es2017",
-    "paths": {
-      "app": [],
-    },
+    // "paths": {
+    //   "app": [],
+    // },
     "outDir": "./dist",
     "module": "commonjs",
     "strict": false,
