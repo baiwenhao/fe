@@ -1,11 +1,10 @@
 import { EggAppConfig, EggAppInfo, PowerPartial } from 'egg';
 import { join } from 'path';
 
-
-
 export default (appInfo: EggAppInfo) => {
     const config = {} as PowerPartial<EggAppConfig>;
     config.keys = 'abc_1560419360605_9825';
+
     config.multipart = {
         fileSize: '50mb',
         mode: 'stream', // 必须写;千万别写错 file
