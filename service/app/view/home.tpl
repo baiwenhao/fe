@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>volkswagen</title>
+  <title>Home</title>
 </head>
 <body>
-  <div>egg home</div>
+  <div>home</div>
 </body>
 </html>
