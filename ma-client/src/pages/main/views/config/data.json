@@ -1,0 +1,50 @@
+{
+  "titleDel": "Are you sure you want to delete?",
+  "config": {
+    "baseListId": null,
+    "configId": null,
+    "configName": null,
+    "configVersion": null,
+    "configRtgIni": [],
+    "consentId": null,
+    "consentName": null,
+    "configDataSets": 65534,
+    "unit": "second",
+    "signals": [],
+    "triggerList": [],
+    "controlSets": [],
+    "description": null,
+    "compareTriggers": [],
+    "evaluateTriggers": []
+  },
+  "trigger": { "triggerName": "test_0", "compareTriggerList": [{}], "eventType": null, "signal": null, "triggerValue": null, "description": null },
+  "eventType": [{ "label": "Compare", "value": "compare", "__disabled": false }, { "label": "Evaluate", "value": "evaluate", "__disabled": true }],
+  "operator": [
+    { "label": "AND", "value": "and", "disabled": false },
+    { "label": "OR", "value": "or", "disabled": false },
+    { "label": "XOR", "value": "xor", "disabled": true }
+  ],
+  "unit": [
+    { "label": "=", "value": "eq" },
+    { "label": "!=", "value": "ne" },
+    { "label": ">", "value": "gt" },
+    { "label": "<", "value": "lt" },
+    { "label": ">=", "value": "ge" },
+    { "label": "<=", "value": "le" }
+  ],
+  "cache": {
+    "commonActive": {},
+    "loading": false,
+    "controlSetMaxNumber": 1,
+    "time": null,
+    "state": false,
+    "dialog": true,
+    "dialogStatus": 0
+  },
+  "dialogStatus": "",
+  "role": {
+    "admin": {},
+    "user": {},
+    "approver": {}
+  }
+}

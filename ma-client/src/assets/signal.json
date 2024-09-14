@@ -1,0 +1,4027 @@
+{
+    "configId": 1806,
+    "configName": "SVWTEST10s",
+    "configFrequency": 10,
+    "configDataSets": 65534,
+    "configRtgIni": [
+        "1",
+        "2",
+        "3"
+    ],
+    "configVersion": "512",
+    "consentId": "ef0d8e6b-bd21-4347-be64-d2065dbb4561",
+    "description": null,
+    "configStatus": 1,
+    "configFlowStatus": 7,
+    "signals": [
+        {
+            "id": 106128,
+            "baseListId": 101,
+            "signalRegisterId": "009",
+            "signalName": "KBI_Kilometerstand",
+            "signalLength": 20,
+            "signalGeoRelated": false,
+            "signalComment": "Fehler wird ausgegeben, falls Kilometerstand nicht restaurierbar"
+        },
+        {
+            "id": 106129,
+            "baseListId": 101,
+            "signalRegisterId": "010",
+            "signalName": "ACC_Status_ACC",
+            "signalLength": 3,
+            "signalGeoRelated": false,
+            "signalComment": "'ACC OFF' bedeutet ACC-Hauptschalter ist 'Gerastet Aus\n\n'ACC Reversibler Fehler' bedeutet, daß das ACC aktuell einen \nreversiblen Fehler im ACC-SG selbst oder in einem zum \nACC-System gehörenden SG erkennt.\n\n'ACC irreversibler Fehler' bedeutet, daß das ACC aktuell einen \nirreversiblen Fehler im ACC-SG selbst oder in einem zum \nACC-System gehörenden SG erkennt.\n\n'ACC_Abschaltreaktion' = Wert 0x5 - gilt ab MLBevo (für Alt-Projekte gilt 'nicht definiert')"
+        },
+        {
+            "id": 106130,
+            "baseListId": 101,
+            "signalRegisterId": "011",
+            "signalName": "ACC_Wunschgeschw_02",
+            "signalLength": 10,
+            "signalGeoRelated": false,
+            "signalComment": "Zur Anzeige der Wunschgeschwindigkeit im Kombiinstrument"
+        },
+        {
+            "id": 106131,
+            "baseListId": 101,
+            "signalRegisterId": "012",
+            "signalName": "ACC_Gesetzte_Zeitluecke",
+            "signalLength": 3,
+            "signalGeoRelated": false,
+            "signalComment": "Nur in ADR/ACC-Fahrzeugen: ACC Zusatzanzeige: 0 = aus / ungleich 0 = ein; angezeigte ADR-Zeitlücke wird auf 3 Bits begrenzt"
+        },
+        {
+            "id": 106132,
+            "baseListId": 101,
+            "signalRegisterId": "013",
+            "signalName": "ACC_Optischer_Fahrerhinweis",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fahrerübernahmeaufforderung; z.B. bei Erreichen der Systemgrenzen oder beim Auftreten von Fehlern in kritischen Situationen (VW)."
+        },
+        {
+            "id": 106133,
+            "baseListId": 101,
+            "signalRegisterId": "015",
+            "signalName": "ACC_Wunschgeschw_erreicht",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Signal for Bentley BY83x: ACC_set_speed_achieved\n\nMit diesem Signal wird im Kombi eine Anzeige angesteuert, wenn das Fahrzeug die gesetzte Wunschgeschwindigkeit erreicht hat.\n\nThis signal illuminates the set speed icon a different colour  in the Kombi when the vehicle achieves the set speed."
+        },
+        {
+            "id": 106134,
+            "baseListId": 101,
+            "signalRegisterId": "018",
+            "signalName": "ACC_Status_Anzeige",
+            "signalLength": 3,
+            "signalGeoRelated": false,
+            "signalComment": "Status nur zur Defintion von Anzeige im Kombi. Hinweis: Wird für die spez. VW-Anzeige (überlappende Anzeigebereiche) verwendet. Vom AUDI-ACC im Rahmen der Modulstrategie zu bedienen."
+        },
+        {
+            "id": 106135,
+            "baseListId": 101,
+            "signalRegisterId": "021",
+            "signalName": "AB_Front_Crash",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Bit wird bei Überschreitung der Gurtstraffer-, US- und RdW-Schwelle gesetzt"
+        },
+        {
+            "id": 106136,
+            "baseListId": 101,
+            "signalRegisterId": "022",
+            "signalName": "AB_Heck_Crash",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Wird für alle neu anlaufenden Projekte umgesetzt: AB8.4, Audi8/VW8"
+        },
+        {
+            "id": 106137,
+            "baseListId": 101,
+            "signalRegisterId": "023",
+            "signalName": "AB_SF_Crash",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Z.Zt. nur in Verbindung mit Crash-Intensität >= 100b (Kraftstoffpumpenabschaltung) verwendet."
+        },
+        {
+            "id": 106138,
+            "baseListId": 101,
+            "signalRegisterId": "024",
+            "signalName": "AB_SB_Crash",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Z.Zt. nur in Verbindung mit Crash-Intensität >= 100b (Kraftstoffpumpenabschaltung) verwendet."
+        },
+        {
+            "id": 106139,
+            "baseListId": 101,
+            "signalRegisterId": "025",
+            "signalName": "AB_Rollover_Crash",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Wird im B6/B7 Cabrio und New Beetle Cabrio bedient."
+        },
+        {
+            "id": 106140,
+            "baseListId": 101,
+            "signalRegisterId": "026",
+            "signalName": "AB_Crash_Int",
+            "signalLength": 3,
+            "signalGeoRelated": false,
+            "signalComment": "Crash_Intensität_1 = fahrzeugabhängige Reaktionen im Crash\nCrash_Intensität_2 = fahrzeugabhängige Reaktionen im Crash\nCrash_Intensität_3 = fahrzeugabhängige Reaktionen im Crash\n\nDie jeweiligen fahrzeugabhängigen Reaktionen im Crash sind in einem separaten Doors Modul im Airbag-SG beschrieben.\n\nDie Information bleibt bei jeder Schwellwert-überschreitung für ~10 s bestehen \n(Achtung: Energiereserve bei abgetrennter Batterie reicht worstcase nur für 150 ms)"
+        },
+        {
+            "id": 106141,
+            "baseListId": 101,
+            "signalRegisterId": "027",
+            "signalName": "AB_Lampe",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Sicherheitswarnlampe im Kombi wird vom Airbag-SG angesteuert; Zustand der Lampe wird auf dem CAN-Bus ausgegeben (auch Blinkinformation)."
+        },
+        {
+            "id": 106142,
+            "baseListId": 101,
+            "signalRegisterId": "028",
+            "signalName": "AB_VB_deaktiviert",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Als Option vorgehalten, Beifahrerairbag wurden per Schlüsselschalter oder Insassenerkennung deaktiviert"
+        },
+        {
+            "id": 106143,
+            "baseListId": 101,
+            "signalRegisterId": "029",
+            "signalName": "AB_Systemfehler",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Systemfehler Ggf. wird Warnlampe dauernd eingeschaltet."
+        },
+        {
+            "id": 106144,
+            "baseListId": 101,
+            "signalRegisterId": "030",
+            "signalName": "AB_Gurtwarn_VF",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fahrer hat Gurt nicht gesteckt, Anzeige im Kombi"
+        },
+        {
+            "id": 106145,
+            "baseListId": 101,
+            "signalRegisterId": "031",
+            "signalName": "AB_Gurtwarn_VB",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Beifahrer hat Gurt nicht gesteckt, Anzeige im Kombi"
+        },
+        {
+            "id": 106146,
+            "baseListId": 101,
+            "signalRegisterId": "032",
+            "signalName": "AB_Texte_AKS",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Textanzeige für pyrotechnische Auslösung der aktiven Kopfstütze (AKS)"
+        },
+        {
+            "id": 106147,
+            "baseListId": 101,
+            "signalRegisterId": "033",
+            "signalName": "AB_Belegung_VF",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Belegungserkennung vorne Fahrer."
+        },
+        {
+            "id": 106148,
+            "baseListId": 101,
+            "signalRegisterId": "034",
+            "signalName": "AB_Gurtschloss_FA_ext",
+            "signalLength": 3,
+            "signalGeoRelated": false,
+            "signalComment": "Das Ergebnis der Basisfunktion \"Plausibilisierung Gurtschloss\" des Verlassenskonzepts wird im Signal dargestellt."
+        },
+        {
+            "id": 106149,
+            "baseListId": 101,
+            "signalRegisterId": "035",
+            "signalName": "AB_Anprall_Seite_Beifahrer",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Uebermittlung der Lage einer Kollision, Anprallzone Beifahrerseite Seite"
+        },
+        {
+            "id": 106150,
+            "baseListId": 101,
+            "signalRegisterId": "036",
+            "signalName": "AB_Anprall_Rollover",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Uebermittlung der Lage einer Kollision, Rollover erkannt"
+        },
+        {
+            "id": 106151,
+            "baseListId": 101,
+            "signalRegisterId": "037",
+            "signalName": "AB_Anprall_FGS",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Uebermittlung der Lage einer Kollision, Fussgaengerschutz-Aktorik"
+        },
+        {
+            "id": 106152,
+            "baseListId": 101,
+            "signalRegisterId": "038",
+            "signalName": "AB_Anprall_Front_Beifahrer",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Uebermittlung der Lage einer Kollision, Anprallzone Front Beifahrerseite"
+        },
+        {
+            "id": 106153,
+            "baseListId": 101,
+            "signalRegisterId": "039",
+            "signalName": "AB_Anprall_Front_Fahrer",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Uebermittlung der Lage einer Kollision, Anprallzone Front Fahrerseite"
+        },
+        {
+            "id": 106154,
+            "baseListId": 101,
+            "signalRegisterId": "040",
+            "signalName": "AB_Anprall_Heck_Beifahrer",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Uebermittlung der Lage einer Kollision, Anprallzone Beifahrerseite hinten"
+        },
+        {
+            "id": 106155,
+            "baseListId": 101,
+            "signalRegisterId": "041",
+            "signalName": "AB_Anprall_Heck_Fahrer",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Uebermittlung der Lage einer Kollision, Anprallzone Fahrerseite hinten"
+        },
+        {
+            "id": 106156,
+            "baseListId": 101,
+            "signalRegisterId": "042",
+            "signalName": "AB_Belegung_VB",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Belegungserkennung vorne Beifahrer. Wird in US-Steuergeräten über Bladder-Matte bedient, optional bei RdW, falls SBE_EuroNCAP entschieden wird."
+        },
+        {
+            "id": 106157,
+            "baseListId": 101,
+            "signalRegisterId": "043",
+            "signalName": "AB_Anprall_Seite_Fahrer",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Uebermittlung der Lage einer Kollision, Anprallzone Fahrerseite Seite"
+        },
+        {
+            "id": 106158,
+            "baseListId": 101,
+            "signalRegisterId": "044",
+            "signalName": "AB_Crashschwere",
+            "signalLength": 3,
+            "signalGeoRelated": false,
+            "signalComment": "Übermittlung der Crashschwere an das Gateway (OBDC)"
+        },
+        {
+            "id": 106159,
+            "baseListId": 101,
+            "signalRegisterId": "045",
+            "signalName": "AB_Gurtschloss_FA",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Gurtschlosstatatus Fahrerseite"
+        },
+        {
+            "id": 106160,
+            "baseListId": 101,
+            "signalRegisterId": "046",
+            "signalName": "AB_Gurtschloss_BF",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Gurtschlossstatus Beifahrerseite"
+        },
+        {
+            "id": 106161,
+            "baseListId": 101,
+            "signalRegisterId": "047",
+            "signalName": "AB_Gurtschloss_Reihe2_FA",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Gurtschlossstatus 2. Reihe Fahrerseite, Mehrausstattung"
+        },
+        {
+            "id": 106162,
+            "baseListId": 101,
+            "signalRegisterId": "048",
+            "signalName": "AB_Gurtschloss_Reihe2_MI",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Gurtschlossstatus 2. Reihe Mitte,  Mehrausstattung"
+        },
+        {
+            "id": 106163,
+            "baseListId": 101,
+            "signalRegisterId": "049",
+            "signalName": "AB_Gurtschloss_Reihe2_BF",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Gurtschlossstatus 2. Reihe Beifahrerseite,  Mehrausstattung"
+        },
+        {
+            "id": 106164,
+            "baseListId": 101,
+            "signalRegisterId": "050",
+            "signalName": "AB_Gurtschloss_Reihe3_FA",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Gurtschlossstatus 3. Reihe Fahrerseite,  Mehrausstattung"
+        },
+        {
+            "id": 106165,
+            "baseListId": 101,
+            "signalRegisterId": "051",
+            "signalName": "AB_Gurtschloss_Reihe3_MI",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Gurtschlossstatus 3. Reihe Mitte,  Mehrausstattung"
+        },
+        {
+            "id": 106166,
+            "baseListId": 101,
+            "signalRegisterId": "052",
+            "signalName": "AB_Gurtschloss_Reihe3_BF",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Gurtschlossstatus 3. Reihe Beifahrerseite,  Mehrausstattung"
+        },
+        {
+            "id": 106167,
+            "baseListId": 101,
+            "signalRegisterId": "053",
+            "signalName": "AB_Sitzpos_Sens_FA",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Ausgabe Sitzposition Fahrer"
+        },
+        {
+            "id": 106168,
+            "baseListId": 101,
+            "signalRegisterId": "054",
+            "signalName": "AB_Sitzpos_Sens_BF",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Ausgabe Sitzposition Beifahrer"
+        },
+        {
+            "id": 106169,
+            "baseListId": 101,
+            "signalRegisterId": "055",
+            "signalName": "AB_Anprall_Front",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Uebermittlung der Lage einer Kollision, Anprallzone Front"
+        },
+        {
+            "id": 106170,
+            "baseListId": 101,
+            "signalRegisterId": "056",
+            "signalName": "AB_Anprall_Heck",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Uebermittlung der Lage einer Kollision, Anprallzone Heck"
+        },
+        {
+            "id": 106171,
+            "baseListId": 101,
+            "signalRegisterId": "057",
+            "signalName": "AB_Gurtwarn_Reihe2_FA",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Status Gurtwarnung 2. Sitzreihe Fahrerseite"
+        },
+        {
+            "id": 106172,
+            "baseListId": 101,
+            "signalRegisterId": "058",
+            "signalName": "AB_Gurtwarn_Reihe2_BF",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Status Gurtwarnung 2. Sitzreihe Beifahrerseite"
+        },
+        {
+            "id": 106173,
+            "baseListId": 101,
+            "signalRegisterId": "059",
+            "signalName": "AB_Gurtwarn_Reihe2_MI",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Status Gurtwarnung 2. Sitzreihe Mitte"
+        },
+        {
+            "id": 106174,
+            "baseListId": 101,
+            "signalRegisterId": "060",
+            "signalName": "AB_Gurtwarn_Reihe3_FA",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Status Gurtwarnung 3. Sitzreihe Fahrerseite"
+        },
+        {
+            "id": 106175,
+            "baseListId": 101,
+            "signalRegisterId": "061",
+            "signalName": "AB_Gurtwarn_Reihe3_MI",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Status Gurtwarnung 3. Sitzreihe Mitte"
+        },
+        {
+            "id": 106176,
+            "baseListId": 101,
+            "signalRegisterId": "062",
+            "signalName": "AB_Gurtwarn_Reihe3_BF",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Status Gurtwarnung 3. Sitzreihe Beifahrerseite"
+        },
+        {
+            "id": 106177,
+            "baseListId": 101,
+            "signalRegisterId": "063",
+            "signalName": "AWV_Warnung",
+            "signalLength": 3,
+            "signalGeoRelated": false,
+            "signalComment": "Hinweisanzeige im Kombi \"Hauptdisplay\""
+        },
+        {
+            "id": 106178,
+            "baseListId": 101,
+            "signalRegisterId": "065",
+            "signalName": "BCM_Bremsbelag_Sensor",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Sensorsignal der Stromschleife  für Bremsbelagverschleiß aktuell, entstört, unbewertet"
+        },
+        {
+            "id": 106179,
+            "baseListId": 101,
+            "signalRegisterId": "066",
+            "signalName": "BCM_Bremsfluessigkeit_Sensor",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Kontaktsignal des Sensorschalters für die Bremsflüssigkeitsreserve aktuell, entstört, unbewertet"
+        },
+        {
+            "id": 106180,
+            "baseListId": 101,
+            "signalRegisterId": "067",
+            "signalName": "BCM_Waschwasser_Sensor",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Signal der Sensorelektroden für die Waschwasserreserve aktuell, entstört, bewertet (OK/Mangel)"
+        },
+        {
+            "id": 106181,
+            "baseListId": 101,
+            "signalRegisterId": "068",
+            "signalName": "BCM_Kuehlmittel_Sensor",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Signal der Sensorelektroden für die Kühlmittelreserve aktuell, entstört, bewertet (OK/Mangel)"
+        },
+        {
+            "id": 106182,
+            "baseListId": 101,
+            "signalRegisterId": "070",
+            "signalName": "BCM1_MH_Schalter",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Motorhaubenkontakt"
+        },
+        {
+            "id": 106183,
+            "baseListId": 101,
+            "signalRegisterId": "072",
+            "signalName": "BEM_Ladezustand",
+            "signalLength": 4,
+            "signalGeoRelated": false,
+            "signalComment": "Ladezustand der Niedervoltbatterie"
+        },
+        {
+            "id": 106184,
+            "baseListId": 101,
+            "signalRegisterId": "073",
+            "signalName": "BEM_UBDM",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Batteriespannung, gemessen vom Batteriedatenmodul"
+        },
+        {
+            "id": 106185,
+            "baseListId": 101,
+            "signalRegisterId": "074",
+            "signalName": "BM_Crash",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Status Crashblinken"
+        },
+        {
+            "id": 106186,
+            "baseListId": 101,
+            "signalRegisterId": "075",
+            "signalName": "BM_Not_Bremsung",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Das Signal BM_Not_Bremsung  zeigt an,  ob ein Warnblinken aufgrund einer vom Bremssystem signalisierten Notbremsung aktiv ist."
+        },
+        {
+            "id": 106187,
+            "baseListId": 101,
+            "signalRegisterId": "076",
+            "signalName": "BM_Warnblinken",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Warnblinken"
+        },
+        {
+            "id": 106188,
+            "baseListId": 101,
+            "signalRegisterId": "079",
+            "signalName": "DI_KL_58xd",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Klemme 58xd Display- und Funktionsbeleuchtung\nMit der Klemme 58xd wird die Helligkeit der Display- und der Funktionsbeleuchtungen der Schalter gesteuert.\nIm Detail beschrieben im 'Funktionslastenheft Dimmung MQB'."
+        },
+        {
+            "id": 106189,
+            "baseListId": 101,
+            "signalRegisterId": "080",
+            "signalName": "DI_KL_58xs",
+            "signalLength": 7,
+            "signalGeoRelated": false,
+            "signalComment": "Suchbeleuchtung Schalter\nEIN-AUS-Schaltalgorithmus der allgemeinen Schaltersuchbeleuchtung. \nIm Detail beschrieben im 'Funktionslastenheft Dimmung MQB'."
+        },
+        {
+            "id": 106190,
+            "baseListId": 101,
+            "signalRegisterId": "082",
+            "signalName": "EPB_Fehlermeldungen_02",
+            "signalLength": 4,
+            "signalGeoRelated": false,
+            "signalComment": "Über das Signal werden bestimmte Fehlertexte und -lampen im Kombi angefordert."
+        },
+        {
+            "id": 106191,
+            "baseListId": 101,
+            "signalRegisterId": "084",
+            "signalName": "EPB_Autoholdlampe_02",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Autoholdlampe im Kombi, grünes P"
+        },
+        {
+            "id": 106192,
+            "baseListId": 101,
+            "signalRegisterId": "088",
+            "signalName": "ESP_Querbeschleunigung",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Beschleunigungswert in y-Achse\n\nMLB: Gemessener Wert\n0xFF = Fehler (wie bereits im Wertebereich spezifizert)\nBei ESP-Abschaltung durch modellgestützte Überwachung wird das Signal weiterhin ausgegeben.\nIm AU64x und AU57x erfolgt die Bereitstellung der Sensorwerte durch SARA-SG!\n\nMQB: Sensorrohwert Querbeschleunigung\nBei ESP gemessene Größe, bei ABS errechnet (ungenauer Ersatzwert)"
+        },
+        {
+            "id": 106193,
+            "baseListId": 101,
+            "signalRegisterId": "089",
+            "signalName": "ESP_Laengsbeschl",
+            "signalLength": 10,
+            "signalGeoRelated": false,
+            "signalComment": "Beschleunigungswert in x-Achse\n\nMLB: Im AU64x und AU57x erfolgt die Bereitstellung der Sensorwerte durch SARA-SG! Im AU64x und AU57x wird bei ESP-Abschaltung durch modellgestützte Überwachung das Signal weiterhin ausgegeben.\n\nMQB: reines ABS schickt 0x3FE für \"nicht vorhanden\""
+        },
+        {
+            "id": 106194,
+            "baseListId": 101,
+            "signalRegisterId": "095",
+            "signalName": "ESP_Bremsdruck",
+            "signalLength": 10,
+            "signalGeoRelated": false,
+            "signalComment": "Rohwert des Bremsdrucks\nFür Fahrzeuge mit elektrischem Bremskraftverstärker gilt: Aus dem Signal ESP_Bremsdruck lässt sich kein Fahrerbremswunsch ableiten. Das Signal bildet lediglich den hydraulischen Anteil der Fahrzeugverzögerung ab. Der Rohwert des Signals kann  auch ohne Fahrerbeteiligung (ohne Betätigung des Bremspedals) variieren. (z.B. ACC,AWV, Autohold). \nFür HEV/PHEV gilt: Während einer Bremsung mit überlagertem Generatorbremsmoment ist der angezeigte Druck kleiner als der Fahrerbremswunsch.\n\nFür Fahrzeuge mit Vakuum-Bremskraftverstärker gilt:\nRohwert des Bremsdrucks [Vordruck durch Fahrervorgabe (Pvor). Bei aktivem Druckaufbau (Stabilisierungseingriffe) kein Pvor]"
+        },
+        {
+            "id": 106195,
+            "baseListId": 101,
+            "signalRegisterId": "096",
+            "signalName": "ESP_Fahrer_bremst",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Bit wird gesetzt beim Überschreiten der Bremsdruckschwelle\n\nWeiterführende Informationen im Lastenheft spezifiziert und in der entsprechenden Fachabteilung zu erfragen."
+        },
+        {
+            "id": 106196,
+            "baseListId": 101,
+            "signalRegisterId": "101",
+            "signalName": "ESP_HL_Radgeschw_02",
+            "signalLength": 16,
+            "signalGeoRelated": false,
+            "signalComment": "Radgeschwindigkeit hinten links"
+        },
+        {
+            "id": 106197,
+            "baseListId": 101,
+            "signalRegisterId": "102",
+            "signalName": "ESP_HR_Radgeschw_02",
+            "signalLength": 16,
+            "signalGeoRelated": false,
+            "signalComment": "Radgeschwindigkeit hinten rechts"
+        },
+        {
+            "id": 106198,
+            "baseListId": 101,
+            "signalRegisterId": "103",
+            "signalName": "ESP_VL_Radgeschw_02",
+            "signalLength": 16,
+            "signalGeoRelated": false,
+            "signalComment": "Radgeschwindigkeit vorne links"
+        },
+        {
+            "id": 106199,
+            "baseListId": 101,
+            "signalRegisterId": "104",
+            "signalName": "ESP_VR_Radgeschw_02",
+            "signalLength": 16,
+            "signalGeoRelated": false,
+            "signalComment": "Radgeschwindigkeit vorne rechts"
+        },
+        {
+            "id": 106200,
+            "baseListId": 101,
+            "signalRegisterId": "105",
+            "signalName": "ESP_v_Signal",
+            "signalLength": 16,
+            "signalGeoRelated": false,
+            "signalComment": "Geschwindigkeitssignal vom ABS/ASR oder ESP. Mittelwert der angetriebenen Räder.\nBei MSR oder ABS Eingriffen wird die ABS-Referenzgeschwindigkeit für >= 200ms eingespiegelt (Zeit wird mit Aktiv-Flanke der Funktionsbits getriggert)\n\nMQB: Bei Frontantrieb und gesteuertem Allrad (Haldex) Mittelwert der Vorderräder."
+        },
+        {
+            "id": 106201,
+            "baseListId": 101,
+            "signalRegisterId": "106",
+            "signalName": "ASR_Tastung_passiv",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "ASR deaktiviert oder Schwellen geändert (projektabhängig)\nWeiterführende Informationen im Lastenheft spezifiziert und in der entsprechenden Fachabteilung zu erfragen."
+        },
+        {
+            "id": 106202,
+            "baseListId": 101,
+            "signalRegisterId": "107",
+            "signalName": "ESP_Tastung_passiv",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "ESP deaktiviert oder Schwellen geändert (projektabhängig)\nWeiterführende Informationen im Lastenheft spezifiziert und in der entsprechenden Fachabteilung zu erfragen."
+        },
+        {
+            "id": 106203,
+            "baseListId": 101,
+            "signalRegisterId": "108",
+            "signalName": "ESP_Systemstatus",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehler steht für Stillegung ESP mit Fehlereintrag.\n\nMLB: Flag wird bei Unterspannung im Stand bis einmalig 6km/h (AU48x) oder 10 km/h (AU641, AU57x) überschritten nicht gesetzt (Ausblendung Startvorgang)\nIm AU64x, AU57x gilt ESP D4 Funktionsanforderungen (DOORS-Modul)"
+        },
+        {
+            "id": 106204,
+            "baseListId": 101,
+            "signalRegisterId": "110",
+            "signalName": "ABS_Bremsung",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Antiblockiersystem, Bit zeigt auch Druckabbau an (z.B. ESP hat zuviel Druck aufgebaut oder ungebremste Regelung auf Bahnübergang)\nWeiterführende Informationen im Lastenheft spezifiziert und in der entsprechenden Fachabteilung zu erfragen."
+        },
+        {
+            "id": 106205,
+            "baseListId": 101,
+            "signalRegisterId": "111",
+            "signalName": "ASR_Anf",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "MLB: Die Momentenanforderung \"ASR_MSR_Moment_schnell\" und \"ASR_Moment_langsam\" sind auszuführen\nMQB: Die Momentenanforderung \"BR_Eingriffsmoment\" ist auszuführen"
+        },
+        {
+            "id": 106206,
+            "baseListId": 101,
+            "signalRegisterId": "112",
+            "signalName": "ESP_Eingriff",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Eingriff des Fahrdynamikreglers"
+        },
+        {
+            "id": 106207,
+            "baseListId": 101,
+            "signalRegisterId": "114",
+            "signalName": "ESP_Textanzeigen_03",
+            "signalLength": 5,
+            "signalGeoRelated": false,
+            "signalComment": "Textanzeigen der Fahrdynamikregelung im Kombiinstrument\n\nWeiterführende Informationen im Lastenheft spezifiziert und in der entsprechenden Fachabteilung zu erfragen.\n\nDer Signalwert 24 wird nur im BY736 verwendet."
+        },
+        {
+            "id": 106208,
+            "baseListId": 101,
+            "signalRegisterId": "115",
+            "signalName": "GE_Fahrstufe",
+            "signalLength": 4,
+            "signalGeoRelated": false,
+            "signalComment": "Fahrprogramm des Getriebes\n\nHinweis: Zwischenstellung \"0x0\" darf nur für Zustandswechsel P/R, R/N, N/D ausgegeben werden, nicht für D/S oder D/Tippgasse wegen Abschaltkriterium GRA/ACC"
+        },
+        {
+            "id": 106209,
+            "baseListId": 101,
+            "signalRegisterId": "116",
+            "signalName": "GE_Zielgang",
+            "signalLength": 4,
+            "signalGeoRelated": false,
+            "signalComment": "VL-Getriebe:\nSignalisiert den Zielgang im manuellen Modus während eines Schaltvorgangs bzw. die momentane simulierte Gangstufe wenn kein Schaltvorgang aktiv ist. In den Fahrprogrammen \"D\" und \"S\" ist die Übersetzung variabel und somit wird dauerhaft \"Istgang nicht definiert\" ausgegeben (auch bei Wählhebel entgegen der Fahrtrichtung). In den Wählhebelpositionen P oder N wird als Zielgang immer 0 ausgegeben.\nSonderfälle:\nBei Kraftschlußunterbrechung in D,R und S wird \"P/N ausgekuppelt\" ausgegeben (z.B. Fehlerfall)\nDie Fahrstufe R wird erst bei Ansteuerung der Rückwärtskupplung ausgegeben bei höheren Geschwindigkeiten vorwärts wird 0x0 ausgegeben.\nIn den Wählhebelzwischenpositionen wird 0x0 ausgegeben.\nBei Motor = aus wird in allen Fahrstufen 0x0 ausgegeben, ausser in der Gasse da \"nicht definiert\".\n\nDL-Getriebe:\ntbd.\n\nAL-Getriebe: \nGibt den Zielgang bei GE_Schaltvorgang = Schaltung aktiv und den Istgang wenn GE-Schaltvorgang = keine Schaltung aus. In den Wählhebelpositionen P oder N wird als Zielgang immer 0 ausgegeben.\nSonderfälle:\nBei Kraftschlußunterbrechung in D,R und S wird der Gang des hydraulischen Notlaufs ausgegeben. (z.B: Fehlerfall).\nDie Fahrstufe R wird erst bei Ansteuerung der Rückwärtskupplung ausgegeben bei höheren Geschwindigkeiten vorwärts wird 0x0 ausgegeben.\nBei Wechsel in eine Wählhebelzwischenposition wird der vorherige Wert von GE_Zielgang weiter ausgegeben.\nBei Standabkopplung geben die ZF-Stufenautomaten den eingelegten Gang aus."
+        },
+        {
+            "id": 106210,
+            "baseListId": 101,
+            "signalRegisterId": "120",
+            "signalName": "GRA_Tip_Setzen",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Tippschalter Set"
+        },
+        {
+            "id": 106211,
+            "baseListId": 101,
+            "signalRegisterId": "130",
+            "signalName": "ASW_Ton_Richtung_VL",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "ASW-Warntonausgabe vorne links"
+        },
+        {
+            "id": 106212,
+            "baseListId": 101,
+            "signalRegisterId": "131",
+            "signalName": "ASW_Ton_Richtung_VR",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "ASW-Warntonausgabe vorne rechts"
+        },
+        {
+            "id": 106213,
+            "baseListId": 101,
+            "signalRegisterId": "132",
+            "signalName": "ASW_Ton_Richtung_HL",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "ASW-Warntonausgabe hinten links"
+        },
+        {
+            "id": 106214,
+            "baseListId": 101,
+            "signalRegisterId": "133",
+            "signalName": "ASW_Ton_Richtung_HR",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "ASW_Warntonausgabe hinten rechts"
+        },
+        {
+            "id": 106215,
+            "baseListId": 101,
+            "signalRegisterId": "134",
+            "signalName": "SWA_Status_System",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Gibt den Status des Systems SWA an"
+        },
+        {
+            "id": 106216,
+            "baseListId": 101,
+            "signalRegisterId": "136",
+            "signalName": "ZAS_Kl_S",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Klemme S: S-Kontakt (Schluessel steckt)"
+        },
+        {
+            "id": 106217,
+            "baseListId": 101,
+            "signalRegisterId": "137",
+            "signalName": "ZAS_Kl_15",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Klemme 15: Zuendung (SW-Kl.15)"
+        },
+        {
+            "id": 106218,
+            "baseListId": 101,
+            "signalRegisterId": "141",
+            "signalName": "KL_Innen_Temp",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Innentemperatur"
+        },
+        {
+            "id": 106219,
+            "baseListId": 101,
+            "signalRegisterId": "151",
+            "signalName": "KL_Temp_Kundenwunsch",
+            "signalLength": 6,
+            "signalGeoRelated": false,
+            "signalComment": "Temeratur, die auf der Fahrerseite der Climatronic vom Kunden vorgegeben wird."
+        },
+        {
+            "id": 106220,
+            "baseListId": 101,
+            "signalRegisterId": "160",
+            "signalName": "BCM1_Aussen_Temp_ungef",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "ungefilterter Wert des Aussentemperatursensors"
+        },
+        {
+            "id": 106221,
+            "baseListId": 101,
+            "signalRegisterId": "161",
+            "signalName": "KBI_Vorglueh_System_Lampe",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Rückmeldung der Vorglühlampe bzw. Motor Systemlampe (MO_Systemlampe) an den Motor (bei Diesel und Otto!). Hardwaremässig gleiche LED im Kombi (EPC- oder Glühwendel), Unterscheidung nur über Ziffernblatt."
+        },
+        {
+            "id": 106222,
+            "baseListId": 101,
+            "signalRegisterId": "164",
+            "signalName": "KBI_Tankwarnung",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fahrer wird gewarnt, dass er den Reservebereich erreicht hat. Fzg.spezifische Warnschwelle"
+        },
+        {
+            "id": 106223,
+            "baseListId": 101,
+            "signalRegisterId": "165",
+            "signalName": "KBI_MFA_v_Einheit_01",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Einheit der Geschwindigkeit, die vom Fahrer im Car-Menü gewählt wurde. Veränderliche Grösse, im Gegensatz zur Einheit des Tachokranzes."
+        },
+        {
+            "id": 106224,
+            "baseListId": 101,
+            "signalRegisterId": "166",
+            "signalName": "KBI_Tankwarnung_ungueltig",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Validiert den Inhalt des Signales KBI_Tankwarnung"
+        },
+        {
+            "id": 106225,
+            "baseListId": 101,
+            "signalRegisterId": "167",
+            "signalName": "KBI_Oeldruckwarnung",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Öldruckwarnung im Kombi aktiv"
+        },
+        {
+            "id": 106226,
+            "baseListId": 101,
+            "signalRegisterId": "168",
+            "signalName": "KBI_Handbremse",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Handbremsen-Information vom Kombi.\nDas Signal bezieht sich ausschließlich auf den Zustand der konventionellen Handbremse."
+        },
+        {
+            "id": 106227,
+            "baseListId": 101,
+            "signalRegisterId": "169",
+            "signalName": "KBI_V_Digital",
+            "signalLength": 9,
+            "signalGeoRelated": false,
+            "signalComment": "Ausgabe der im Kombi angezeigten digitalen Geschwindigkeit.\n\nEinheit ist im KBI_MFA_v_Einheit_01 definiert"
+        },
+        {
+            "id": 106228,
+            "baseListId": 101,
+            "signalRegisterId": "173",
+            "signalName": "KBI_Standzeit_02",
+            "signalLength": 17,
+            "signalGeoRelated": false,
+            "signalComment": "Zähler welcher die Standzeit des Motors wiedergibt.\nDas Signal beschreibt den Anteil der Motor-Standzeit zwischen Zündung aus und nächstem Motorstart."
+        },
+        {
+            "id": 106229,
+            "baseListId": 101,
+            "signalRegisterId": "175",
+            "signalName": "KBI_FStatus_Tank",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Signal wird gesetzt:\n\na) Während der Fehlerentprellzeit (20 s Entprellung)\n\nb) Bei erkanntem Fehler wird der Tankinhalt während der laufenden KL15-Phase über den \n    Verbrauch zurückgerechnet. In dieser Zeit ist das Bit ebenfalls gesetzt. Nach einem KL15-Wechsel\n    wird bei immer noch vorliegendem Tankgeberfehler im Tankinhalt erst 0x7F ausgegeben.\n\nNach 2 Sekunden liegt spätestens die Tankinfo vor"
+        },
+        {
+            "id": 106230,
+            "baseListId": 101,
+            "signalRegisterId": "177",
+            "signalName": "KBI_Aussen_Temp_gef",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": null
+        },
+        {
+            "id": 106231,
+            "baseListId": 101,
+            "signalRegisterId": "183",
+            "signalName": "LDW_Texte",
+            "signalLength": 4,
+            "signalGeoRelated": false,
+            "signalComment": "Bei Anzeige eines Fehlertextes im Kombi ertönt ein akustisches Signal"
+        },
+        {
+            "id": 106232,
+            "baseListId": 101,
+            "signalRegisterId": "184",
+            "signalName": "LDW_Status_LED_gruen",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": null
+        },
+        {
+            "id": 106233,
+            "baseListId": 101,
+            "signalRegisterId": "185",
+            "signalName": "EPS_Warnungen",
+            "signalLength": 3,
+            "signalGeoRelated": false,
+            "signalComment": "Diese Bits werden verwendet, um im Kombi Texte, Lampen oder Bilder für die Lenkhilfe darzustellen\nAudi MLB/RSe:\nText_1: Lenkung defekt (Prio 1)\nText_2: Lenkung Systemstörung (Prio 2)\nVW526:\nText_1 (ID_TXT_1026.1): Ausfall Lenkunterstützung\nText_2 (ID_TXT_1026.2): Fehler Lenkunterstützung\nText_4 (ID_TXT_1026.3): Kurzzeitige Störung Lenkunterstützung\nMQB:\n0x0: Normalzustand, System fehlerfrei\n0x1: Warnung, System nicht initialisiert (gelbe Lampe)\n0x2: Fahrerwarnung, Systemstörung (gelbe Lampe, Akustik Prio 2)\n0x3: Fehler, Aufprüfen (rote Lampe)\n0x4: Fahrerwarnung, kritischer Fehler (rote Lampe, Akustik Prio 1)\n0x5: Bestätigung Endanschlag gelernt (gelbe Lampe, Infoton)\nMLBevo/MSS:\n0x0: Normalzustand, System fehlerfrei\n0x1: nicht definiert\n0x2: Lenkung Systemstörung! Weiterfahrt möglich (gelbe Lampe, Akustik Prio 2)\n0x3: kein Fehler, Aufprüfen (rote Lampe)\n0x4: Lenkung defekt! Fahrzeug abstellen! (rote Lampe, Akustik Prio 1)\n0x5: Bestätigung Endanschlag gelernt (gelbe Lampe, Infoton)"
+        },
+        {
+            "id": 106234,
+            "baseListId": 101,
+            "signalRegisterId": "190",
+            "signalName": "LH_Bremslicht_H_aktiv",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Bremslicht hinten"
+        },
+        {
+            "id": 106235,
+            "baseListId": 101,
+            "signalRegisterId": "191",
+            "signalName": "LH_Blinker_li_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Blinker hinten links"
+        },
+        {
+            "id": 106236,
+            "baseListId": 101,
+            "signalRegisterId": "192",
+            "signalName": "LH_Bremsl_li_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Bremslicht hinten links (Detektion Einzelausfall)"
+        },
+        {
+            "id": 106237,
+            "baseListId": 101,
+            "signalRegisterId": "193",
+            "signalName": "LH_Schlusslicht_li_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlererkennung Schlusslicht hinten links"
+        },
+        {
+            "id": 106238,
+            "baseListId": 101,
+            "signalRegisterId": "194",
+            "signalName": "LH_Rueckf_li_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlererkennung Rückfahrlicht hinten links"
+        },
+        {
+            "id": 106239,
+            "baseListId": 101,
+            "signalRegisterId": "195",
+            "signalName": "LH_Nebel_li_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlererkennung Nebelschlusslicht hinten links"
+        },
+        {
+            "id": 106240,
+            "baseListId": 101,
+            "signalRegisterId": "196",
+            "signalName": "LH_Schluss_Brems_Nebel_li_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Signal wird gesetzt, wenn eine Unterbrechung oder  ein Kurzschluss am Lampenausgang für Schluss_Brems_Nebelschlusslicht erkannt wird."
+        },
+        {
+            "id": 106241,
+            "baseListId": 101,
+            "signalRegisterId": "197",
+            "signalName": "LH_Schluss_Brems_Nebel_re_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Signal wird gesetzt, wenn eine Unterbrechung oder  ein Kurzschluss am Lampenausgang für Schluss_Brems_Nebelschlusslicht erkannt wird."
+        },
+        {
+            "id": 106242,
+            "baseListId": 101,
+            "signalRegisterId": "198",
+            "signalName": "LH_Schluss_Brems_li_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Konfiguration SL+ BRL + PL links und SL+ BRL  links"
+        },
+        {
+            "id": 106243,
+            "baseListId": 101,
+            "signalRegisterId": "199",
+            "signalName": "LH_Schluss_Nebel_li_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Konfiguration SL + NSL links oder SL + NSL + PL links"
+        },
+        {
+            "id": 106244,
+            "baseListId": 101,
+            "signalRegisterId": "200",
+            "signalName": "LH_Brems_Blk_li_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Konfiguration BRL + BLK links"
+        },
+        {
+            "id": 106245,
+            "baseListId": 101,
+            "signalRegisterId": "201",
+            "signalName": "LH_Diag_LED_li_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Heckleuchte links defekt"
+        },
+        {
+            "id": 106246,
+            "baseListId": 101,
+            "signalRegisterId": "202",
+            "signalName": "LH_Diag_LED_re_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Heckleuchte rechts defekt"
+        },
+        {
+            "id": 106247,
+            "baseListId": 101,
+            "signalRegisterId": "203",
+            "signalName": "LH_Blinker_re_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Blinker hinten rechts"
+        },
+        {
+            "id": 106248,
+            "baseListId": 101,
+            "signalRegisterId": "204",
+            "signalName": "LH_Bremsl_re_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Bremslicht hinten rechts  (Detektion Einzelausfall)"
+        },
+        {
+            "id": 106249,
+            "baseListId": 101,
+            "signalRegisterId": "205",
+            "signalName": "LH_Schlusslicht_re_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlererkennung Schlusslicht hinten rechts"
+        },
+        {
+            "id": 106250,
+            "baseListId": 101,
+            "signalRegisterId": "206",
+            "signalName": "LH_Rueckf_re_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlererkennung Rückfahrlicht hinten rechts"
+        },
+        {
+            "id": 106251,
+            "baseListId": 101,
+            "signalRegisterId": "207",
+            "signalName": "LH_Nebel_re_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlererkennung Nebelschlusslicht hinten rechts"
+        },
+        {
+            "id": 106252,
+            "baseListId": 101,
+            "signalRegisterId": "208",
+            "signalName": "LH_Schluss_Brems_re_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Konfiguration SL+ BRL + PL rechts und SL+ BRL  rechts"
+        },
+        {
+            "id": 106253,
+            "baseListId": 101,
+            "signalRegisterId": "209",
+            "signalName": "LH_Schluss_Nebel_re_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Konfiguration SL + NSL rechts oder SL + NSL + PL rechts"
+        },
+        {
+            "id": 106254,
+            "baseListId": 101,
+            "signalRegisterId": "210",
+            "signalName": "LH_Brems_Blk_re_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Konfiguration BRL + BLK rechts"
+        },
+        {
+            "id": 106255,
+            "baseListId": 101,
+            "signalRegisterId": "211",
+            "signalName": "LH_Kennzl_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Kennzeichenbeleuchtung hinten"
+        },
+        {
+            "id": 106256,
+            "baseListId": 101,
+            "signalRegisterId": "212",
+            "signalName": "LH_3_Bremsl_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus 3. Bremsleuchte"
+        },
+        {
+            "id": 106257,
+            "baseListId": 101,
+            "signalRegisterId": "213",
+            "signalName": "LH_Nebel_mi_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlererkennung Nebelschlusslicht hinten Mitte"
+        },
+        {
+            "id": 106258,
+            "baseListId": 101,
+            "signalRegisterId": "214",
+            "signalName": "LH_Bremsl_li_ges_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Bremslicht hinten links (Detektion Totalausfall)"
+        },
+        {
+            "id": 106259,
+            "baseListId": 101,
+            "signalRegisterId": "215",
+            "signalName": "LH_Bremsl_re_ges_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Bremslicht hinten rechts (Detektion Totalausfall)"
+        },
+        {
+            "id": 106260,
+            "baseListId": 101,
+            "signalRegisterId": "223",
+            "signalName": "LV_Blinker_li_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Blinker vorne links"
+        },
+        {
+            "id": 106261,
+            "baseListId": 101,
+            "signalRegisterId": "224",
+            "signalName": "LV_Standlicht_li_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Standlicht vorne links"
+        },
+        {
+            "id": 106262,
+            "baseListId": 101,
+            "signalRegisterId": "225",
+            "signalName": "LV_Abblendlicht_li_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Abblendlicht vorne links"
+        },
+        {
+            "id": 106263,
+            "baseListId": 101,
+            "signalRegisterId": "226",
+            "signalName": "LV_Fernlicht_li_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Fernlicht vorne links"
+        },
+        {
+            "id": 106264,
+            "baseListId": 101,
+            "signalRegisterId": "227",
+            "signalName": "LV_Nebellicht_li_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Nebelscheinwerfer vorne links"
+        },
+        {
+            "id": 106265,
+            "baseListId": 101,
+            "signalRegisterId": "228",
+            "signalName": "LV_Blk_li_Seite_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Seitenblinker links"
+        },
+        {
+            "id": 106266,
+            "baseListId": 101,
+            "signalRegisterId": "229",
+            "signalName": "LV_Tagfahrlicht_li_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Tagfahrlicht links"
+        },
+        {
+            "id": 106267,
+            "baseListId": 101,
+            "signalRegisterId": "231",
+            "signalName": "LV_Blinker_re_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Blinker vorne rechts"
+        },
+        {
+            "id": 106268,
+            "baseListId": 101,
+            "signalRegisterId": "232",
+            "signalName": "LV_Standlicht_re_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Standlicht vorne rechts"
+        },
+        {
+            "id": 106269,
+            "baseListId": 101,
+            "signalRegisterId": "233",
+            "signalName": "LV_Abblendlicht_re_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Abblendlicht vorne rechts"
+        },
+        {
+            "id": 106270,
+            "baseListId": 101,
+            "signalRegisterId": "234",
+            "signalName": "LV_Fernlicht_re_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Fernlicht vorne rechts"
+        },
+        {
+            "id": 106271,
+            "baseListId": 101,
+            "signalRegisterId": "235",
+            "signalName": "LV_Nebellicht_re_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Nebelscheinwerfer vorne rechts"
+        },
+        {
+            "id": 106272,
+            "baseListId": 101,
+            "signalRegisterId": "236",
+            "signalName": "LV_Blk_re_Seite_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Blinker Seite rechts"
+        },
+        {
+            "id": 106273,
+            "baseListId": 101,
+            "signalRegisterId": "237",
+            "signalName": "LV_Tagfahrlicht_re_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Tagfahrlicht rechts"
+        },
+        {
+            "id": 106274,
+            "baseListId": 101,
+            "signalRegisterId": "238",
+            "signalName": "LV_Nebellicht_TFL_li_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Nebellicht und Tagfahrlicht links"
+        },
+        {
+            "id": 106275,
+            "baseListId": 101,
+            "signalRegisterId": "239",
+            "signalName": "LV_Standlicht_TFL_li_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Standlicht und Tagfahrlicht links"
+        },
+        {
+            "id": 106276,
+            "baseListId": 101,
+            "signalRegisterId": "240",
+            "signalName": "LV_Abblend_Fernlicht_li_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Abblendlicht und Fernlicht links"
+        },
+        {
+            "id": 106277,
+            "baseListId": 101,
+            "signalRegisterId": "241",
+            "signalName": "LV_Nebellicht_TFL_re_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Nebellicht und Tagfahrlicht rechts"
+        },
+        {
+            "id": 106278,
+            "baseListId": 101,
+            "signalRegisterId": "242",
+            "signalName": "LV_Standlicht_TFL_re_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Standlicht und Tagfahrlicht rechts"
+        },
+        {
+            "id": 106279,
+            "baseListId": 101,
+            "signalRegisterId": "243",
+            "signalName": "LV_Abblend_Fernlicht_re_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Abblendlicht und Fernlicht rechts"
+        },
+        {
+            "id": 106280,
+            "baseListId": 101,
+            "signalRegisterId": "244",
+            "signalName": "LV_Abbiegelicht_li_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Abbiegelicht vorne links"
+        },
+        {
+            "id": 106281,
+            "baseListId": 101,
+            "signalRegisterId": "245",
+            "signalName": "LV_Abbiegelicht_re_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Abbiegelicht vorne rechts"
+        },
+        {
+            "id": 106282,
+            "baseListId": 101,
+            "signalRegisterId": "246",
+            "signalName": "LV_LED_Scheinwerfer_li_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus LED-Scheinwerfer links"
+        },
+        {
+            "id": 106283,
+            "baseListId": 101,
+            "signalRegisterId": "247",
+            "signalName": "LV_LED_Scheinwerfer_re_def",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus LED-Scheinwerfer rechts"
+        },
+        {
+            "id": 106284,
+            "baseListId": 101,
+            "signalRegisterId": "251",
+            "signalName": "LWI_Lenkradwinkel",
+            "signalLength": 13,
+            "signalGeoRelated": false,
+            "signalComment": "Wertebereich = +/- 800 Grad\nAuflösung = 0,1 Grad\nACHTUNG: spezifizierte Interne Auflösung des Sensors beträgt aber nur Schrittweite 0,5 Grad!\n\nHinweis:\nMLB: Zusätzlich gestellte Winkel bei Dynamiklenkung beachten !\nMQB: Nicht konstante Lenkübersetzung bei Progressivlenkung beachten. Signal bei Progressivlenkung auf den Lenkhub bezogen."
+        },
+        {
+            "id": 106285,
+            "baseListId": 101,
+            "signalRegisterId": "252",
+            "signalName": "LWI_VZ_Lenkradwinkel",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Vorzeichen Lenkradwinkel gemäss DIN70000; \nNullstellung = +0"
+        },
+        {
+            "id": 106286,
+            "baseListId": 101,
+            "signalRegisterId": "255",
+            "signalName": "MO_QBit_Oel_Temp",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": null
+        },
+        {
+            "id": 106287,
+            "baseListId": 101,
+            "signalRegisterId": "256",
+            "signalName": "MO_Ansaugluft_Temp",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "In Fahrzeugen ohne Außentemperatur vom Kombi kann aus der Ansauglufttemperatur auf die Außentemperatur geschlossen werden. Beim SDI ist das mit einer gewissen Genauigkeit gegeben. Genutzt wird es vom ASG."
+        },
+        {
+            "id": 106288,
+            "baseListId": 101,
+            "signalRegisterId": "257",
+            "signalName": "MO_Oel_Temp",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Realer Meßbereich ca. -40..150 Grad"
+        },
+        {
+            "id": 106289,
+            "baseListId": 101,
+            "signalRegisterId": "258",
+            "signalName": "MO_Kuehlmittel_Temp",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Kuehlmitteltemperatur"
+        },
+        {
+            "id": 106290,
+            "baseListId": 101,
+            "signalRegisterId": "259",
+            "signalName": "MO_StartStopp_Status",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Aktivitätsstatus Start/Stopp-Koordinator\nHYBRID:\nWenn MO_Hybridfahrzeug = 1 gilt:\nSignal bezieht sich nur auf den Verbrennungsmotor, nicht auf den Hybridantrieb"
+        },
+        {
+            "id": 106291,
+            "baseListId": 101,
+            "signalRegisterId": "260",
+            "signalName": "MO_StartStopp_Motorstopp",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Motor-Stopp durch Start/Stopp-Koordinator\nHYBRID:\nWenn MO_Hybridfahrzeug = 1 gilt:\nVerbrennungsmotor durch Hybrid-Koordinator im MSG ausgeschaltet. \nDie definierten Start/Stopp-Signale beziehen sich nur auf den Verbrennungsmotor!"
+        },
+        {
+            "id": 106292,
+            "baseListId": 101,
+            "signalRegisterId": "261",
+            "signalName": "MO_Kl_75",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Klemme X"
+        },
+        {
+            "id": 106293,
+            "baseListId": 101,
+            "signalRegisterId": "262",
+            "signalName": "MO_Kl_50",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Klemme 50: Startausführung durch Ritzelstarter\n\nMLB: nicht von allen Motoren gesendet\nMQB/MLBevo: gesendet von allen Motoren"
+        },
+        {
+            "id": 106294,
+            "baseListId": 101,
+            "signalRegisterId": "263",
+            "signalName": "MO_Gangposition",
+            "signalLength": 4,
+            "signalGeoRelated": false,
+            "signalComment": "MLB:\nStellung des Wählhebels in der Schaltgasse des Handschaltgetriebes.\nMLBevo: \nAusweitung der Bedienung auch auf Automatikgetriebe;\nRouting des Signals GE_Fahrstufe: \n1. Position_R (dez. 6) auf MO_Gangposition: Gang_R (dez. 13) wegen Entfall Signals BCM1_Rueckfahrlicht_Schalter; \n2. Position_N (4) auf GangN (0)\n3. Zwischenstellung (0) auf Zwischenstellung (12)\n4. Init (1) auf Init (14)\n5. Fehler (15) auf Fehler (15) oder Timeout der relevanten Getriebe-PDU\n6. Position_S und Tipp_in_S auf Automat_Vorwärts_S (10)\n7. Position_D, Effizienz und Tipp_in_D auf Automat_Vorwärts_D/E (11)\n8. Position_P (5) auf Automat_P (9)\n\nHandschaltgetriebe wie MLB\nMQB: \nAbhängig vom Signal MO_Signalquelle_Gangposition:  Stellung des Wählhebels in der Schaltgasse des Handschaltgetriebes aus Gangpositionssensor oder Modellwert aus Motordrehzahl und Fahrzeuggeschwindigkeit (ggf. unter Hinzuziehung des Neutralgangsensors und Rückfahrlichtschalters); bei betätigter Kupplung (MO_Kuppl_schalter=1) ist das der Modellwert nicht verwendbar. Der Modellwert ist für Plausibilisierungen nicht geeignet. \nBei verbautem Automatikgetriebe wird der Initwert (14=Istgang nicht definiert) ausgegeben."
+        },
+        {
+            "id": 106295,
+            "baseListId": 101,
+            "signalRegisterId": "264",
+            "signalName": "MO_Fahrer_bremst",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Redundante Bremsinformation vom Motor.\n\nMLB:\nAUDI D4: Zykluszeit: 10ms (siehe Zykluszeit schnell/Cycletime Fast)\nIm AUDI B8 wird in diesem Bit der Wert der ESP-CAN-Information \"ESP_Fahrer_bremst\" ausgegeben.\n\nAchtung:\nReduktion der Zykluszeit Motor_03 auf 10ms geplant.\nProjektabhängig soll künftig mit 10ms gesendet werden.\nEmpfänger die in weiteren Konzern-Projekten eingesetzt werden müssen dazu beide Zykluszeiten (10/20ms) unterstützen.\nEmpfänger muss in diesem Fall für die Timeoutdiagnose und CAN-Messwerteblöcke mit 20ms auslegen."
+        },
+        {
+            "id": 106296,
+            "baseListId": 101,
+            "signalRegisterId": "265",
+            "signalName": "MO_Motor_laeuft",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Das Motorsteuergerät gibt die Information aus, ab wann der Motor verbrennungsbedingt autark läuft und durch zuschaltbare Nebenaggregate mechanisch belastbar ist (z.B. durch Generator, Klimakompressor, etc.).\n\nDie \"Motor läuft\" Information wird ausgegeben, wenn für eine (projektspezifisch) applizierbare Zeit (~500 - 600ms) die (projektspezifische) Motor-Startende-Drehzahl überschritten wird. Diese Drehzahlschwelle ist von der Kühlwassertemperatur und dem Umgebungsdruck (Diesel Motor) abhängig.\nDas Bit wird auch gesetzt, nach MSG-Reset und wenn der Motor angeschleppt wird (wenn während der Fahrt Kl. 15 aus --> ein erfolgt)\n\nHYBRID:\nWenn MO_Hybridfahrzeug = 1 gilt:\nHybridantrieb läuft und ist belastbar, es kann ein Moment abgegeben werden (erzeugt durch ELM oder / und VKM).\nRücknahme des Signals im Fehlerfall, wenn das Hybridsystem die Versorgung des Bordnetzes deutlich begrenzen bzw. abschalten muss. \n\nAchtung: Das Signal kann nicht mehr dazu dienen, ob Komponenten am Riementrieb des Verbrennungsmotors den Verbrennungsmotor belasten können."
+        },
+        {
+            "id": 106297,
+            "baseListId": 101,
+            "signalRegisterId": "266",
+            "signalName": "MO_Kickdown",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Es gilt: Signalspec MO_Kickdown v1.0"
+        },
+        {
+            "id": 106298,
+            "baseListId": 101,
+            "signalRegisterId": "267",
+            "signalName": "MO_Remotestart_Betrieb",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Das MSG ist für den Remotestart-Betrieb bereit. Nach Empfang der Motorstartanforderung für RSt-Betrieb durch BCM wird der Fahrzeugmotor gestartet und solange der Motor läuft, bleibt dieses Bit aktiv. Dieses Signal ist nur zur Verwendung durch das BCM zur RemoteStart-Freigabe."
+        },
+        {
+            "id": 106299,
+            "baseListId": 101,
+            "signalRegisterId": "270",
+            "signalName": "MO_Kuehlerluefter_1",
+            "signalLength": 7,
+            "signalGeoRelated": false,
+            "signalComment": "Ansteuertastverhaeltnis (PWM) der Kuehlerluefterendstufe 1"
+        },
+        {
+            "id": 106300,
+            "baseListId": 101,
+            "signalRegisterId": "271",
+            "signalName": "MO_Kuehlerluefter_2",
+            "signalLength": 7,
+            "signalGeoRelated": false,
+            "signalComment": "Ansteuertastverhaeltnis (PWM) der Kuehlerluefterendstufe 2"
+        },
+        {
+            "id": 106301,
+            "baseListId": 101,
+            "signalRegisterId": "274",
+            "signalName": "WIV_Oelstand",
+            "signalLength": 4,
+            "signalGeoRelated": false,
+            "signalComment": "8 Segmente zur Balkenanzeige des Ölstands"
+        },
+        {
+            "id": 106302,
+            "baseListId": 101,
+            "signalRegisterId": "275",
+            "signalName": "MO_Oelwarnung_max",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Ölstandswarnung mit der Aufforderung zum Ölwechsel.\nHintergrund: Bei Kraftstoffeintrag (B20) ins Öl verbleibt der RME-Anteil irreversibel im Öl."
+        },
+        {
+            "id": 106303,
+            "baseListId": 101,
+            "signalRegisterId": "275",
+            "signalName": "MO_Oelwarnung_max",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Ölstandswarnung mit der Aufforderung zum Ölwechsel.\nHintergrund: Bei Kraftstoffeintrag (B20) ins Öl verbleibt der RME-Anteil irreversibel im Öl."
+        },
+        {
+            "id": 106304,
+            "baseListId": 101,
+            "signalRegisterId": "277",
+            "signalName": "WIV_Oelmenge",
+            "signalLength": 5,
+            "signalGeoRelated": false,
+            "signalComment": "Ölmenge zwischen Min und Max"
+        },
+        {
+            "id": 106305,
+            "baseListId": 101,
+            "signalRegisterId": "277",
+            "signalName": "WIV_Oelmenge",
+            "signalLength": 5,
+            "signalGeoRelated": false,
+            "signalComment": "Ölmenge zwischen Min und Max"
+        },
+        {
+            "id": 106306,
+            "baseListId": 101,
+            "signalRegisterId": "278",
+            "signalName": "MO_Systemlampe",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "EGas Systemlampe (EPC) oder Vorglühlampe im Kombi, Kombi steuert immer gleiche\nLED an, nur über Ziffernblatt wird die EPC von der Vorglühlampe differenziert"
+        },
+        {
+            "id": 106307,
+            "baseListId": 101,
+            "signalRegisterId": "278",
+            "signalName": "MO_Systemlampe",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "EGas Systemlampe (EPC) oder Vorglühlampe im Kombi, Kombi steuert immer gleiche\nLED an, nur über Ziffernblatt wird die EPC von der Vorglühlampe differenziert"
+        },
+        {
+            "id": 106308,
+            "baseListId": 101,
+            "signalRegisterId": "279",
+            "signalName": "MO_OBD2_Lampe",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "OBD bzw. MIL-Lampe wird vom Motorsteuergerät angesteuert, die Information im Signal GE_OBD_Status wird vom Motorsteuergerät an das Kombi weitergereicht"
+        },
+        {
+            "id": 106309,
+            "baseListId": 101,
+            "signalRegisterId": "279",
+            "signalName": "MO_OBD2_Lampe",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "OBD bzw. MIL-Lampe wird vom Motorsteuergerät angesteuert, die Information im Signal GE_OBD_Status wird vom Motorsteuergerät an das Kombi weitergereicht"
+        },
+        {
+            "id": 106310,
+            "baseListId": 101,
+            "signalRegisterId": "280",
+            "signalName": "MO_Heissleuchte",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Ansteuerung der Kühlwassertemperatur-Heißleuchte (Sensor nur noch am Motorsteuergerät): Temperaturschaltschwellen mit Hysterese (bei VW D1/Colorado Kombi derzeit noch nicht genutzt)."
+        },
+        {
+            "id": 106311,
+            "baseListId": 101,
+            "signalRegisterId": "280",
+            "signalName": "MO_Heissleuchte",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Ansteuerung der Kühlwassertemperatur-Heißleuchte (Sensor nur noch am Motorsteuergerät): Temperaturschaltschwellen mit Hysterese (bei VW D1/Colorado Kombi derzeit noch nicht genutzt)."
+        },
+        {
+            "id": 106312,
+            "baseListId": 101,
+            "signalRegisterId": "281",
+            "signalName": "WIV_Oeldr_Warn_Motor",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Löst im Kombiinstrument die rote Prio1-Öldruckwarnung (inkl. 3xBeep) aus.\nnur MLB: die Warnauslösung erfolgt nur bei gleichzeitig gesetztem \"WIV_Enable_Oeldr_Motor\""
+        },
+        {
+            "id": 106313,
+            "baseListId": 101,
+            "signalRegisterId": "281",
+            "signalName": "WIV_Oeldr_Warn_Motor",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Löst im Kombiinstrument die rote Prio1-Öldruckwarnung (inkl. 3xBeep) aus.\nnur MLB: die Warnauslösung erfolgt nur bei gleichzeitig gesetztem \"WIV_Enable_Oeldr_Motor\""
+        },
+        {
+            "id": 106314,
+            "baseListId": 101,
+            "signalRegisterId": "283",
+            "signalName": "MO_QBit_Drehzahl_01",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "AUDI D4: Zykluszeit: 10ms (siehe Zykluszeit schnell/Cycletime Fast)\n\nAchtung:\nReduktion der Zykluszeit Motor_03 auf 10ms geplant.\nProjektabhängig soll künftig mit 10ms gesendet werden.\nEmpfänger die in weiteren Konzern-Projekten eingesetzt werden müssen dazu beide Zykluszeiten (10/20ms) unterstützen.\nEmpfänger muss in diesem Fall für die Timeoutdiagnose und CAN-Messwerteblöcke mit 20ms auslegen."
+        },
+        {
+            "id": 106315,
+            "baseListId": 101,
+            "signalRegisterId": "283",
+            "signalName": "MO_QBit_Drehzahl_01",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "AUDI D4: Zykluszeit: 10ms (siehe Zykluszeit schnell/Cycletime Fast)\n\nAchtung:\nReduktion der Zykluszeit Motor_03 auf 10ms geplant.\nProjektabhängig soll künftig mit 10ms gesendet werden.\nEmpfänger die in weiteren Konzern-Projekten eingesetzt werden müssen dazu beide Zykluszeiten (10/20ms) unterstützen.\nEmpfänger muss in diesem Fall für die Timeoutdiagnose und CAN-Messwerteblöcke mit 20ms auslegen."
+        },
+        {
+            "id": 106316,
+            "baseListId": 101,
+            "signalRegisterId": "284",
+            "signalName": "MO_Drehzahl_01",
+            "signalLength": 16,
+            "signalGeoRelated": false,
+            "signalComment": "Im Fehlerfall wird die Motordrehzahl über die Nockenwellendrehzahl als Ersatzgrösse ausgegeben\n\nBei Parallelhybrid: Getriebeeingangsdrehzahl (=E-Maschinen Drehzahl)\n\nHinweis: \nEhemaliger Fehlerwert 0xFFFF wird senderseitig nicht unterstützt. \nDiesen Wert aus Kompatibilitätsgründen nicht neu belegen!"
+        },
+        {
+            "id": 106317,
+            "baseListId": 101,
+            "signalRegisterId": "284",
+            "signalName": "MO_Drehzahl_01",
+            "signalLength": 16,
+            "signalGeoRelated": false,
+            "signalComment": "Im Fehlerfall wird die Motordrehzahl über die Nockenwellendrehzahl als Ersatzgrösse ausgegeben\n\nBei Parallelhybrid: Getriebeeingangsdrehzahl (=E-Maschinen Drehzahl)\n\nHinweis: \nEhemaliger Fehlerwert 0xFFFF wird senderseitig nicht unterstützt. \nDiesen Wert aus Kompatibilitätsgründen nicht neu belegen!"
+        },
+        {
+            "id": 106318,
+            "baseListId": 101,
+            "signalRegisterId": "285",
+            "signalName": "MO_Fahrpedalrohwert_01",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "AUDI D4: Zykluszeit: 10ms (siehe Zykluszeit schnell/Cycletime Fast)\n\nStellung des Fahrpedales (Rohwert, ohne Überlagerung durch GRA-Eingriffe etc.)\n\nDie Funktionen zur Berechung des Fahrpedalrohwerts laufen im 10ms Raster. Der Fahrpedalwert berechnet sich jedoch immer aus dem, bezogen auf einen Ausgabezyklus, letzten für die Berechnung des Gradienten genutzten Signalwerts.\n\nAchtung:\nReduktion der Zykluszeit Motor_03 auf 10ms geplant.\nProjektabhängig soll künftig mit 10ms gesendet werden.\nEmpfänger die in weiteren Konzern-Projekten eingesetzt werden müssen dazu beide Zykluszeiten (10/20ms) unterstützen.\nEmpfänger muss in diesem Fall für die Timeoutdiagnose und CAN-Messwerteblöcke mit 20ms auslegen."
+        },
+        {
+            "id": 106319,
+            "baseListId": 101,
+            "signalRegisterId": "285",
+            "signalName": "MO_Fahrpedalrohwert_01",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "AUDI D4: Zykluszeit: 10ms (siehe Zykluszeit schnell/Cycletime Fast)\n\nStellung des Fahrpedales (Rohwert, ohne Überlagerung durch GRA-Eingriffe etc.)\n\nDie Funktionen zur Berechung des Fahrpedalrohwerts laufen im 10ms Raster. Der Fahrpedalwert berechnet sich jedoch immer aus dem, bezogen auf einen Ausgabezyklus, letzten für die Berechnung des Gradienten genutzten Signalwerts.\n\nAchtung:\nReduktion der Zykluszeit Motor_03 auf 10ms geplant.\nProjektabhängig soll künftig mit 10ms gesendet werden.\nEmpfänger die in weiteren Konzern-Projekten eingesetzt werden müssen dazu beide Zykluszeiten (10/20ms) unterstützen.\nEmpfänger muss in diesem Fall für die Timeoutdiagnose und CAN-Messwerteblöcke mit 20ms auslegen."
+        },
+        {
+            "id": 106320,
+            "baseListId": 101,
+            "signalRegisterId": "286",
+            "signalName": "MO_rel_Saugrohrdruck",
+            "signalLength": 6,
+            "signalGeoRelated": false,
+            "signalComment": "Der Wert gibt an, um wieviel mbar der Saugrohrdruck unterhalb des Umgebungsdrucks liegt. Überdruck im Saugrohr wird nicht ausgegeben.\n0: Saugrohrdruck=Umgebungsdruck"
+        },
+        {
+            "id": 106321,
+            "baseListId": 101,
+            "signalRegisterId": "286",
+            "signalName": "MO_rel_Saugrohrdruck",
+            "signalLength": 6,
+            "signalGeoRelated": false,
+            "signalComment": "Der Wert gibt an, um wieviel mbar der Saugrohrdruck unterhalb des Umgebungsdrucks liegt. Überdruck im Saugrohr wird nicht ausgegeben.\n0: Saugrohrdruck=Umgebungsdruck"
+        },
+        {
+            "id": 106322,
+            "baseListId": 101,
+            "signalRegisterId": "287",
+            "signalName": "TSK_Status",
+            "signalLength": 3,
+            "signalGeoRelated": false,
+            "signalComment": "Betriebszustand des TSK-Reglers"
+        },
+        {
+            "id": 106323,
+            "baseListId": 101,
+            "signalRegisterId": "287",
+            "signalName": "TSK_Status",
+            "signalLength": 3,
+            "signalGeoRelated": false,
+            "signalComment": "Betriebszustand des TSK-Reglers"
+        },
+        {
+            "id": 106324,
+            "baseListId": 101,
+            "signalRegisterId": "289",
+            "signalName": "MO_Anzeige_Verbr_Einheit",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Signal steht im Kontext MO_Anzeige_Verbrauch und überträgt die Verbrauchseinheit der aktuellen Antriebsart. Signal muss in der gleichen Botschaft wie MO_Anzeige_Verbrauch übertragen werden"
+        },
+        {
+            "id": 106325,
+            "baseListId": 101,
+            "signalRegisterId": "289",
+            "signalName": "MO_Anzeige_Verbr_Einheit",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Signal steht im Kontext MO_Anzeige_Verbrauch und überträgt die Verbrauchseinheit der aktuellen Antriebsart. Signal muss in der gleichen Botschaft wie MO_Anzeige_Verbrauch übertragen werden"
+        },
+        {
+            "id": 106326,
+            "baseListId": 101,
+            "signalRegisterId": "290",
+            "signalName": "MO_Anzeige_Drehmoment",
+            "signalLength": 11,
+            "signalGeoRelated": false,
+            "signalComment": "Drehmomentssignal für Sport-HMI im Kombi."
+        },
+        {
+            "id": 106327,
+            "baseListId": 101,
+            "signalRegisterId": "290",
+            "signalName": "MO_Anzeige_Drehmoment",
+            "signalLength": 11,
+            "signalGeoRelated": false,
+            "signalComment": "Drehmomentssignal für Sport-HMI im Kombi."
+        },
+        {
+            "id": 106328,
+            "baseListId": 101,
+            "signalRegisterId": "291",
+            "signalName": "MO_Istgang",
+            "signalLength": 4,
+            "signalGeoRelated": false,
+            "signalComment": "Aktueller Gang für Anzeige Hochschaltempfehlung (gültig, wenn MO_Schaltempf_verfbar = 1).\n\nAnzeige im Kombi:\nSollgang == Istgang         ==> Anzeige Istgang\nSollgang !=   Istgang         ==> Schaltempfehlung\nSollgang == Istgang == 0 ==> keine Anzeige"
+        },
+        {
+            "id": 106329,
+            "baseListId": 101,
+            "signalRegisterId": "291",
+            "signalName": "MO_Istgang",
+            "signalLength": 4,
+            "signalGeoRelated": false,
+            "signalComment": "Aktueller Gang für Anzeige Hochschaltempfehlung (gültig, wenn MO_Schaltempf_verfbar = 1).\n\nAnzeige im Kombi:\nSollgang == Istgang         ==> Anzeige Istgang\nSollgang !=   Istgang         ==> Schaltempfehlung\nSollgang == Istgang == 0 ==> keine Anzeige"
+        },
+        {
+            "id": 106330,
+            "baseListId": 101,
+            "signalRegisterId": "292",
+            "signalName": "MO_Sollgang",
+            "signalLength": 4,
+            "signalGeoRelated": false,
+            "signalComment": "Motor sendet den Sollgang in den der Fahrer schalten soll. Wird im Kombi als Hochschaltempfehlung hervorgehoben (gültig, wenn MO_Schaltempf_verfbar = 1).\n\nAnzeige im Kombi:\nSollgang == Istgang          ==> Anzeige Istgang\nSollgang !=  Istgang          ==> Schaltempfehlung\nSollgang == Istgang == 0 ==> keine Anzeige\nSollgang == 15                  ==> Schaltempfehlung in N"
+        },
+        {
+            "id": 106331,
+            "baseListId": 101,
+            "signalRegisterId": "292",
+            "signalName": "MO_Sollgang",
+            "signalLength": 4,
+            "signalGeoRelated": false,
+            "signalComment": "Motor sendet den Sollgang in den der Fahrer schalten soll. Wird im Kombi als Hochschaltempfehlung hervorgehoben (gültig, wenn MO_Schaltempf_verfbar = 1).\n\nAnzeige im Kombi:\nSollgang == Istgang          ==> Anzeige Istgang\nSollgang !=  Istgang          ==> Schaltempfehlung\nSollgang == Istgang == 0 ==> keine Anzeige\nSollgang == 15                  ==> Schaltempfehlung in N"
+        },
+        {
+            "id": 106332,
+            "baseListId": 101,
+            "signalRegisterId": "293",
+            "signalName": "MO_Anzeigedrehz",
+            "signalLength": 12,
+            "signalGeoRelated": false,
+            "signalComment": "Optimierte Anzeigedrehzahl wegen sportlicherem Drehzahlmesser im Kombi. \nBei Parallelhybrid: Anzeige VKM- Drehzahl nach Anzeigekonzept\n\nHinweis: Ehemaliger Fehlerwert 0xFFF wird senderseitig nicht unterstützt. Diesen Wert aus Kompatibilitätsgründen nicht neu belegen!"
+        },
+        {
+            "id": 106333,
+            "baseListId": 101,
+            "signalRegisterId": "293",
+            "signalName": "MO_Anzeigedrehz",
+            "signalLength": 12,
+            "signalGeoRelated": false,
+            "signalComment": "Optimierte Anzeigedrehzahl wegen sportlicherem Drehzahlmesser im Kombi. \nBei Parallelhybrid: Anzeige VKM- Drehzahl nach Anzeigekonzept\n\nHinweis: Ehemaliger Fehlerwert 0xFFF wird senderseitig nicht unterstützt. Diesen Wert aus Kompatibilitätsgründen nicht neu belegen!"
+        },
+        {
+            "id": 106334,
+            "baseListId": 101,
+            "signalRegisterId": "294",
+            "signalName": "MO_Fehler_Oeldrucksensor",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Steuert  im Kombiinstrument die gelbe zentrale Warnlampe und das Symbol \"gelbe Ölkanne\"  mit der Textmeldung \"Sensorfehler: Werkstatt aufsuchen\" an"
+        },
+        {
+            "id": 106335,
+            "baseListId": 101,
+            "signalRegisterId": "294",
+            "signalName": "MO_Fehler_Oeldrucksensor",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Steuert  im Kombiinstrument die gelbe zentrale Warnlampe und das Symbol \"gelbe Ölkanne\"  mit der Textmeldung \"Sensorfehler: Werkstatt aufsuchen\" an"
+        },
+        {
+            "id": 106336,
+            "baseListId": 101,
+            "signalRegisterId": "295",
+            "signalName": "MO_Schaltempf_verfbar",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Info, ob Schaltempfehlung im Fzg. verfügbar. Statischer Wert, ändert sich für ein Fzg. nicht!"
+        },
+        {
+            "id": 106337,
+            "baseListId": 101,
+            "signalRegisterId": "295",
+            "signalName": "MO_Schaltempf_verfbar",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Info, ob Schaltempfehlung im Fzg. verfügbar. Statischer Wert, ändert sich für ein Fzg. nicht!"
+        },
+        {
+            "id": 106338,
+            "baseListId": 101,
+            "signalRegisterId": "296",
+            "signalName": "MO_Ladedruck",
+            "signalLength": 9,
+            "signalGeoRelated": false,
+            "signalComment": "absoluter Ladedruck"
+        },
+        {
+            "id": 106339,
+            "baseListId": 101,
+            "signalRegisterId": "296",
+            "signalName": "MO_Ladedruck",
+            "signalLength": 9,
+            "signalGeoRelated": false,
+            "signalComment": "absoluter Ladedruck"
+        },
+        {
+            "id": 106340,
+            "baseListId": 101,
+            "signalRegisterId": "297",
+            "signalName": "MO_KVS",
+            "signalLength": 15,
+            "signalGeoRelated": false,
+            "signalComment": "Motorsteuergerätinterner Verbrauchszähler, der vom Kombi zyklisch ausgelesen wird, um die Einspritzmenge zur Verbrauchsmessung aufzusummieren; aus diesem Zählerstand werden Momentan- und Durchschnittsverbrauch berechnet; das Überlauf-Bit ist zu berücksichtigen"
+        },
+        {
+            "id": 106341,
+            "baseListId": 101,
+            "signalRegisterId": "297",
+            "signalName": "MO_KVS",
+            "signalLength": 15,
+            "signalGeoRelated": false,
+            "signalComment": "Motorsteuergerätinterner Verbrauchszähler, der vom Kombi zyklisch ausgelesen wird, um die Einspritzmenge zur Verbrauchsmessung aufzusummieren; aus diesem Zählerstand werden Momentan- und Durchschnittsverbrauch berechnet; das Überlauf-Bit ist zu berücksichtigen"
+        },
+        {
+            "id": 106342,
+            "baseListId": 101,
+            "signalRegisterId": "298",
+            "signalName": "MO_KVS_Ueberlauf",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Der motorsteuergeräteinterne Verbrauchszähler ist mindestens einmal übergelaufen. Dieses Bit wird genutzt, um erkennen zu können, daß das Motorsteuergerät aus dem Reset-Zustand hochläuft."
+        },
+        {
+            "id": 106343,
+            "baseListId": 101,
+            "signalRegisterId": "298",
+            "signalName": "MO_KVS_Ueberlauf",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Der motorsteuergeräteinterne Verbrauchszähler ist mindestens einmal übergelaufen. Dieses Bit wird genutzt, um erkennen zu können, daß das Motorsteuergerät aus dem Reset-Zustand hochläuft."
+        },
+        {
+            "id": 106344,
+            "baseListId": 101,
+            "signalRegisterId": "302",
+            "signalName": "MO_Anzeige_Verbrauch_oE",
+            "signalLength": 16,
+            "signalGeoRelated": false,
+            "signalComment": "Anzeige Verbrauchssignal fürs Kombi. Im Bezug auf Verbrennerbeteiligung. Das Signal ist einheitenlos. Die zugehörige Einheit wird in MO_Anzeige_Verbr_Einheit übertragen."
+        },
+        {
+            "id": 106345,
+            "baseListId": 101,
+            "signalRegisterId": "302",
+            "signalName": "MO_Anzeige_Verbrauch_oE",
+            "signalLength": 16,
+            "signalGeoRelated": false,
+            "signalComment": "Anzeige Verbrauchssignal fürs Kombi. Im Bezug auf Verbrennerbeteiligung. Das Signal ist einheitenlos. Die zugehörige Einheit wird in MO_Anzeige_Verbr_Einheit übertragen."
+        },
+        {
+            "id": 106346,
+            "baseListId": 101,
+            "signalRegisterId": "303",
+            "signalName": "MO_Beladungsstufe_OPF",
+            "signalLength": 3,
+            "signalGeoRelated": false,
+            "signalComment": "Dieses Signal zeigt die Beladungsstufe des OPFs an."
+        },
+        {
+            "id": 106347,
+            "baseListId": 101,
+            "signalRegisterId": "303",
+            "signalName": "MO_Beladungsstufe_OPF",
+            "signalLength": 3,
+            "signalGeoRelated": false,
+            "signalComment": "Dieses Signal zeigt die Beladungsstufe des OPFs an."
+        },
+        {
+            "id": 106348,
+            "baseListId": 101,
+            "signalRegisterId": "304",
+            "signalName": "MO_Modellbeladung_OPF",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Dieses Signal zeigt die ermittelte OPF-Beladung an."
+        },
+        {
+            "id": 106349,
+            "baseListId": 101,
+            "signalRegisterId": "304",
+            "signalName": "MO_Modellbeladung_OPF",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Dieses Signal zeigt die ermittelte OPF-Beladung an."
+        },
+        {
+            "id": 106350,
+            "baseListId": 101,
+            "signalRegisterId": "305",
+            "signalName": "MO_Aschebeladung_OPF",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Dieses Signal zeigt die Beladung des OPFs mit Asche an."
+        },
+        {
+            "id": 106351,
+            "baseListId": 101,
+            "signalRegisterId": "305",
+            "signalName": "MO_Aschebeladung_OPF",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Dieses Signal zeigt die Beladung des OPFs mit Asche an."
+        },
+        {
+            "id": 106352,
+            "baseListId": 101,
+            "signalRegisterId": "306",
+            "signalName": "MO_Offset_Nockenwelle1",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Offset zwischen Nockenwelle 1 und Kurbelwelle auf Basis Druck 1."
+        },
+        {
+            "id": 106353,
+            "baseListId": 101,
+            "signalRegisterId": "306",
+            "signalName": "MO_Offset_Nockenwelle1",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Offset zwischen Nockenwelle 1 und Kurbelwelle auf Basis Druck 1."
+        },
+        {
+            "id": 106354,
+            "baseListId": 101,
+            "signalRegisterId": "307",
+            "signalName": "MO_Offset_Nockenwelle2",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Offset zwischen Nockenwelle 2 und Kurbelwelle auf Basis Druck 2."
+        },
+        {
+            "id": 106355,
+            "baseListId": 101,
+            "signalRegisterId": "307",
+            "signalName": "MO_Offset_Nockenwelle2",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Offset zwischen Nockenwelle 2 und Kurbelwelle auf Basis Druck 2."
+        },
+        {
+            "id": 106356,
+            "baseListId": 101,
+            "signalRegisterId": "309",
+            "signalName": "RDK_FMVSS138_Lampe",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Ansteuerung der RDK-Lampe im Kombi bei Druckwarnung"
+        },
+        {
+            "id": 106357,
+            "baseListId": 101,
+            "signalRegisterId": "309",
+            "signalName": "RDK_FMVSS138_Lampe",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Ansteuerung der RDK-Lampe im Kombi bei Druckwarnung"
+        },
+        {
+            "id": 106358,
+            "baseListId": 101,
+            "signalRegisterId": "310",
+            "signalName": "RDK_FMVSS138_MIL",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Ansteuerung der RDK-Lampe im Kombi bei Systemstörung.\nRDK-Lampe muss für 65 Sekunden blinken und anschliessend dauerhaft leuchten bis RDK dieses Bit wieder auf \"0\" setzt (Wiedergutprüfung).\nHinweis:  Im AU48x blinken für 60 Sekunden"
+        },
+        {
+            "id": 106359,
+            "baseListId": 101,
+            "signalRegisterId": "310",
+            "signalName": "RDK_FMVSS138_MIL",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Ansteuerung der RDK-Lampe im Kombi bei Systemstörung.\nRDK-Lampe muss für 65 Sekunden blinken und anschliessend dauerhaft leuchten bis RDK dieses Bit wieder auf \"0\" setzt (Wiedergutprüfung).\nHinweis:  Im AU48x blinken für 60 Sekunden"
+        },
+        {
+            "id": 106360,
+            "baseListId": 101,
+            "signalRegisterId": "338",
+            "signalName": "TPMS_WarnLmpStMil",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Control of the TPMS lamp in the instrument cluster for system fault"
+        },
+        {
+            "id": 106361,
+            "baseListId": 101,
+            "signalRegisterId": "338",
+            "signalName": "TPMS_WarnLmpStMil",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Control of the TPMS lamp in the instrument cluster for system fault"
+        },
+        {
+            "id": 106362,
+            "baseListId": 101,
+            "signalRegisterId": "339",
+            "signalName": "TPMS_WarnTmpFlt",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Warning when the TPMS has a temporary fault"
+        },
+        {
+            "id": 106363,
+            "baseListId": 101,
+            "signalRegisterId": "339",
+            "signalName": "TPMS_WarnTmpFlt",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Warning when the TPMS has a temporary fault"
+        },
+        {
+            "id": 106364,
+            "baseListId": 101,
+            "signalRegisterId": "342",
+            "signalName": "TPMS_WarnFltIdc",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Warning when the TPMS is in fault"
+        },
+        {
+            "id": 106365,
+            "baseListId": 101,
+            "signalRegisterId": "342",
+            "signalName": "TPMS_WarnFltIdc",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Warning when the TPMS is in fault"
+        },
+        {
+            "id": 106366,
+            "baseListId": 101,
+            "signalRegisterId": "343",
+            "signalName": "TPMS_WarnLmpStP",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Control of the TPMS warning lamp  in the instrument cluster for pressure warning"
+        },
+        {
+            "id": 106367,
+            "baseListId": 101,
+            "signalRegisterId": "343",
+            "signalName": "TPMS_WarnLmpStP",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Control of the TPMS warning lamp  in the instrument cluster for pressure warning"
+        },
+        {
+            "id": 106368,
+            "baseListId": 101,
+            "signalRegisterId": "348",
+            "signalName": "TPMS_SensPFrLe",
+            "signalLength": 6,
+            "signalGeoRelated": false,
+            "signalComment": "Sensor measured pressure (tire pressure uncompensated) front left"
+        },
+        {
+            "id": 106369,
+            "baseListId": 101,
+            "signalRegisterId": "348",
+            "signalName": "TPMS_SensPFrLe",
+            "signalLength": 6,
+            "signalGeoRelated": false,
+            "signalComment": "Sensor measured pressure (tire pressure uncompensated) front left"
+        },
+        {
+            "id": 106370,
+            "baseListId": 101,
+            "signalRegisterId": "349",
+            "signalName": "TPMS_SensPFrRi",
+            "signalLength": 6,
+            "signalGeoRelated": false,
+            "signalComment": "Sensor measured pressure (tire pressure uncompensated) front right"
+        },
+        {
+            "id": 106371,
+            "baseListId": 101,
+            "signalRegisterId": "349",
+            "signalName": "TPMS_SensPFrRi",
+            "signalLength": 6,
+            "signalGeoRelated": false,
+            "signalComment": "Sensor measured pressure (tire pressure uncompensated) front right"
+        },
+        {
+            "id": 106372,
+            "baseListId": 101,
+            "signalRegisterId": "350",
+            "signalName": "TPMS_SensPReLe",
+            "signalLength": 6,
+            "signalGeoRelated": false,
+            "signalComment": "Sensor measured pressure (tire pressure uncompensated) rear left"
+        },
+        {
+            "id": 106373,
+            "baseListId": 101,
+            "signalRegisterId": "350",
+            "signalName": "TPMS_SensPReLe",
+            "signalLength": 6,
+            "signalGeoRelated": false,
+            "signalComment": "Sensor measured pressure (tire pressure uncompensated) rear left"
+        },
+        {
+            "id": 106374,
+            "baseListId": 101,
+            "signalRegisterId": "351",
+            "signalName": "TPMS_SensPReRi",
+            "signalLength": 6,
+            "signalGeoRelated": false,
+            "signalComment": "Sensor measured pressure (tire pressure uncompensated) rear right"
+        },
+        {
+            "id": 106375,
+            "baseListId": 101,
+            "signalRegisterId": "351",
+            "signalName": "TPMS_SensPReRi",
+            "signalLength": 6,
+            "signalGeoRelated": false,
+            "signalComment": "Sensor measured pressure (tire pressure uncompensated) rear right"
+        },
+        {
+            "id": 106376,
+            "baseListId": 101,
+            "signalRegisterId": "369",
+            "signalName": "RW_Sek_Reichweitenv_Einheit",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Für sekundäre Reichweitenberechnung (KBI_Sek_Reichweitenverbrauch) zugrunde gelegte Einheit"
+        },
+        {
+            "id": 106377,
+            "baseListId": 101,
+            "signalRegisterId": "369",
+            "signalName": "RW_Sek_Reichweitenv_Einheit",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Für sekundäre Reichweitenberechnung (KBI_Sek_Reichweitenverbrauch) zugrunde gelegte Einheit"
+        },
+        {
+            "id": 106378,
+            "baseListId": 101,
+            "signalRegisterId": "370",
+            "signalName": "RW_Sek_Reichweitenverbrauch",
+            "signalLength": 11,
+            "signalGeoRelated": false,
+            "signalComment": "Für sekundäre Reichweitenberechnung zugrunde gelegter Verbrauch"
+        },
+        {
+            "id": 106379,
+            "baseListId": 101,
+            "signalRegisterId": "370",
+            "signalName": "RW_Sek_Reichweitenverbrauch",
+            "signalLength": 11,
+            "signalGeoRelated": false,
+            "signalComment": "Für sekundäre Reichweitenberechnung zugrunde gelegter Verbrauch"
+        },
+        {
+            "id": 106380,
+            "baseListId": 101,
+            "signalRegisterId": "371",
+            "signalName": "RKA_FMVSS138_Lampe",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Kein Einsatz RKA im D4 Hybrid"
+        },
+        {
+            "id": 106381,
+            "baseListId": 101,
+            "signalRegisterId": "371",
+            "signalName": "RKA_FMVSS138_Lampe",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Kein Einsatz RKA im D4 Hybrid"
+        },
+        {
+            "id": 106382,
+            "baseListId": 101,
+            "signalRegisterId": "372",
+            "signalName": "RKA_FMVSS138_MIL",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Zentral blinkend für 1 Minute immer nur gelbe Lampe, dann statisch an. \n\nKein Einsatz RKA im D4 Hybrid"
+        },
+        {
+            "id": 106383,
+            "baseListId": 101,
+            "signalRegisterId": "372",
+            "signalName": "RKA_FMVSS138_MIL",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Zentral blinkend für 1 Minute immer nur gelbe Lampe, dann statisch an. \n\nKein Einsatz RKA im D4 Hybrid"
+        },
+        {
+            "id": 106384,
+            "baseListId": 101,
+            "signalRegisterId": "373",
+            "signalName": "RKA_Warnungen_02",
+            "signalLength": 5,
+            "signalGeoRelated": false,
+            "signalComment": "Ansteuerung der Warnungen (Texte, Töne, Lampen) im Kombi für Funktion RKA+\n\nKein Einsatz RKA im D4 Hybrid"
+        },
+        {
+            "id": 106385,
+            "baseListId": 101,
+            "signalRegisterId": "373",
+            "signalName": "RKA_Warnungen_02",
+            "signalLength": 5,
+            "signalGeoRelated": false,
+            "signalComment": "Ansteuerung der Warnungen (Texte, Töne, Lampen) im Kombi für Funktion RKA+\n\nKein Einsatz RKA im D4 Hybrid"
+        },
+        {
+            "id": 106386,
+            "baseListId": 101,
+            "signalRegisterId": "380",
+            "signalName": "RS_defekt",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlererkennung Regensensor"
+        },
+        {
+            "id": 106387,
+            "baseListId": 101,
+            "signalRegisterId": "380",
+            "signalName": "RS_defekt",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlererkennung Regensensor"
+        },
+        {
+            "id": 106388,
+            "baseListId": 101,
+            "signalRegisterId": "381",
+            "signalName": "RS_Wischergeschwindigkeit",
+            "signalLength": 3,
+            "signalGeoRelated": false,
+            "signalComment": "Wischergeschwindigkeit (Hübe/min)"
+        },
+        {
+            "id": 106389,
+            "baseListId": 101,
+            "signalRegisterId": "381",
+            "signalName": "RS_Wischergeschwindigkeit",
+            "signalLength": 3,
+            "signalGeoRelated": false,
+            "signalComment": "Wischergeschwindigkeit (Hübe/min)"
+        },
+        {
+            "id": 106390,
+            "baseListId": 101,
+            "signalRegisterId": "382",
+            "signalName": "MD1_Position",
+            "signalLength": 7,
+            "signalGeoRelated": false,
+            "signalComment": "Aktuelle Öffnungsweite Schiebedach."
+        },
+        {
+            "id": 106391,
+            "baseListId": 101,
+            "signalRegisterId": "382",
+            "signalName": "MD1_Position",
+            "signalLength": 7,
+            "signalGeoRelated": false,
+            "signalComment": "Aktuelle Öffnungsweite Schiebedach."
+        },
+        {
+            "id": 106392,
+            "baseListId": 101,
+            "signalRegisterId": "383",
+            "signalName": "MD1_Lage",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Lage Schiebedachstellung 1 (Signal wird 1:1 vom BCM2 geroutet; ursprünglicher Sender: SAD = LIN-Slave vom BCM2)"
+        },
+        {
+            "id": 106393,
+            "baseListId": 101,
+            "signalRegisterId": "383",
+            "signalName": "MD1_Lage",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Lage Schiebedachstellung 1 (Signal wird 1:1 vom BCM2 geroutet; ursprünglicher Sender: SAD = LIN-Slave vom BCM2)"
+        },
+        {
+            "id": 106394,
+            "baseListId": 101,
+            "signalRegisterId": "384",
+            "signalName": "MRollo_Position",
+            "signalLength": 7,
+            "signalGeoRelated": false,
+            "signalComment": "Aktuelle Öffnungsweite des Dachrollos."
+        },
+        {
+            "id": 106395,
+            "baseListId": 101,
+            "signalRegisterId": "384",
+            "signalName": "MRollo_Position",
+            "signalLength": 7,
+            "signalGeoRelated": false,
+            "signalComment": "Aktuelle Öffnungsweite des Dachrollos."
+        },
+        {
+            "id": 106396,
+            "baseListId": 101,
+            "signalRegisterId": "386",
+            "signalName": "BH_Blinker_li",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Blinkerhebel Richtung links"
+        },
+        {
+            "id": 106397,
+            "baseListId": 101,
+            "signalRegisterId": "386",
+            "signalName": "BH_Blinker_li",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Blinkerhebel Richtung links"
+        },
+        {
+            "id": 106398,
+            "baseListId": 101,
+            "signalRegisterId": "387",
+            "signalName": "BH_Blinker_re",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Blinkerhebel Richtung rechts"
+        },
+        {
+            "id": 106399,
+            "baseListId": 101,
+            "signalRegisterId": "387",
+            "signalName": "BH_Blinker_re",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Blinkerhebel Richtung rechts"
+        },
+        {
+            "id": 106400,
+            "baseListId": 101,
+            "signalRegisterId": "398",
+            "signalName": "STH_KVS_Ueberlauf",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Kraftstoffverbrauch, Überlauf hat stattgefunden"
+        },
+        {
+            "id": 106401,
+            "baseListId": 101,
+            "signalRegisterId": "398",
+            "signalName": "STH_KVS_Ueberlauf",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Kraftstoffverbrauch, Überlauf hat stattgefunden"
+        },
+        {
+            "id": 106402,
+            "baseListId": 101,
+            "signalRegisterId": "399",
+            "signalName": "BT_Tuer_geoeffnet",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Zeigt eine geöffnete Tür an"
+        },
+        {
+            "id": 106403,
+            "baseListId": 101,
+            "signalRegisterId": "399",
+            "signalName": "BT_Tuer_geoeffnet",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Zeigt eine geöffnete Tür an"
+        },
+        {
+            "id": 106404,
+            "baseListId": 101,
+            "signalRegisterId": "401",
+            "signalName": "BT_FH_Oeffnung",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Gibt den Fensteröffnungswert in % an."
+        },
+        {
+            "id": 106405,
+            "baseListId": 101,
+            "signalRegisterId": "401",
+            "signalName": "BT_FH_Oeffnung",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Gibt den Fensteröffnungswert in % an."
+        },
+        {
+            "id": 106406,
+            "baseListId": 101,
+            "signalRegisterId": "402",
+            "signalName": "FT_Tuer_geoeffnet",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Zeigt eine geöffnete Tür an"
+        },
+        {
+            "id": 106407,
+            "baseListId": 101,
+            "signalRegisterId": "402",
+            "signalName": "FT_Tuer_geoeffnet",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Zeigt eine geöffnete Tür an"
+        },
+        {
+            "id": 106408,
+            "baseListId": 101,
+            "signalRegisterId": "404",
+            "signalName": "FT_FH_Oeffnung",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Gibt den Fensteröffnungswert in % an."
+        },
+        {
+            "id": 106409,
+            "baseListId": 101,
+            "signalRegisterId": "404",
+            "signalName": "FT_FH_Oeffnung",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Gibt den Fensteröffnungswert in % an."
+        },
+        {
+            "id": 106410,
+            "baseListId": 101,
+            "signalRegisterId": "407",
+            "signalName": "HBFS_Tuer_geoeffnet",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "HBFS Tuer geoeffnet"
+        },
+        {
+            "id": 106411,
+            "baseListId": 101,
+            "signalRegisterId": "407",
+            "signalName": "HBFS_Tuer_geoeffnet",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "HBFS Tuer geoeffnet"
+        },
+        {
+            "id": 106412,
+            "baseListId": 101,
+            "signalRegisterId": "408",
+            "signalName": "HBFS_FH_Oeffnung",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Gibt den Fensteröffnungswert in % an."
+        },
+        {
+            "id": 106413,
+            "baseListId": 101,
+            "signalRegisterId": "408",
+            "signalName": "HBFS_FH_Oeffnung",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Gibt den Fensteröffnungswert in % an."
+        },
+        {
+            "id": 106414,
+            "baseListId": 101,
+            "signalRegisterId": "409",
+            "signalName": "HFS_Tuer_geoeffnet",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "HFS Tuer geoeffnet"
+        },
+        {
+            "id": 106415,
+            "baseListId": 101,
+            "signalRegisterId": "409",
+            "signalName": "HFS_Tuer_geoeffnet",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "HFS Tuer geoeffnet"
+        },
+        {
+            "id": 106416,
+            "baseListId": 101,
+            "signalRegisterId": "410",
+            "signalName": "HFS_FH_Oeffnung",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Gibt den Fensteröffnungswert in % an."
+        },
+        {
+            "id": 106417,
+            "baseListId": 101,
+            "signalRegisterId": "410",
+            "signalName": "HFS_FH_Oeffnung",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Gibt den Fensteröffnungswert in % an."
+        },
+        {
+            "id": 106418,
+            "baseListId": 101,
+            "signalRegisterId": "411",
+            "signalName": "WBA_eing_Gang_02",
+            "signalLength": 4,
+            "signalGeoRelated": false,
+            "signalComment": "Das Automatikgetriebe gibt den aktuell eingelegten Gang aus.\nBesonderheiten:\n0x0 = marktabhängig wird auf Ganganzeige zur Fahrstufe komplett verzichtet\n0xA = kurzzeitige Unterdrückung der Ganganzeige (z. B. Segeln, Zwischenstellung, etc.)"
+        },
+        {
+            "id": 106419,
+            "baseListId": 101,
+            "signalRegisterId": "411",
+            "signalName": "WBA_eing_Gang_02",
+            "signalLength": 4,
+            "signalGeoRelated": false,
+            "signalComment": "Das Automatikgetriebe gibt den aktuell eingelegten Gang aus.\nBesonderheiten:\n0x0 = marktabhängig wird auf Ganganzeige zur Fahrstufe komplett verzichtet\n0xA = kurzzeitige Unterdrückung der Ganganzeige (z. B. Segeln, Zwischenstellung, etc.)"
+        },
+        {
+            "id": 106420,
+            "baseListId": 101,
+            "signalRegisterId": "412",
+            "signalName": "WBA_GE_Zusatzwarnungen",
+            "signalLength": 3,
+            "signalGeoRelated": false,
+            "signalComment": "Prioritaetswarnungen Getriebe an Kombi\nAudi MLB Wertebereich 0 bis 3\nVW MQB Projekte verwenden nur den Wertebereich 0 bis 2\nVW MQB Getriebefehler werden über das Signal  GE_Warnungen_02 gesendet."
+        },
+        {
+            "id": 106421,
+            "baseListId": 101,
+            "signalRegisterId": "412",
+            "signalName": "WBA_GE_Zusatzwarnungen",
+            "signalLength": 3,
+            "signalGeoRelated": false,
+            "signalComment": "Prioritaetswarnungen Getriebe an Kombi\nAudi MLB Wertebereich 0 bis 3\nVW MQB Projekte verwenden nur den Wertebereich 0 bis 2\nVW MQB Getriebefehler werden über das Signal  GE_Warnungen_02 gesendet."
+        },
+        {
+            "id": 106422,
+            "baseListId": 101,
+            "signalRegisterId": "413",
+            "signalName": "GE_Sollgang",
+            "signalLength": 4,
+            "signalGeoRelated": false,
+            "signalComment": "Signalisiert den Sollgang, in den getippt werden soll. Abhängig vom Signal \"WBA_eing_Gang_02\" und dem Sollgang kann dann das Kombi die Hochschaltempfehlung in Tip darstellen."
+        },
+        {
+            "id": 106423,
+            "baseListId": 101,
+            "signalRegisterId": "413",
+            "signalName": "GE_Sollgang",
+            "signalLength": 4,
+            "signalGeoRelated": false,
+            "signalComment": "Signalisiert den Sollgang, in den getippt werden soll. Abhängig vom Signal \"WBA_eing_Gang_02\" und dem Sollgang kann dann das Kombi die Hochschaltempfehlung in Tip darstellen."
+        },
+        {
+            "id": 106424,
+            "baseListId": 101,
+            "signalRegisterId": "416",
+            "signalName": "Wischer_vorne_defekt",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Wischer vorne (Anzeige im Kombi)"
+        },
+        {
+            "id": 106425,
+            "baseListId": 101,
+            "signalRegisterId": "416",
+            "signalName": "Wischer_vorne_defekt",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Fehlerstatus Wischer vorne (Anzeige im Kombi)"
+        },
+        {
+            "id": 106426,
+            "baseListId": 101,
+            "signalRegisterId": "419",
+            "signalName": "ZV_verriegelt_intern_ist",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Istzustand: Verriegelung Fahrzeug innen"
+        },
+        {
+            "id": 106427,
+            "baseListId": 101,
+            "signalRegisterId": "419",
+            "signalName": "ZV_verriegelt_intern_ist",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Istzustand: Verriegelung Fahrzeug innen"
+        },
+        {
+            "id": 106428,
+            "baseListId": 101,
+            "signalRegisterId": "420",
+            "signalName": "ZV_FT_offen",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "gespiegeltes Bit FT_Tuer_geoeffnet TSG_FT_1 Botschaft"
+        },
+        {
+            "id": 106429,
+            "baseListId": 101,
+            "signalRegisterId": "420",
+            "signalName": "ZV_FT_offen",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "gespiegeltes Bit FT_Tuer_geoeffnet TSG_FT_1 Botschaft"
+        },
+        {
+            "id": 106430,
+            "baseListId": 101,
+            "signalRegisterId": "421",
+            "signalName": "ZV_BT_offen",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "gespiegeltes Bit BT_Tuer_geoeffnet TSG_BT_1 Botschaft"
+        },
+        {
+            "id": 106431,
+            "baseListId": 101,
+            "signalRegisterId": "421",
+            "signalName": "ZV_BT_offen",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "gespiegeltes Bit BT_Tuer_geoeffnet TSG_BT_1 Botschaft"
+        },
+        {
+            "id": 106432,
+            "baseListId": 101,
+            "signalRegisterId": "422",
+            "signalName": "ZV_HFS_offen",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "gespiegeltes Bit HFS_Tuer_geoeffnet TSG_HFS_1 Botschaft"
+        },
+        {
+            "id": 106433,
+            "baseListId": 101,
+            "signalRegisterId": "422",
+            "signalName": "ZV_HFS_offen",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "gespiegeltes Bit HFS_Tuer_geoeffnet TSG_HFS_1 Botschaft"
+        },
+        {
+            "id": 106434,
+            "baseListId": 101,
+            "signalRegisterId": "423",
+            "signalName": "ZV_HBFS_offen",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "gespiegeltes Bit HBFS_Tuer_geoeffnet TSG_HBFS_1 Botschaft"
+        },
+        {
+            "id": 106435,
+            "baseListId": 101,
+            "signalRegisterId": "423",
+            "signalName": "ZV_HBFS_offen",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "gespiegeltes Bit HBFS_Tuer_geoeffnet TSG_HBFS_1 Botschaft"
+        },
+        {
+            "id": 106436,
+            "baseListId": 101,
+            "signalRegisterId": "424",
+            "signalName": "ZV_HD_offen",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Status Heckdeckel"
+        },
+        {
+            "id": 106437,
+            "baseListId": 101,
+            "signalRegisterId": "424",
+            "signalName": "ZV_HD_offen",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Status Heckdeckel"
+        },
+        {
+            "id": 106438,
+            "baseListId": 101,
+            "signalRegisterId": "425",
+            "signalName": "ZV_Schluessel_Zugang",
+            "signalLength": 4,
+            "signalGeoRelated": false,
+            "signalComment": "aktuelle Funkschlüsselnummer"
+        },
+        {
+            "id": 106439,
+            "baseListId": 101,
+            "signalRegisterId": "425",
+            "signalName": "ZV_Schluessel_Zugang",
+            "signalLength": 4,
+            "signalGeoRelated": false,
+            "signalComment": "aktuelle Funkschlüsselnummer"
+        },
+        {
+            "id": 106440,
+            "baseListId": 101,
+            "signalRegisterId": "431",
+            "signalName": "MUX_KM_Stand_FEHLER",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": null
+        },
+        {
+            "id": 106441,
+            "baseListId": 101,
+            "signalRegisterId": "431",
+            "signalName": "MUX_KM_Stand_FEHLER",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": null
+        },
+        {
+            "id": 106442,
+            "baseListId": 101,
+            "signalRegisterId": "464",
+            "signalName": "MO_Hoeheninfo",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Korrekturfaktor Höhe (1 entspricht 1013 mbar)"
+        },
+        {
+            "id": 106443,
+            "baseListId": 101,
+            "signalRegisterId": "464",
+            "signalName": "MO_Hoeheninfo",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Korrekturfaktor Höhe (1 entspricht 1013 mbar)"
+        },
+        {
+            "id": 106444,
+            "baseListId": 101,
+            "signalRegisterId": "465",
+            "signalName": "MO_SpannungsAnf",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Forderung des Motor-SGs zur Spannungsanhebung"
+        },
+        {
+            "id": 106445,
+            "baseListId": 101,
+            "signalRegisterId": "465",
+            "signalName": "MO_SpannungsAnf",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Forderung des Motor-SGs zur Spannungsanhebung"
+        },
+        {
+            "id": 106446,
+            "baseListId": 101,
+            "signalRegisterId": "466",
+            "signalName": "MO_Klima_Eingr",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Eingriffe des Motor bei der Klima"
+        },
+        {
+            "id": 106447,
+            "baseListId": 101,
+            "signalRegisterId": "466",
+            "signalName": "MO_Klima_Eingr",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Eingriffe des Motor bei der Klima"
+        },
+        {
+            "id": 106448,
+            "baseListId": 101,
+            "signalRegisterId": "467",
+            "signalName": "MO_Freigabe_Segeln",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Freigabebit des Segelbetriebs im Getriebe. Bedingt durch bestimmte Diagnosen und Adaptionen des MSGs, die nur im Schub möglich sind, darf nicht jede Schubphase für einen Segelbetrieb genutzt werden. Eine Freigabe bleibt auch außerhalb einer Schubphase bestehen. D.h. das Signal kennzeichnet nicht die Schubphase sondern sagt nur aus, dass aus Motorsicht nichts gegen einen Segelbetrieb in einer der nächsten Schubphasen spricht."
+        },
+        {
+            "id": 106449,
+            "baseListId": 101,
+            "signalRegisterId": "467",
+            "signalName": "MO_Freigabe_Segeln",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Freigabebit des Segelbetriebs im Getriebe. Bedingt durch bestimmte Diagnosen und Adaptionen des MSGs, die nur im Schub möglich sind, darf nicht jede Schubphase für einen Segelbetrieb genutzt werden. Eine Freigabe bleibt auch außerhalb einer Schubphase bestehen. D.h. das Signal kennzeichnet nicht die Schubphase sondern sagt nur aus, dass aus Motorsicht nichts gegen einen Segelbetrieb in einer der nächsten Schubphasen spricht."
+        },
+        {
+            "id": 106450,
+            "baseListId": 101,
+            "signalRegisterId": "468",
+            "signalName": "MO_Zylinderabschaltung",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Status Zylinderabschaltung Motor"
+        },
+        {
+            "id": 106451,
+            "baseListId": 101,
+            "signalRegisterId": "468",
+            "signalName": "MO_Zylinderabschaltung",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Status Zylinderabschaltung Motor"
+        },
+        {
+            "id": 106452,
+            "baseListId": 101,
+            "signalRegisterId": "469",
+            "signalName": "MO_SpannungsAnf_02",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Forderung des Motor-SG's zur Spannungsanhebung"
+        },
+        {
+            "id": 106453,
+            "baseListId": 101,
+            "signalRegisterId": "469",
+            "signalName": "MO_SpannungsAnf_02",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Forderung des Motor-SG's zur Spannungsanhebung"
+        },
+        {
+            "id": 106454,
+            "baseListId": 101,
+            "signalRegisterId": "470",
+            "signalName": "MO_EPCL",
+            "signalLength": 3,
+            "signalGeoRelated": false,
+            "signalComment": "Die Anforderung der EPC-Lampe vom MSG ans Kombi soll durch das Bus-Signal MO_EPCL gemäß folgender Logik erfolgen:\nMO_EPCL = 0 dez -> EPC Lampe aus, kein Text\nMO_EPCL = 1 dez -> gelbe EPC-Symbolik, Text „Antrieb: Störung! Bitte Service aufsuchen“\nMO_EPCL = 2 dez -> gelbe EPC-Symbolik, Text „Antrieb: Achtung! Fahrleistung begrenzt“\nMO_EPCL = 3 dez -> rote EPC-Symbolik, Text „Antrieb: Störung! Fahrzeug sicher abstellen“"
+        },
+        {
+            "id": 106455,
+            "baseListId": 101,
+            "signalRegisterId": "470",
+            "signalName": "MO_EPCL",
+            "signalLength": 3,
+            "signalGeoRelated": false,
+            "signalComment": "Die Anforderung der EPC-Lampe vom MSG ans Kombi soll durch das Bus-Signal MO_EPCL gemäß folgender Logik erfolgen:\nMO_EPCL = 0 dez -> EPC Lampe aus, kein Text\nMO_EPCL = 1 dez -> gelbe EPC-Symbolik, Text „Antrieb: Störung! Bitte Service aufsuchen“\nMO_EPCL = 2 dez -> gelbe EPC-Symbolik, Text „Antrieb: Achtung! Fahrleistung begrenzt“\nMO_EPCL = 3 dez -> rote EPC-Symbolik, Text „Antrieb: Störung! Fahrzeug sicher abstellen“"
+        },
+        {
+            "id": 106456,
+            "baseListId": 101,
+            "signalRegisterId": "471",
+            "signalName": "MO_Abstellzeit",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Abstelldauer nach letztem KL15 aus\n\nHinweis: \nEhemaliger Fehlerwert 0xFF wird senderseitig nicht unterstützt. \nDiesen Wert aus Kompatibilitätsgründen nicht neu belegen!"
+        },
+        {
+            "id": 106457,
+            "baseListId": 101,
+            "signalRegisterId": "471",
+            "signalName": "MO_Abstellzeit",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Abstelldauer nach letztem KL15 aus\n\nHinweis: \nEhemaliger Fehlerwert 0xFF wird senderseitig nicht unterstützt. \nDiesen Wert aus Kompatibilitätsgründen nicht neu belegen!"
+        },
+        {
+            "id": 106458,
+            "baseListId": 101,
+            "signalRegisterId": "472",
+            "signalName": "MO_Text_Partikelfil_Reg",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Über dieses Bit im Kombi wird ein Klartextanzeige erzeugt werden: \"Partikelfilter benötigt Regeneration\"."
+        },
+        {
+            "id": 106459,
+            "baseListId": 101,
+            "signalRegisterId": "472",
+            "signalName": "MO_Text_Partikelfil_Reg",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Über dieses Bit im Kombi wird ein Klartextanzeige erzeugt werden: \"Partikelfilter benötigt Regeneration\"."
+        },
+        {
+            "id": 106460,
+            "baseListId": 101,
+            "signalRegisterId": "473",
+            "signalName": "MO_Text_Tankdeckelwarn",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Textbit der Tankdeckelwarnung, z.Zt. Vorhalt VW"
+        },
+        {
+            "id": 106461,
+            "baseListId": 101,
+            "signalRegisterId": "473",
+            "signalName": "MO_Text_Tankdeckelwarn",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Textbit der Tankdeckelwarnung, z.Zt. Vorhalt VW"
+        },
+        {
+            "id": 106462,
+            "baseListId": 101,
+            "signalRegisterId": "474",
+            "signalName": "MO_NGS_Position",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Messwert des Neutralgangsensors\n(nur Handschalter)"
+        },
+        {
+            "id": 106463,
+            "baseListId": 101,
+            "signalRegisterId": "474",
+            "signalName": "MO_NGS_Position",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Messwert des Neutralgangsensors\n(nur Handschalter)"
+        },
+        {
+            "id": 106464,
+            "baseListId": 101,
+            "signalRegisterId": "475",
+            "signalName": "MO_NGS_Status",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Status des Signals MO_NGS_Position. Das MSG prüft die Plausibilität nur hinsichtlich sicher geöffnetem Triebstrang."
+        },
+        {
+            "id": 106465,
+            "baseListId": 101,
+            "signalRegisterId": "475",
+            "signalName": "MO_NGS_Status",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Status des Signals MO_NGS_Position. Das MSG prüft die Plausibilität nur hinsichtlich sicher geöffnetem Triebstrang."
+        },
+        {
+            "id": 106466,
+            "baseListId": 101,
+            "signalRegisterId": "476",
+            "signalName": "MO_rel_Ladedruck",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "relativer Ladedruck (für Boostanzeige)"
+        },
+        {
+            "id": 106467,
+            "baseListId": 101,
+            "signalRegisterId": "476",
+            "signalName": "MO_rel_Ladedruck",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "relativer Ladedruck (für Boostanzeige)"
+        },
+        {
+            "id": 106468,
+            "baseListId": 101,
+            "signalRegisterId": "477",
+            "signalName": "MO_Mom_Soll_Roh",
+            "signalLength": 10,
+            "signalGeoRelated": false,
+            "signalComment": "Einheitenloser Wert! Faktor in MO_Faktor_Momente_02 in Motor_Code_01 beachten!\n\nMomentenanforderung aus Fahrpedal bzw. von ACC/GRA bzw. aus dem Leerlaufregler (quasistatischer Anteil) bzw. aus Rekuperationsanforderung; keine Begrenzungen, keine Filterungen, keine Abbildung externer Eingriffsanforderungen; \n\nIn Fahrzeugen mit einer Antriebsachse bzw. mit mechanischem Allradantrieb wird das Gesamt-Moment der Antriebsmaschinen gezeigt, in Fahrzeugen mit getrennten Antriebsachsen nur das Moment der Antriebsmaschinen der primären Achse.\n\nDefiniert als Kupplungsmoment an Kurbelwelle nach Abgriff der Nebenaggregate\n\nHinweis: Ehemaliger Fehlerwert 0x7F wird senderseitig nicht unterstützt. Diesen Wert aus Kompatibilitätsgründen nicht neu belegen!"
+        },
+        {
+            "id": 106469,
+            "baseListId": 101,
+            "signalRegisterId": "477",
+            "signalName": "MO_Mom_Soll_Roh",
+            "signalLength": 10,
+            "signalGeoRelated": false,
+            "signalComment": "Einheitenloser Wert! Faktor in MO_Faktor_Momente_02 in Motor_Code_01 beachten!\n\nMomentenanforderung aus Fahrpedal bzw. von ACC/GRA bzw. aus dem Leerlaufregler (quasistatischer Anteil) bzw. aus Rekuperationsanforderung; keine Begrenzungen, keine Filterungen, keine Abbildung externer Eingriffsanforderungen; \n\nIn Fahrzeugen mit einer Antriebsachse bzw. mit mechanischem Allradantrieb wird das Gesamt-Moment der Antriebsmaschinen gezeigt, in Fahrzeugen mit getrennten Antriebsachsen nur das Moment der Antriebsmaschinen der primären Achse.\n\nDefiniert als Kupplungsmoment an Kurbelwelle nach Abgriff der Nebenaggregate\n\nHinweis: Ehemaliger Fehlerwert 0x7F wird senderseitig nicht unterstützt. Diesen Wert aus Kompatibilitätsgründen nicht neu belegen!"
+        },
+        {
+            "id": 106470,
+            "baseListId": 101,
+            "signalRegisterId": "478",
+            "signalName": "MO_Mom_Ist_Summe",
+            "signalLength": 10,
+            "signalGeoRelated": false,
+            "signalComment": "Einheitenloser Wert! Faktor in MO_Faktor_Momente_02 in Motor_Code_01 beachten!\n\nIst-Moment als Summe aus Verbrennungsmotor und E-Motor (bei Hybrid-Konzepten) incl. allen Eingriffen und Korrekturen\n\nIn Fahrzeugen mit einer Antriebsachse bzw. mit mechanischem Allradantrieb wird das Gesamt-Moment der Antriebsmaschinen gezeigt, in Fahrzeugen mit getrennten Antriebsachsen nur das Moment der Antriebsmaschinen der primären Achse.\n\nDefiniert als Kupplungsmoment an Kurbelwelle nach Abgriff der Nebenaggregate\n\nHinweis: Ehemaliger Fehlerwert 0x7F wird senderseitig nicht unterstützt. Diesen Wert aus Kompatibilitätsgründen nicht neu belegen!"
+        },
+        {
+            "id": 106471,
+            "baseListId": 101,
+            "signalRegisterId": "478",
+            "signalName": "MO_Mom_Ist_Summe",
+            "signalLength": 10,
+            "signalGeoRelated": false,
+            "signalComment": "Einheitenloser Wert! Faktor in MO_Faktor_Momente_02 in Motor_Code_01 beachten!\n\nIst-Moment als Summe aus Verbrennungsmotor und E-Motor (bei Hybrid-Konzepten) incl. allen Eingriffen und Korrekturen\n\nIn Fahrzeugen mit einer Antriebsachse bzw. mit mechanischem Allradantrieb wird das Gesamt-Moment der Antriebsmaschinen gezeigt, in Fahrzeugen mit getrennten Antriebsachsen nur das Moment der Antriebsmaschinen der primären Achse.\n\nDefiniert als Kupplungsmoment an Kurbelwelle nach Abgriff der Nebenaggregate\n\nHinweis: Ehemaliger Fehlerwert 0x7F wird senderseitig nicht unterstützt. Diesen Wert aus Kompatibilitätsgründen nicht neu belegen!"
+        },
+        {
+            "id": 106472,
+            "baseListId": 101,
+            "signalRegisterId": "479",
+            "signalName": "MO_Mom_Schub",
+            "signalLength": 9,
+            "signalGeoRelated": false,
+            "signalComment": "Einheitenloser Wert! Faktor in MO_Faktor_Momente_02 in Motor_Code_01 beachten!\n\nMoment das sich einstellt, wenn der Fahrer 0% Fahrpedal gibt; bei konventionellen Projekten = alle Verluste (mechanische Reibung und sonstige Verluste) des Verbrennungsmotors + Momentenaufnahme der Nebenaggregate; bei Hybrid-Projekten = alle Verluste des Verbrennungsmotors (in Abhängigkeit von der Momentenübertragung der Kupplung K0) + virtuelles \"Schubmoment\" des E-Motors + Momentenaufnahme der Nebenaggregate; keine Berücksichtigung der Massenträgheitsmomente\n\nIn Fahrzeugen mit einer Antriebsachse bzw. mit mechanischem Allradantrieb wird das Gesamt-Moment der Antriebsmaschinen gezeigt, in Fahrzeugen mit getrennten Antriebsachsen nur das Moment der Antriebsmaschinen der primären Achse.\n\nHinweis: Ehemaliger Fehlerwert 0x1FF wird senderseitig nicht unterstützt. Diesen Wert aus Kompatibilitätsgründen nicht neu belegen!"
+        },
+        {
+            "id": 106473,
+            "baseListId": 101,
+            "signalRegisterId": "479",
+            "signalName": "MO_Mom_Schub",
+            "signalLength": 9,
+            "signalGeoRelated": false,
+            "signalComment": "Einheitenloser Wert! Faktor in MO_Faktor_Momente_02 in Motor_Code_01 beachten!\n\nMoment das sich einstellt, wenn der Fahrer 0% Fahrpedal gibt; bei konventionellen Projekten = alle Verluste (mechanische Reibung und sonstige Verluste) des Verbrennungsmotors + Momentenaufnahme der Nebenaggregate; bei Hybrid-Projekten = alle Verluste des Verbrennungsmotors (in Abhängigkeit von der Momentenübertragung der Kupplung K0) + virtuelles \"Schubmoment\" des E-Motors + Momentenaufnahme der Nebenaggregate; keine Berücksichtigung der Massenträgheitsmomente\n\nIn Fahrzeugen mit einer Antriebsachse bzw. mit mechanischem Allradantrieb wird das Gesamt-Moment der Antriebsmaschinen gezeigt, in Fahrzeugen mit getrennten Antriebsachsen nur das Moment der Antriebsmaschinen der primären Achse.\n\nHinweis: Ehemaliger Fehlerwert 0x1FF wird senderseitig nicht unterstützt. Diesen Wert aus Kompatibilitätsgründen nicht neu belegen!"
+        },
+        {
+            "id": 106474,
+            "baseListId": 101,
+            "signalRegisterId": "480",
+            "signalName": "MO_Schubabschaltung",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "ESP plausibilisiert Unterdrucksensor nur bei aktiver Schubabschaltung\n\nMLBevo:\nSignal wird nur in MLBevo Projekten mit PDKII Getriebe bedient. In allen anderen MLBevo Projekten wird das Signal mit \"0\" bedient\nPDKII berücksichtigt Verzugszeiten, die in der Umsetzung von Eingriffen durch den Motor reproduzierbar auftreten. Im Zustand Schubabschaltung bzw. Vollausblendung, tritt eine längere Mindest-Verzugszeit auf, die das PDKII anhand des Signals berücksichtigen kann um damit eine besser Spontanität bei z.B. Schubrückschaltungen zu erreichen."
+        },
+        {
+            "id": 106475,
+            "baseListId": 101,
+            "signalRegisterId": "480",
+            "signalName": "MO_Schubabschaltung",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "ESP plausibilisiert Unterdrucksensor nur bei aktiver Schubabschaltung\n\nMLBevo:\nSignal wird nur in MLBevo Projekten mit PDKII Getriebe bedient. In allen anderen MLBevo Projekten wird das Signal mit \"0\" bedient\nPDKII berücksichtigt Verzugszeiten, die in der Umsetzung von Eingriffen durch den Motor reproduzierbar auftreten. Im Zustand Schubabschaltung bzw. Vollausblendung, tritt eine längere Mindest-Verzugszeit auf, die das PDKII anhand des Signals berücksichtigen kann um damit eine besser Spontanität bei z.B. Schubrückschaltungen zu erreichen."
+        },
+        {
+            "id": 106476,
+            "baseListId": 101,
+            "signalRegisterId": "481",
+            "signalName": "MO_Solldrehz_Leerlauf",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Leerlaufsolldrehzahl, die im Motor eingestellt ist (Bei Parallelhybrid im E-Fahr-Betrieb Leerlaufsolldrehzahl der E-Maschine). Der Motor paßt aufgrund der Anforderung von anderen Steuergeräten seine Leerlaufsolldrehzahl an, bspw. Kat-Heizen, Anforderung vom Getriebe etc.\n\nHinweis: \nEhemaliger Fehlerwert 0xFF wird senderseitig nicht unterstützt. \nDiesen Wert aus Kompatibilitätsgründen nicht neu belegen!"
+        },
+        {
+            "id": 106477,
+            "baseListId": 101,
+            "signalRegisterId": "481",
+            "signalName": "MO_Solldrehz_Leerlauf",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Leerlaufsolldrehzahl, die im Motor eingestellt ist (Bei Parallelhybrid im E-Fahr-Betrieb Leerlaufsolldrehzahl der E-Maschine). Der Motor paßt aufgrund der Anforderung von anderen Steuergeräten seine Leerlaufsolldrehzahl an, bspw. Kat-Heizen, Anforderung vom Getriebe etc.\n\nHinweis: \nEhemaliger Fehlerwert 0xFF wird senderseitig nicht unterstützt. \nDiesen Wert aus Kompatibilitätsgründen nicht neu belegen!"
+        },
+        {
+            "id": 106478,
+            "baseListId": 101,
+            "signalRegisterId": "482",
+            "signalName": "ESP_Status_Bremsdruck",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "MLB: Bei gesetztem Bit liegt p > ca. 2 bar an, hervorgerufen durch Fahrer, ASR, FZR, ECD, Bremsregler ... bei Abfall des Bits ist p < X bar, bei aktivem ECD-Eingriff Ende des Eingriffs \n\nWeiterführende Informationen im Lastenheft spezifiziert und in der entsprechenden Fachabteilung zu erfragen."
+        },
+        {
+            "id": 106479,
+            "baseListId": 101,
+            "signalRegisterId": "482",
+            "signalName": "ESP_Status_Bremsdruck",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "MLB: Bei gesetztem Bit liegt p > ca. 2 bar an, hervorgerufen durch Fahrer, ASR, FZR, ECD, Bremsregler ... bei Abfall des Bits ist p < X bar, bei aktivem ECD-Eingriff Ende des Eingriffs \n\nWeiterführende Informationen im Lastenheft spezifiziert und in der entsprechenden Fachabteilung zu erfragen."
+        },
+        {
+            "id": 106480,
+            "baseListId": 101,
+            "signalRegisterId": "483",
+            "signalName": "KL_Drehz_Anh",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Drehzahlanhebung vom Motor angefordert"
+        },
+        {
+            "id": 106481,
+            "baseListId": 101,
+            "signalRegisterId": "483",
+            "signalName": "KL_Drehz_Anh",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Drehzahlanhebung vom Motor angefordert"
+        },
+        {
+            "id": 106482,
+            "baseListId": 101,
+            "signalRegisterId": "484",
+            "signalName": "KL_Anf_KL",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Anforderung Kühlerlüfter der Klimaanlage in Prozent"
+        },
+        {
+            "id": 106483,
+            "baseListId": 101,
+            "signalRegisterId": "484",
+            "signalName": "KL_Anf_KL",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Anforderung Kühlerlüfter der Klimaanlage in Prozent"
+        },
+        {
+            "id": 106484,
+            "baseListId": 101,
+            "signalRegisterId": "485",
+            "signalName": "KL_Last_Kompr",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Aktuelles Verlustmoment der Klimaanlage bezogen auf die Kurbelwelle. Wird der Klimakompressor nicht angesteuert, ist das Schleppmoment bezogen auf die Kurbelwelle zu senden."
+        },
+        {
+            "id": 106485,
+            "baseListId": 101,
+            "signalRegisterId": "485",
+            "signalName": "KL_Last_Kompr",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Aktuelles Verlustmoment der Klimaanlage bezogen auf die Kurbelwelle. Wird der Klimakompressor nicht angesteuert, ist das Schleppmoment bezogen auf die Kurbelwelle zu senden."
+        },
+        {
+            "id": 106486,
+            "baseListId": 101,
+            "signalRegisterId": "486",
+            "signalName": "MSR_Anf",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "MLB: Die Momentenanforderung \"ASR_MSR_Moment_schnell\" ist auszuführen.\nMQB: Die Momentenanforderung \"BR_Eingriffsmoment\" ist auszuführen"
+        },
+        {
+            "id": 106487,
+            "baseListId": 101,
+            "signalRegisterId": "486",
+            "signalName": "MSR_Anf",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "MLB: Die Momentenanforderung \"ASR_MSR_Moment_schnell\" ist auszuführen.\nMQB: Die Momentenanforderung \"BR_Eingriffsmoment\" ist auszuführen"
+        },
+        {
+            "id": 106488,
+            "baseListId": 101,
+            "signalRegisterId": "487",
+            "signalName": "OBD_Calc_Load_Val",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Calculated Load Value\n\nÜbertragung von Meßgrößen an das Getriebesteuergerät für Freeze Frame Abspeicherung bei Getriebefehlern\n\nPID $04 Calculated Load Value; 0 .. 100% mit 100/255 % per bit"
+        },
+        {
+            "id": 106489,
+            "baseListId": 101,
+            "signalRegisterId": "487",
+            "signalName": "OBD_Calc_Load_Val",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Calculated Load Value\n\nÜbertragung von Meßgrößen an das Getriebesteuergerät für Freeze Frame Abspeicherung bei Getriebefehlern\n\nPID $04 Calculated Load Value; 0 .. 100% mit 100/255 % per bit"
+        },
+        {
+            "id": 106490,
+            "baseListId": 101,
+            "signalRegisterId": "488",
+            "signalName": "OBD_Abs_Throttle_Pos",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Absolute Throttle Position\n\nÜbertragung von Meßgrößen an das Getriebesteuergerät für Freeze Frame Abspeicherung bei Getriebefehlern\n\nPID $11 Absolute Throttle Position; 0 .. 100% mit 100/255 %/bit"
+        },
+        {
+            "id": 106491,
+            "baseListId": 101,
+            "signalRegisterId": "488",
+            "signalName": "OBD_Abs_Throttle_Pos",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Absolute Throttle Position\n\nÜbertragung von Meßgrößen an das Getriebesteuergerät für Freeze Frame Abspeicherung bei Getriebefehlern\n\nPID $11 Absolute Throttle Position; 0 .. 100% mit 100/255 %/bit"
+        },
+        {
+            "id": 106492,
+            "baseListId": 101,
+            "signalRegisterId": "489",
+            "signalName": "OBD_Abs_Load_Val",
+            "signalLength": 16,
+            "signalGeoRelated": false,
+            "signalComment": "Absolute Load Value\n\nÜbertragung von Meßgrößen an das Getriebesteuergerät für Freeze Frame Abspeicherung bei Getriebefehlern\n\nPID $43 Absolute Load Value; 0 .. 25700%  mit 100/255 %/bit"
+        },
+        {
+            "id": 106493,
+            "baseListId": 101,
+            "signalRegisterId": "489",
+            "signalName": "OBD_Abs_Load_Val",
+            "signalLength": 16,
+            "signalGeoRelated": false,
+            "signalComment": "Absolute Load Value\n\nÜbertragung von Meßgrößen an das Getriebesteuergerät für Freeze Frame Abspeicherung bei Getriebefehlern\n\nPID $43 Absolute Load Value; 0 .. 25700%  mit 100/255 %/bit"
+        },
+        {
+            "id": 106494,
+            "baseListId": 101,
+            "signalRegisterId": "490",
+            "signalName": "OBD_Sperrung_Kaltstart_Denom",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Information vom MIL Master, dass die Bildung des EVAP Denominators  im Motor nicht möglich ist und damit der noECM-Denominator gesperrt werden darf."
+        },
+        {
+            "id": 106495,
+            "baseListId": 101,
+            "signalRegisterId": "490",
+            "signalName": "OBD_Sperrung_Kaltstart_Denom",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Information vom MIL Master, dass die Bildung des EVAP Denominators  im Motor nicht möglich ist und damit der noECM-Denominator gesperrt werden darf."
+        },
+        {
+            "id": 106496,
+            "baseListId": 101,
+            "signalRegisterId": "491",
+            "signalName": "OBD_Sperrung_IUMPR",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Wenn der General Denominator auf Grund eines Fehlers in den Eingangsgrößen gesperrt wird, wird diese Information über Bussystem als OBD-Statusinformation OBD_Sperrung_IUMPR für andere OBD-Steuergeräte bereitgestellt. \n\nDas MSG (MIL-Master) setzt dieses Bit, wenn auf Grund vorliegender Sperrbedingungen keine Inkrementierung des GeneralDenominator mehr stattfindet. Im Empfänger-SG ist entsprechend die Inkrementierung des oder der Numeratoren einzufrieren."
+        },
+        {
+            "id": 106497,
+            "baseListId": 101,
+            "signalRegisterId": "491",
+            "signalName": "OBD_Sperrung_IUMPR",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Wenn der General Denominator auf Grund eines Fehlers in den Eingangsgrößen gesperrt wird, wird diese Information über Bussystem als OBD-Statusinformation OBD_Sperrung_IUMPR für andere OBD-Steuergeräte bereitgestellt. \n\nDas MSG (MIL-Master) setzt dieses Bit, wenn auf Grund vorliegender Sperrbedingungen keine Inkrementierung des GeneralDenominator mehr stattfindet. Im Empfänger-SG ist entsprechend die Inkrementierung des oder der Numeratoren einzufrieren."
+        },
+        {
+            "id": 106498,
+            "baseListId": 101,
+            "signalRegisterId": "492",
+            "signalName": "OBD_Kaltstart_Denominator",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Bestimmte Diagnosen werden nur unter Kaltstartbedingungen durchgeführt, der entsprechende Denominator bei IUMPR-pflichtigen Systemen wird anhand dieses vom MSG gebildeten Signals inkrementiert. (Entspricht EVAP-Denominator)"
+        },
+        {
+            "id": 106499,
+            "baseListId": 101,
+            "signalRegisterId": "492",
+            "signalName": "OBD_Kaltstart_Denominator",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Bestimmte Diagnosen werden nur unter Kaltstartbedingungen durchgeführt, der entsprechende Denominator bei IUMPR-pflichtigen Systemen wird anhand dieses vom MSG gebildeten Signals inkrementiert. (Entspricht EVAP-Denominator)"
+        },
+        {
+            "id": 106500,
+            "baseListId": 101,
+            "signalRegisterId": "493",
+            "signalName": "OBD_Minimum_Trip",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Grundlage OBD-Gesetz CCR 1968.2 (d)(4.3) Denominator Specifications\nBildung des General Denominator \"Normed Trip\":\n 600 sec. (kumulativ) Zeit nach Motorstart\n 300 sec. (kumulativ) mit Fahrzeuggeschwindigkeit > 25 mph (40 km/h)\n 30 sec. (kontinuierlich) Leerlauf\nWenn alle diese Bedingungen erfüllt wurden ist ein OBD_Min_Normed_Trip erfüllt"
+        },
+        {
+            "id": 106501,
+            "baseListId": 101,
+            "signalRegisterId": "493",
+            "signalName": "OBD_Minimum_Trip",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Grundlage OBD-Gesetz CCR 1968.2 (d)(4.3) Denominator Specifications\nBildung des General Denominator \"Normed Trip\":\n 600 sec. (kumulativ) Zeit nach Motorstart\n 300 sec. (kumulativ) mit Fahrzeuggeschwindigkeit > 25 mph (40 km/h)\n 30 sec. (kontinuierlich) Leerlauf\nWenn alle diese Bedingungen erfüllt wurden ist ein OBD_Min_Normed_Trip erfüllt"
+        },
+        {
+            "id": 106502,
+            "baseListId": 101,
+            "signalRegisterId": "494",
+            "signalName": "OBD_Driving_Cycle",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Signalisierung Driving Cycle Qualifizierung - Trigger Ignition Cycle Counter"
+        },
+        {
+            "id": 106503,
+            "baseListId": 101,
+            "signalRegisterId": "494",
+            "signalName": "OBD_Driving_Cycle",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Signalisierung Driving Cycle Qualifizierung - Trigger Ignition Cycle Counter"
+        },
+        {
+            "id": 106504,
+            "baseListId": 101,
+            "signalRegisterId": "495",
+            "signalName": "OBD_Warm_Up_Cycle",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Mit dem Warm-Up-Cycle wird der zentrale Verlernzähler vom Gateway inkrementiert"
+        },
+        {
+            "id": 106505,
+            "baseListId": 101,
+            "signalRegisterId": "495",
+            "signalName": "OBD_Warm_Up_Cycle",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Mit dem Warm-Up-Cycle wird der zentrale Verlernzähler vom Gateway inkrementiert"
+        },
+        {
+            "id": 106506,
+            "baseListId": 101,
+            "signalRegisterId": "496",
+            "signalName": "OBD_Normed_Trip",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Gesetzlich definierte \"Normed Condition\" erfüllt, \"General Denominator\" darf erhöht werden"
+        },
+        {
+            "id": 106507,
+            "baseListId": 101,
+            "signalRegisterId": "496",
+            "signalName": "OBD_Normed_Trip",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Gesetzlich definierte \"Normed Condition\" erfüllt, \"General Denominator\" darf erhöht werden"
+        },
+        {
+            "id": 106508,
+            "baseListId": 101,
+            "signalRegisterId": "497",
+            "signalName": "MO_MIN_Wunschdrehzahl",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "minimale Motorwunschdrehzahl aufgrund Regeneration, die vom Getriebe nicht unterschritten werden darf\n\nHinweis: \nEhemaliger Fehlerwert 0xFF wird senderseitig nicht unterstützt. \nDiesen Wert aus Kompatibilitätsgründen nicht neu belegen!"
+        },
+        {
+            "id": 106509,
+            "baseListId": 101,
+            "signalRegisterId": "497",
+            "signalName": "MO_MIN_Wunschdrehzahl",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "minimale Motorwunschdrehzahl aufgrund Regeneration, die vom Getriebe nicht unterschritten werden darf\n\nHinweis: \nEhemaliger Fehlerwert 0xFF wird senderseitig nicht unterstützt. \nDiesen Wert aus Kompatibilitätsgründen nicht neu belegen!"
+        },
+        {
+            "id": 106510,
+            "baseListId": 101,
+            "signalRegisterId": "498",
+            "signalName": "MO_MAX_Wunschdrehzahl",
+            "signalLength": 9,
+            "signalGeoRelated": false,
+            "signalComment": "maximale Motorwunschdrehzahl, die vom Getriebe nicht überschritten werden darf\n\nSignal darf GE_Synchro_Wunschdrehzahl nicht spiegeln"
+        },
+        {
+            "id": 106511,
+            "baseListId": 101,
+            "signalRegisterId": "498",
+            "signalName": "MO_MAX_Wunschdrehzahl",
+            "signalLength": 9,
+            "signalGeoRelated": false,
+            "signalComment": "maximale Motorwunschdrehzahl, die vom Getriebe nicht überschritten werden darf\n\nSignal darf GE_Synchro_Wunschdrehzahl nicht spiegeln"
+        },
+        {
+            "id": 106512,
+            "baseListId": 101,
+            "signalRegisterId": "499",
+            "signalName": "MO_Kuppl_betaetigt",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Das Motorsteuergerät gibt eine plausibilisierte Information aus, ob die Kupplung betätigt oder nicht betätigt wurde."
+        },
+        {
+            "id": 106513,
+            "baseListId": 101,
+            "signalRegisterId": "499",
+            "signalName": "MO_Kuppl_betaetigt",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Das Motorsteuergerät gibt eine plausibilisierte Information aus, ob die Kupplung betätigt oder nicht betätigt wurde."
+        },
+        {
+            "id": 106514,
+            "baseListId": 101,
+            "signalRegisterId": "500",
+            "signalName": "MO_QBit_Kuppl_betaetigt",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Q - Bit für das Signal Kupplung betätigt"
+        },
+        {
+            "id": 106515,
+            "baseListId": 101,
+            "signalRegisterId": "500",
+            "signalName": "MO_QBit_Kuppl_betaetigt",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Q - Bit für das Signal Kupplung betätigt"
+        },
+        {
+            "id": 106516,
+            "baseListId": 101,
+            "signalRegisterId": "501",
+            "signalName": "MO_Fahrbereitschaft",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Das Signal MO_Fahrbereitschaft zeigt in mehreren Stufen an, ob der Motor in einem anfahrbereiten Zustand ist."
+        },
+        {
+            "id": 106517,
+            "baseListId": 101,
+            "signalRegisterId": "501",
+            "signalName": "MO_Fahrbereitschaft",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Das Signal MO_Fahrbereitschaft zeigt in mehreren Stufen an, ob der Motor in einem anfahrbereiten Zustand ist."
+        },
+        {
+            "id": 106518,
+            "baseListId": 101,
+            "signalRegisterId": "502",
+            "signalName": "MO_Freilauf_Info",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Freilauf Informationssignal vom Motorsteuergerät zum Getriebesteuergerät. Das Motorsteuergerät kann über dieses Signal den Freilauf freigeben, verhindern bzw. explizit anfordern."
+        },
+        {
+            "id": 106519,
+            "baseListId": 101,
+            "signalRegisterId": "502",
+            "signalName": "MO_Freilauf_Info",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Freilauf Informationssignal vom Motorsteuergerät zum Getriebesteuergerät. Das Motorsteuergerät kann über dieses Signal den Freilauf freigeben, verhindern bzw. explizit anfordern."
+        },
+        {
+            "id": 106520,
+            "baseListId": 101,
+            "signalRegisterId": "503",
+            "signalName": "MO_Freilauf_Status",
+            "signalLength": 3,
+            "signalGeoRelated": false,
+            "signalComment": "Freilauf-Status-Signal vom Frailauf-Master an aktive Freilauf-Teilnehmer. In diesem Signal zeigt der Freilauf-Master an, welchen aktuellen Status die Freilauf-Betriebsstrategie hat."
+        },
+        {
+            "id": 106521,
+            "baseListId": 101,
+            "signalRegisterId": "503",
+            "signalName": "MO_Freilauf_Status",
+            "signalLength": 3,
+            "signalGeoRelated": false,
+            "signalComment": "Freilauf-Status-Signal vom Frailauf-Master an aktive Freilauf-Teilnehmer. In diesem Signal zeigt der Freilauf-Master an, welchen aktuellen Status die Freilauf-Betriebsstrategie hat."
+        },
+        {
+            "id": 106522,
+            "baseListId": 101,
+            "signalRegisterId": "504",
+            "signalName": "MO_Prio_MAX_Wunschdrehzahl",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Prioritätsbit der Motorwunschdrehzahl  als MAX"
+        },
+        {
+            "id": 106523,
+            "baseListId": 101,
+            "signalRegisterId": "504",
+            "signalName": "MO_Prio_MAX_Wunschdrehzahl",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Prioritätsbit der Motorwunschdrehzahl  als MAX"
+        },
+        {
+            "id": 106524,
+            "baseListId": 101,
+            "signalRegisterId": "505",
+            "signalName": "MO_Prio_MIN_Wunschdrehzahl",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Prioritätsbit der Motorwunschdrehzahl als MIN"
+        },
+        {
+            "id": 106525,
+            "baseListId": 101,
+            "signalRegisterId": "505",
+            "signalName": "MO_Prio_MIN_Wunschdrehzahl",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Prioritätsbit der Motorwunschdrehzahl als MIN"
+        },
+        {
+            "id": 106526,
+            "baseListId": 101,
+            "signalRegisterId": "506",
+            "signalName": "MO_Fahrzeugabstellzeit_Status",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Status Fahrzeugabstellzeit"
+        },
+        {
+            "id": 106527,
+            "baseListId": 101,
+            "signalRegisterId": "506",
+            "signalName": "MO_Fahrzeugabstellzeit_Status",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Status Fahrzeugabstellzeit"
+        },
+        {
+            "id": 106528,
+            "baseListId": 101,
+            "signalRegisterId": "507",
+            "signalName": "MO_Sensorbeladung_OPF",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Dieses Signal zeigt die mittels Sensor erkannte Beladung des OPFs an."
+        },
+        {
+            "id": 106529,
+            "baseListId": 101,
+            "signalRegisterId": "507",
+            "signalName": "MO_Sensorbeladung_OPF",
+            "signalLength": 8,
+            "signalGeoRelated": false,
+            "signalComment": "Dieses Signal zeigt die mittels Sensor erkannte Beladung des OPFs an."
+        },
+        {
+            "id": 106530,
+            "baseListId": 101,
+            "signalRegisterId": "508",
+            "signalName": "GE_Freigabe_Synchro",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Freigabe der Signale\n\"GE_Synchro_Wunschdrehz\" und \"GE_Synchro_Zeit\""
+        },
+        {
+            "id": 106531,
+            "baseListId": 101,
+            "signalRegisterId": "508",
+            "signalName": "GE_Freigabe_Synchro",
+            "signalLength": 1,
+            "signalGeoRelated": false,
+            "signalComment": "Freigabe der Signale\n\"GE_Synchro_Wunschdrehz\" und \"GE_Synchro_Zeit\""
+        },
+        {
+            "id": 106532,
+            "baseListId": 101,
+            "signalRegisterId": "509",
+            "signalName": "GE_Synchro_Wunschdrehz",
+            "signalLength": 9,
+            "signalGeoRelated": false,
+            "signalComment": "Wunschdrehzahl für Verbrennungsmotor bzw. E-Motor; Freigabe durch GE_Freigabe_Synchro (bei MLB und MQB), Freigabe und Steuerung durch GE_Synchro_Status (bei MLBevo).\nWenn kein Eingriff angefordert wird, soll Init = 0 = 0x0 gesendet werden."
+        },
+        {
+            "id": 106533,
+            "baseListId": 101,
+            "signalRegisterId": "509",
+            "signalName": "GE_Synchro_Wunschdrehz",
+            "signalLength": 9,
+            "signalGeoRelated": false,
+            "signalComment": "Wunschdrehzahl für Verbrennungsmotor bzw. E-Motor; Freigabe durch GE_Freigabe_Synchro (bei MLB und MQB), Freigabe und Steuerung durch GE_Synchro_Status (bei MLBevo).\nWenn kein Eingriff angefordert wird, soll Init = 0 = 0x0 gesendet werden."
+        },
+        {
+            "id": 106534,
+            "baseListId": 101,
+            "signalRegisterId": "510",
+            "signalName": "GE_Langfr_Schutzmom_02",
+            "signalLength": 9,
+            "signalGeoRelated": false,
+            "signalComment": "Konventionelle Projekte: Begrenzung des Motormoments in positiver Richtung\nHybrid-Projekte: Begrenzung des Summenmoments der Antriebsmaschinen; in MQB Begrenzung betragsmäßig sowohl in positiver als auch in negativer Richtung; in MLBevo Begrenzung nur in positiver Richtung.\nDas Signal gilt nur bei Freigabe durch GE_Freig_Langfr_Schutzmom.\n\nDas Signal ist als Kupplungsmoment (=Motorausgangsmoment) definiert.\nAchtung: Einheitenloser Wert! Faktor in MO_Faktor_Momente_02 in Motor_Code_01 beachten!"
+        },
+        {
+            "id": 106535,
+            "baseListId": 101,
+            "signalRegisterId": "510",
+            "signalName": "GE_Langfr_Schutzmom_02",
+            "signalLength": 9,
+            "signalGeoRelated": false,
+            "signalComment": "Konventionelle Projekte: Begrenzung des Motormoments in positiver Richtung\nHybrid-Projekte: Begrenzung des Summenmoments der Antriebsmaschinen; in MQB Begrenzung betragsmäßig sowohl in positiver als auch in negativer Richtung; in MLBevo Begrenzung nur in positiver Richtung.\nDas Signal gilt nur bei Freigabe durch GE_Freig_Langfr_Schutzmom.\n\nDas Signal ist als Kupplungsmoment (=Motorausgangsmoment) definiert.\nAchtung: Einheitenloser Wert! Faktor in MO_Faktor_Momente_02 in Motor_Code_01 beachten!"
+        },
+        {
+            "id": 106536,
+            "baseListId": 101,
+            "signalRegisterId": "511",
+            "signalName": "BEM_n_LLA",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Es gilt: Signalspec BEM_n_LLA v1.0 Anforderung einer Leerlaufdrehzahlanhebung in drei Stufen. Die Höhe der jeweiligen LL-Drehzahlstufe ist im Motorsteuergerät appliziert."
+        },
+        {
+            "id": 106537,
+            "baseListId": 101,
+            "signalRegisterId": "511",
+            "signalName": "BEM_n_LLA",
+            "signalLength": 2,
+            "signalGeoRelated": false,
+            "signalComment": "Es gilt: Signalspec BEM_n_LLA v1.0 Anforderung einer Leerlaufdrehzahlanhebung in drei Stufen. Die Höhe der jeweiligen LL-Drehzahlstufe ist im Motorsteuergerät appliziert."
+        }
+    ],
+    "compareTriggers": [],
+    "evaluateTriggers": [],
+    "controlSets": [
+        {
+            "id": 2381,
+            "controlSetName": "RTGSET",
+            "privacyMode": "0x70",
+            "triggerList": [],
+            "signalList": [
+                "009",
+                "010",
+                "011",
+                "012",
+                "013",
+                "015",
+                "018",
+                "021",
+                "022",
+                "023",
+                "024",
+                "025",
+                "026",
+                "027",
+                "028",
+                "029",
+                "030",
+                "031",
+                "032",
+                "033",
+                "034",
+                "035",
+                "036",
+                "037",
+                "038",
+                "039",
+                "040",
+                "041",
+                "042",
+                "043",
+                "044",
+                "045",
+                "046",
+                "047",
+                "048",
+                "049",
+                "050",
+                "051",
+                "052",
+                "053",
+                "054",
+                "055",
+                "056",
+                "057",
+                "058",
+                "059",
+                "060",
+                "061",
+                "062",
+                "063",
+                "065",
+                "066",
+                "067",
+                "068",
+                "070",
+                "072",
+                "073",
+                "074",
+                "075",
+                "076",
+                "079",
+                "080",
+                "082",
+                "084",
+                "088",
+                "089",
+                "095",
+                "096",
+                "101",
+                "102",
+                "103",
+                "104",
+                "105",
+                "106",
+                "107",
+                "108",
+                "110",
+                "111",
+                "112",
+                "114",
+                "115",
+                "116",
+                "120",
+                "130",
+                "131",
+                "132",
+                "133",
+                "134",
+                "136",
+                "137",
+                "141",
+                "151",
+                "160",
+                "161",
+                "164",
+                "165",
+                "166",
+                "167",
+                "168",
+                "169",
+                "173",
+                "175",
+                "177",
+                "183",
+                "184",
+                "185",
+                "190",
+                "191",
+                "192",
+                "193",
+                "194",
+                "195",
+                "196",
+                "197",
+                "198",
+                "199",
+                "200",
+                "201",
+                "202",
+                "203",
+                "204",
+                "205",
+                "206",
+                "207",
+                "208",
+                "209",
+                "210",
+                "211",
+                "212",
+                "213",
+                "214",
+                "215",
+                "223",
+                "224",
+                "225",
+                "226",
+                "227",
+                "228",
+                "229",
+                "231",
+                "232",
+                "233",
+                "234",
+                "235",
+                "236",
+                "237",
+                "238",
+                "239",
+                "240",
+                "241",
+                "242",
+                "243",
+                "244",
+                "245",
+                "246",
+                "247",
+                "251",
+                "252",
+                "255",
+                "256",
+                "257",
+                "258",
+                "259",
+                "260",
+                "261",
+                "262",
+                "263",
+                "264",
+                "265",
+                "266",
+                "267",
+                "270",
+                "271",
+                "274",
+                "275",
+                "277",
+                "278",
+                "279",
+                "280",
+                "281",
+                "283",
+                "284",
+                "285",
+                "286",
+                "287",
+                "289",
+                "290",
+                "291",
+                "292",
+                "293",
+                "294",
+                "295",
+                "296",
+                "297",
+                "298",
+                "302",
+                "303",
+                "304",
+                "305",
+                "306",
+                "307",
+                "309",
+                "310",
+                "338",
+                "339",
+                "342",
+                "343",
+                "348",
+                "349",
+                "350",
+                "351",
+                "369",
+                "370",
+                "371",
+                "372",
+                "373",
+                "380",
+                "381",
+                "382",
+                "383",
+                "384",
+                "386",
+                "387",
+                "398",
+                "399",
+                "401",
+                "402",
+                "404",
+                "407",
+                "408",
+                "409",
+                "410",
+                "411",
+                "412",
+                "413",
+                "416",
+                "419",
+                "420",
+                "421",
+                "422",
+                "423",
+                "424",
+                "425",
+                "431",
+                "464",
+                "465",
+                "466",
+                "467",
+                "468",
+                "469",
+                "470",
+                "471",
+                "472",
+                "473",
+                "474",
+                "475",
+                "476",
+                "477",
+                "478",
+                "479",
+                "480",
+                "481",
+                "482",
+                "483",
+                "484",
+                "485",
+                "486",
+                "487",
+                "488",
+                "489",
+                "490",
+                "491",
+                "492",
+                "493",
+                "494",
+                "495",
+                "496",
+                "497",
+                "498",
+                "499",
+                "500",
+                "501",
+                "502",
+                "503",
+                "504",
+                "505",
+                "506",
+                "507",
+                "508",
+                "509",
+                "510",
+                "511"
+            ],
+            "registerList": [
+                "0x3000",
+                "0x3002",
+                "0x3003"
+            ],
+            "triggerTypeName": "By Time Interval",
+            "configFrequency": 1
+        }
+    ],
+    "appId": "004",
+    "baseListId": 101,
+    "consentName": "svwtest292",
+    "createTime": "2023-10-17 13:23:47",
+    "updateTime": "2023-10-17 13:23:47",
+    "createBy": "Yunyang Ma",
+    "updateBy": "Yunyang Ma",
+    "configContent": "H4sIAAAAAAAAAAXBx1ITABQF0BlkgRvHYeXS8UvufXfnV+AfuHQZE0CKwIhC6DUVhVCkWUCKSC+hKxB6ryEUpcRzkh4+vos/eJL76KnLkWAJLx8/X0hMGktOTnjx6tl4YiaykI23yEEe8lGAQrhRhGKUoBRlKEcFKlGFatSgFh544YMfAQRRh4/4hHo0IIRGNKEZLfiMVrShHR3oxBd8xTd8Rxe60YNe9KEfAxjEEIYxglFMYBJhzGABi4hgFVvYxg52sYd9HOAQxzjBKaI4RwzXcNLFVKYxnRnMZA7drGI1PfTSRz8DDLKeITaxnR3sZBe7+YM97GUf+/mTA/zFQQ5xmCMc5RjHOcFJTjHMac5wlnOcZ4SrXOM6N7jJLe5wl3vc5wEPecRjnvCUZ4zynDFe8JJXvOEt43TYa3Oay1ItzdLtjWVYpmVZtuVanuXbeyuwQnNbkRVbqZVZuVVYpVVbjdWax7zmM78FLGh11mAha7Qma7YWa7U2C9u0zdm8LdmyrVjEzixq5xazC7u1O7u3uDnklEu5ytM75euD3CpSsUpUqjKVq0q18sgrn/wKKKiQJjWlsKY1o1nNaV4LWtRv/dGSlrWiiFa1pnVtaFNb2taOdrWnfR3oUEc61olOdaaozhXThS51pWv91T/d6FZ3uldcjhRniivlP3ujZdFsAgAA"
+}

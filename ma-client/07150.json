@@ -1,0 +1,124 @@
+{
+  "configId": 2733,
+  "configName": "1590SOP2035",
+  "configFrequency": 60,
+  "configDataSets": 65534,
+  "configRtgIni": [
+    "1",
+    "2",
+    "3"
+  ],
+  "configVersion": "512",
+  "consentId": "6538f962-dd22-4ae2-a271-64e7e4dfbe3a",
+  "consentName": "SVW1590-Bench",
+  "description": null,
+  "configStatus": 1,
+  "configFlowStatus": 6,
+  "signals": [
+    {
+      "id": 186604,
+      "baseListId": 101,
+      "signalRegisterId": "001",
+      "signalName": "GNSS_Richtung_Breite_Ortung",
+      "signalLength": 1,
+      "signalGeoRelated": true,
+      "signalComment": "Richtung des Breitengrads des Ortungsergebnisses nach WGS84 als Kombination von mehreren GNSSen"
+    },
+    {
+      "id": 186605,
+      "baseListId": 101,
+      "signalRegisterId": "002",
+      "signalName": "GNSS_Richtung_Laenge_Ortung",
+      "signalLength": 1,
+      "signalGeoRelated": true,
+      "signalComment": "Richtung des Längengrads des Ortungsergebnisses nach WGS84 als Kombination von mehreren GNSSen"
+    },
+    {
+      "id": 186606,
+      "baseListId": 101,
+      "signalRegisterId": "003",
+      "signalName": "GNSS_Breite_Ortung",
+      "signalLength": 27,
+      "signalGeoRelated": true,
+      "signalComment": "Breitengrad des Ortungsergebnisses nach WGS84 als Kombination von mehreren GNSSen"
+    },
+    {
+      "id": 186607,
+      "baseListId": 101,
+      "signalRegisterId": "004",
+      "signalName": "GNSS_Laenge_Ortung",
+      "signalLength": 28,
+      "signalGeoRelated": true,
+      "signalComment": "Längengrad des Ortungsergebnisses nach WGS84 als Kombination von mehreren GNSSen"
+    },
+    {
+      "id": 186608,
+      "baseListId": 101,
+      "signalRegisterId": "005",
+      "signalName": "GNSS_Ortung_Hoehe",
+      "signalLength": 12,
+      "signalGeoRelated": true,
+      "signalComment": "Höhe über dem Meeresspiegel"
+    },
+    {
+      "id": 186609,
+      "baseListId": 101,
+      "signalRegisterId": "006",
+      "signalName": "GNSS_Ortung_Ausrichtung",
+      "signalLength": 12,
+      "signalGeoRelated": true,
+      "signalComment": "Ausrichtung (Kurswinkel) der GNSS-Messung"
+    },
+    {
+      "id": 186610,
+      "baseListId": 101,
+      "signalRegisterId": "007",
+      "signalName": "GNSS_Ortung_PDOP",
+      "signalLength": 9,
+      "signalGeoRelated": true,
+      "signalComment": "Synthetischer Wert für den Verlust an Präzision der Postionsmessung auf Grund der Satellitenkonstellation"
+    },
+    {
+      "id": 186611,
+      "baseListId": 101,
+      "signalRegisterId": "008",
+      "signalName": "GNSS_UTC_Zeit",
+      "signalLength": 32,
+      "signalGeoRelated": true,
+      "signalComment": "UTC-Zeit, Sekunden seit dem 01.01.1970 00:00"
+    }
+  ],
+  "compareTriggers": [],
+  "evaluateTriggers": [],
+  "controlSets": [
+    {
+      "id": 5053,
+      "controlSetName": "geo",
+      "privacyMode": "0x10",
+      "triggerList": [],
+      "signalList": [
+        "001",
+        "002",
+        "003",
+        "004",
+        "005",
+        "006",
+        "007",
+        "008"
+      ],
+      "registerList": [
+        "0x3002",
+        "0x3003"
+      ],
+      "triggerTypeName": "By Time Interval",
+      "configFrequency": 20
+    }
+  ],
+  "appId": "004",
+  "baseListId": 101,
+  "createTime": "2024-07-11 09:55:29",
+  "updateTime": "2024-07-11 10:10:44",
+  "createBy": "Chen, Duan (EXTERN: AKKA Beijing)",
+  "updateBy": "Chen, Duan (EXTERN: AKKA Beijing)",
+  "configContent": null
+}

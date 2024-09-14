@@ -1,0 +1,48 @@
+import request from '@/api/request';
+
+{{#if list}}
+export function getList(query) {
+    return request({
+        url: '/api/{{name}}s',
+        method: 'get',
+        params: query
+    });
+}
+{{/if}}
+
+{{#if item}}
+export function getItem(id) {
+    return request({
+        url: `/api/{{name}}/${id}`,
+        method: 'get'
+    });
+}
+{{/if}}
+
+{{#if update}}
+export function updateItem(data) {
+    return request({
+        url: `/api/{{name}}/${data.id}`,
+        method: 'put',
+        data
+    });
+}
+{{/if}}
+{{#if create}}
+export function createItem(data) {
+    return request({
+        url: '/api/{{name}}/create',
+        method: 'post',
+        data
+    });
+}
+{{/if}}
+{{#if delete}}
+export function deleteItem(id) {
+    return request({
+        url: `/api/{{name}}/${id}`,
+        method: 'delete'
+    });
+}
+{{/if}}
+

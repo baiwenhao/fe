@@ -1,0 +1,389 @@
+const config = {
+    "configFrequency": 60,
+    "baseListId": 8,
+    "configId": null,
+    "configName": "test",
+    "configVersion": "512",
+    "configRtgIni": [
+        "1",
+        "2",
+        "3"
+    ],
+    "consentId": "5626640b-5686-47d3-b0a5-0ba4e481f6a6",
+    "consentName": null,
+    "configDataSets": 65534,
+    "unit": "second",
+    "signals": [
+    {
+        "__lBaseListLogicalValueList": [
+        {
+            "lvRegisterId": "010",
+            "lvOriginalValue": 0,
+            "lvWorstCaseStartupDelay": "200 ms\n",
+            "lvId": 7160,
+            "lvDescription": "ACC_OFF_Hauptschalter_aus",
+            "lvListId": 2345
+        },
+        {
+            "lvRegisterId": "010",
+            "lvOriginalValue": 1,
+            "lvWorstCaseStartupDelay": "200 ms\n",
+            "lvId": 7176,
+            "lvDescription": "ACC_INIT",
+            "lvListId": 2345
+        },
+        {
+            "lvRegisterId": "010",
+            "lvOriginalValue": 2,
+            "lvWorstCaseStartupDelay": "200 ms\n",
+            "lvId": 7192,
+            "lvDescription": "ACC_STANDBY",
+            "lvListId": 2345
+        },
+        {
+            "lvRegisterId": "010",
+            "lvOriginalValue": 3,
+            "lvWorstCaseStartupDelay": "200 ms\n",
+            "lvId": 7204,
+            "lvDescription": "ACC_AKTIV_regelt",
+            "lvListId": 2345
+        },
+        {
+            "lvRegisterId": "010",
+            "lvOriginalValue": 4,
+            "lvWorstCaseStartupDelay": "200 ms\n",
+            "lvId": 7220,
+            "lvDescription": "ACC_OVERRIDE",
+            "lvListId": 2345
+        },
+        {
+            "lvRegisterId": "010",
+            "lvOriginalValue": 5,
+            "lvWorstCaseStartupDelay": "200 ms\n",
+            "lvId": 7236,
+            "lvDescription": "ACC_Abschaltreaktion",
+            "lvListId": 2345
+        },
+        {
+            "lvRegisterId": "010",
+            "lvOriginalValue": 6,
+            "lvWorstCaseStartupDelay": "200 ms\n",
+            "lvId": 7250,
+            "lvDescription": "reversibler_Fehler_im_ACC_System",
+            "lvListId": 2345
+        },
+        {
+            "lvRegisterId": "010",
+            "lvOriginalValue": 7,
+            "lvWorstCaseStartupDelay": "200 ms\n",
+            "lvId": 7265,
+            "lvDescription": "irreversibler_Fehler_im_ACC_System",
+            "lvListId": 2345
+        }],
+        "__lBaseListPhysicalValueList": [],
+        "signalRegisterId": "010",
+        "baseListId": 101,
+        "signalComment": "'ACC OFF' bedeutet ACC-Hauptschalter ist 'Gerastet Aus\n\n'ACC Reversibler Fehler' bedeutet, daß das ACC aktuell einen \nreversiblen Fehler im ACC-SG selbst oder in einem zum \nACC-System gehörenden SG erkennt.\n\n'ACC irreversibler Fehler' bedeutet, daß das ACC aktuell einen \nirreversiblen Fehler im ACC-SG selbst oder in einem zum \nACC-System gehörenden SG erkennt.\n\n'ACC_Abschaltreaktion' = Wert 0x5 - gilt ab MLBevo (für Alt-Projekte gilt 'nicht definiert')",
+        "signalGeoRelated": false,
+        "signalLength": 3,
+        "signalName": "ACC_Status_ACC"
+    },
+    {
+        "__lBaseListLogicalValueList": [
+        {
+            "lvRegisterId": "001",
+            "lvOriginalValue": 0,
+            "lvId": 7156,
+            "lvDescription": "Nord",
+            "lvListId": 2339
+        },
+        {
+            "lvRegisterId": "001",
+            "lvOriginalValue": 1,
+            "lvId": 7177,
+            "lvDescription": "Sued",
+            "lvListId": 2339
+        }],
+        "__lBaseListPhysicalValueList": [],
+        "signalRegisterId": "001",
+        "baseListId": 101,
+        "signalComment": "Richtung des Breitengrads des Ortungsergebnisses nach WGS84 als Kombination von mehreren GNSSen",
+        "signalGeoRelated": true,
+        "signalLength": 1,
+        "signalName": "GNSS_Richtung_Breite_Ortung"
+    }],
+    "triggerList": [
+    {
+        "_id": "perbcw717",
+        "triggerName": "test_2",
+        "compareTriggerList": [{}],
+        "eventType": "compare",
+        "signal":
+        {
+            "__lBaseListLogicalValueList": [
+            {
+                "lvRegisterId": "010",
+                "lvOriginalValue": 0,
+                "lvWorstCaseStartupDelay": "200 ms\n",
+                "lvId": 7160,
+                "lvDescription": "ACC_OFF_Hauptschalter_aus",
+                "lvListId": 2345
+            },
+            {
+                "lvRegisterId": "010",
+                "lvOriginalValue": 1,
+                "lvWorstCaseStartupDelay": "200 ms\n",
+                "lvId": 7176,
+                "lvDescription": "ACC_INIT",
+                "lvListId": 2345
+            },
+            {
+                "lvRegisterId": "010",
+                "lvOriginalValue": 2,
+                "lvWorstCaseStartupDelay": "200 ms\n",
+                "lvId": 7192,
+                "lvDescription": "ACC_STANDBY",
+                "lvListId": 2345
+            },
+            {
+                "lvRegisterId": "010",
+                "lvOriginalValue": 3,
+                "lvWorstCaseStartupDelay": "200 ms\n",
+                "lvId": 7204,
+                "lvDescription": "ACC_AKTIV_regelt",
+                "lvListId": 2345
+            },
+            {
+                "lvRegisterId": "010",
+                "lvOriginalValue": 4,
+                "lvWorstCaseStartupDelay": "200 ms\n",
+                "lvId": 7220,
+                "lvDescription": "ACC_OVERRIDE",
+                "lvListId": 2345
+            },
+            {
+                "lvRegisterId": "010",
+                "lvOriginalValue": 5,
+                "lvWorstCaseStartupDelay": "200 ms\n",
+                "lvId": 7236,
+                "lvDescription": "ACC_Abschaltreaktion",
+                "lvListId": 2345
+            },
+            {
+                "lvRegisterId": "010",
+                "lvOriginalValue": 6,
+                "lvWorstCaseStartupDelay": "200 ms\n",
+                "lvId": 7250,
+                "lvDescription": "reversibler_Fehler_im_ACC_System",
+                "lvListId": 2345
+            },
+            {
+                "lvRegisterId": "010",
+                "lvOriginalValue": 7,
+                "lvWorstCaseStartupDelay": "200 ms\n",
+                "lvId": 7265,
+                "lvDescription": "irreversibler_Fehler_im_ACC_System",
+                "lvListId": 2345
+            }],
+            "__lBaseListPhysicalValueList": [],
+            "signalRegisterId": "010",
+            "baseListId": 101,
+            "signalComment": "'ACC OFF' bedeutet ACC-Hauptschalter ist 'Gerastet Aus\n\n'ACC Reversibler Fehler' bedeutet, daß das ACC aktuell einen \nreversiblen Fehler im ACC-SG selbst oder in einem zum \nACC-System gehörenden SG erkennt.\n\n'ACC irreversibler Fehler' bedeutet, daß das ACC aktuell einen \nirreversiblen Fehler im ACC-SG selbst oder in einem zum \nACC-System gehörenden SG erkennt.\n\n'ACC_Abschaltreaktion' = Wert 0x5 - gilt ab MLBevo (für Alt-Projekte gilt 'nicht definiert')",
+            "signalGeoRelated": false,
+            "signalLength": 3,
+            "signalName": "ACC_Status_ACC"
+        },
+        "triggerValue": 0,
+        "description": "ACC_OFF_Hauptschalter_aus",
+        "registerId": "010",
+        "triggerOperators": "eq"
+    },
+    {
+        "_id": "whz6siccb",
+        "triggerName": "test_1",
+        "compareTriggerList": [
+        {}],
+        "eventType": "compare",
+        "signal":
+        {
+            "__lBaseListLogicalValueList": [
+            {
+                "lvRegisterId": "001",
+                "lvOriginalValue": 0,
+                "lvId": 7156,
+                "lvDescription": "Nord",
+                "lvListId": 2339
+            },
+            {
+                "lvRegisterId": "001",
+                "lvOriginalValue": 1,
+                "lvId": 7177,
+                "lvDescription": "Sued",
+                "lvListId": 2339
+            }],
+            "__lBaseListPhysicalValueList": [],
+            "signalRegisterId": "001",
+            "baseListId": 101,
+            "signalComment": "Richtung des Breitengrads des Ortungsergebnisses nach WGS84 als Kombination von mehreren GNSSen",
+            "signalGeoRelated": true,
+            "signalLength": 1,
+            "signalName": "GNSS_Richtung_Breite_Ortung"
+        },
+        "triggerValue": 0,
+        "description": "Nord",
+        "registerId": "001",
+        "triggerOperators": "lt"
+    },
+    {
+        "_id": "whz6sgb5h",
+        "triggerName": "test_0",
+        "compareTriggerList": [
+        {
+            "_id": "perbcw717"
+        },
+        {
+            "_id": "whz6siccb"
+        }],
+        "eventType": "evaluate",
+        "signal": null,
+        "triggerValue": null,
+        "description": null,
+        "triggerOperators": "and"
+    }],
+    "controlSets": [
+    {
+        "allSignal": true,
+        "allRegister": false,
+        "triggerList": null,
+        "signalList": [
+            "010"
+        ],
+        "registerList": [
+            "0x3000"
+        ],
+        "privacyMode": "NON GEO DATA",
+        "triggerTypeName": "By Time Interval",
+        "configFrequency": 60,
+        "__signalList": [
+        {
+            "__lBaseListLogicalValueList": [
+            {
+                "lvRegisterId": "010",
+                "lvOriginalValue": 0,
+                "lvWorstCaseStartupDelay": "200 ms\n",
+                "lvId": 7160,
+                "lvDescription": "ACC_OFF_Hauptschalter_aus",
+                "lvListId": 2345
+            },
+            {
+                "lvRegisterId": "010",
+                "lvOriginalValue": 1,
+                "lvWorstCaseStartupDelay": "200 ms\n",
+                "lvId": 7176,
+                "lvDescription": "ACC_INIT",
+                "lvListId": 2345
+            },
+            {
+                "lvRegisterId": "010",
+                "lvOriginalValue": 2,
+                "lvWorstCaseStartupDelay": "200 ms\n",
+                "lvId": 7192,
+                "lvDescription": "ACC_STANDBY",
+                "lvListId": 2345
+            },
+            {
+                "lvRegisterId": "010",
+                "lvOriginalValue": 3,
+                "lvWorstCaseStartupDelay": "200 ms\n",
+                "lvId": 7204,
+                "lvDescription": "ACC_AKTIV_regelt",
+                "lvListId": 2345
+            },
+            {
+                "lvRegisterId": "010",
+                "lvOriginalValue": 4,
+                "lvWorstCaseStartupDelay": "200 ms\n",
+                "lvId": 7220,
+                "lvDescription": "ACC_OVERRIDE",
+                "lvListId": 2345
+            },
+            {
+                "lvRegisterId": "010",
+                "lvOriginalValue": 5,
+                "lvWorstCaseStartupDelay": "200 ms\n",
+                "lvId": 7236,
+                "lvDescription": "ACC_Abschaltreaktion",
+                "lvListId": 2345
+            },
+            {
+                "lvRegisterId": "010",
+                "lvOriginalValue": 6,
+                "lvWorstCaseStartupDelay": "200 ms\n",
+                "lvId": 7250,
+                "lvDescription": "reversibler_Fehler_im_ACC_System",
+                "lvListId": 2345
+            },
+            {
+                "lvRegisterId": "010",
+                "lvOriginalValue": 7,
+                "lvWorstCaseStartupDelay": "200 ms\n",
+                "lvId": 7265,
+                "lvDescription": "irreversibler_Fehler_im_ACC_System",
+                "lvListId": 2345
+            }],
+            "__lBaseListPhysicalValueList": [],
+            "signalRegisterId": "010",
+            "baseListId": 101,
+            "signalComment": "'ACC OFF' bedeutet ACC-Hauptschalter ist 'Gerastet Aus\n\n'ACC Reversibler Fehler' bedeutet, daß das ACC aktuell einen \nreversiblen Fehler im ACC-SG selbst oder in einem zum \nACC-System gehörenden SG erkennt.\n\n'ACC irreversibler Fehler' bedeutet, daß das ACC aktuell einen \nirreversiblen Fehler im ACC-SG selbst oder in einem zum \nACC-System gehörenden SG erkennt.\n\n'ACC_Abschaltreaktion' = Wert 0x5 - gilt ab MLBevo (für Alt-Projekte gilt 'nicht definiert')",
+            "signalGeoRelated": false,
+            "signalLength": 3,
+            "signalName": "ACC_Status_ACC"
+        }],
+        "key": 1684305934731,
+        "controlSetName": "test2"
+    },
+    {
+        "allSignal": true,
+        "allRegister": false,
+        "triggerList": "test_0",
+        "signalList": [
+            "001"
+        ],
+        "registerList": [
+            "0x3000"
+        ],
+        "privacyMode": "GEO DATA",
+        "triggerTypeName": "By Trigger",
+        "configFrequency": null,
+        "__signalList": [
+        {
+            "__lBaseListLogicalValueList": [
+            {
+                "lvRegisterId": "001",
+                "lvOriginalValue": 0,
+                "lvId": 7156,
+                "lvDescription": "Nord",
+                "lvListId": 2339
+            },
+            {
+                "lvRegisterId": "001",
+                "lvOriginalValue": 1,
+                "lvId": 7177,
+                "lvDescription": "Sued",
+                "lvListId": 2339
+            }],
+            "__lBaseListPhysicalValueList": [],
+            "signalRegisterId": "001",
+            "baseListId": 101,
+            "signalComment": "Richtung des Breitengrads des Ortungsergebnisses nach WGS84 als Kombination von mehreren GNSSen",
+            "signalGeoRelated": true,
+            "signalLength": 1,
+            "signalName": "GNSS_Richtung_Breite_Ortung"
+        }],
+        "key": 9527,
+        "controlSetName": "test"
+    }],
+    "description": "desc",
+    "compareTriggers": [],
+    "evaluateTriggers": []
+}

@@ -1,0 +1,22 @@
+{
+  "ping": [
+    {
+      "value": "https://rtg.mazeai.com",
+      "label": "VGC",
+      "delay": "0",
+      "result": "default"
+    },
+    {
+      "value": "https://lh.rtg.mazeai.com",
+      "label": "License Holder",
+      "delay": "0",
+      "result": "active"
+    },
+    {
+      "value": "https://github.com",
+      "label": "Github",
+      "delay": "0",
+      "result": "default"
+    }
+  ]
+}

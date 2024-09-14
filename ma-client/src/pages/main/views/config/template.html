@@ -1,0 +1,515 @@
+<div class="m-dashboard">
+  <div style="text-align: right;position: fixed;top: 82px;right: 12px;z-index: 10;" class="pr12">
+    <!-- <span v-if="type === 'import'" class="btn ok default" @click="changeBtn('import')">Import</span> -->
+    <span class="btn ok default" style="width: 60px" @click="changeBtn('cancel')">Cancel</span>
+    <span v-if="type !== 'view'" style="width: 60px" class="btn ok default" @click="changeBtn('save', $event)">Save</span>
+    <span v-if="type !== 'view'" style="width: 60px" class="btn ok default" @click="changeBtn('submit', $event)">Submit</span>
+  </div>
+
+  <el-form id="form_selected" ref="base" :model="config" :rules="baseInfo">
+
+    <!-- 1 -->
+    <div class="start">
+      <div class="start_title">
+        <div class="el-step__icon is-text mr6">
+          <div class="el-step__icon-inner">1</div>
+        </div>
+        <strong class="f16 bg not-select pl6 pr6" @click="toggleMain('#base_main')">Basic information</strong>
+      </div>
+
+      <div id="base_main">
+        <el-form-item prop="configName" label-position="right" label-width="220px" label="Service Package Name:">
+          <el-col :span="10" class="mr12">
+            <el-input v-model="config.configName" :disabled="type === 'view'" maxlength="20" autocomplete="off" placeholder="Please enter service package Name" @blur="config.configName=$event.target.value.replace(/\s/g, '')" show-word-limit clearable />
+          </el-col>
+          <div>( Please input letter / number only )</div>
+        </el-form-item>
+
+        <el-form-item prop="configVersion" label-position="right" label-width="220px" label="RTG Version:">
+          <el-col :span="4">
+            <el-select v-model="config.configVersion" :disabled="type === 'view'" style="width: 100%" placeholder="Please select">
+              <el-option v-for="(v, i) in versionList" :key="i" :label="v.versionName" :value="v.versionValue">
+                <span style="float: left">{{ v.versionName }}</span>
+                <span style="float: right;">{{ v.versionValue }}</span>
+              </el-option>
+            </el-select>
+          </el-col>
+        </el-form-item>
+
+        <el-form-item prop="configFrequency" label-position="right" label-width="220px" label="Report Frequency:">
+          <el-col :span="4" class="mr12">
+            <el-input v-model="config.configFrequency" :disabled="type === 'view'" type="number" clearable @input="changeFrequency" />
+          </el-col>
+
+          <el-col :span="5">
+            <el-select v-model="config.unit" id="unit_value" style="width: 100%" :disabled="type === 'view'" placeholder="Please select" @input="changeFrequency">
+              <el-option label="second" value="second" />
+              <el-option label="minute" value="minute" />
+              <!-- <el-option label="hours" value="hours" /> -->
+            </el-select>
+          </el-col>
+        </el-form-item>
+
+        <!--
+        <el-form-item prop="configDataSets" label-position="right" label-width="220px" label="Data Set:">
+          <el-col :span="4" class="mr12">
+            <el-input v-model="config.configDataSets" :disabled="type === 'view'" type="number" placeholder="Please enter" clearable />
+          </el-col>
+          <div>( min:1 - max:65534 )</div>
+        </el-form-item>
+        -->
+
+        <el-form-item prop="consentId" label-position="right" label-width="220px" label="Test Consent:">
+          <el-radio-group v-if="type !== 'view'" v-model="config.consentId" :disabled="type === 'view'">
+            <el-radio v-for="(v, i) in consentList" class="item_consent" :key="i" :label="v.consentId" :title="v.consentName">{{ v.consentName }}</el-radio>
+          </el-radio-group>
+          <div v-else style="display: inline-block;">
+            <el-input v-model="config.consentName" :disabled="true" />
+          </div>
+        </el-form-item>
+
+        <!-- <el-form-item prop="configRtgIni" label-position="right" label-width="220px" label="RtgIni:">
+          <el-checkbox-group v-model="config.configRtgIni" :disabled="type === 'view'">
+            <el-checkbox v-for="(v, i) in configRtgIni" :key="i" :label="v.rtgIniCode" disabled2="v.rtgIniName === 'Register Delete' && v.id === 3">{{ v.rtgIniName }}</el-checkbox>
+          </el-checkbox-group>
+        </el-form-item> -->
+
+        <el-form-item :label-position="'right'" label-width="220px" label="Description:">
+          <el-col :span="20">
+            <el-input v-model="config.description" style="margin-top: 4px" :disabled="type === 'view'" type="textarea" :rows="2" placeholder="Please enter" maxlength="100" show-word-limit />
+          </el-col>
+        </el-form-item>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="start">
+      <div class="start_title">
+        <div class="el-step__icon is-text mr6"><div class="el-step__icon-inner">2</div></div>
+        <strong class="bg f16 not-select pl6 pr6" @click="toggleMain('#signal_main')">Select Signals</strong>
+      </div>
+      <div id="signal_main">
+        <el-form-item v-show="baseList.length" prop="baseListId" :label-position="'right'" label-width="220px" label="Baselist Id:">
+          <el-col :span="10" class="mr12">
+            <el-select v-model="config.baseListId" :disabled="type === 'view'" style="width: 100%" placeholder="Please select baseId" @change="changeBtn('baseList')">
+              <el-option v-for="(v, i) in baseList" :key="i" :label="v.bName" :value="v.bId">
+                <span class="fl">{{ v.bName }}</span>
+                <span class="fr">{{ v.bListId }}</span>
+              </el-option>
+            </el-select>
+          </el-col>
+        </el-form-item>
+
+        <div v-show="config.baseListId && type !== 'view'" class="common_btn flex aic white pr12 blue_bg">
+          <img :src="add" class="icon mr6 ml6" @click="changeBtn('signalAdd')">
+          <!-- <div>Add Signal</div> -->
+          <div>( <span id="signal_selected_total">0</span>/<span id="signal_all_total">0</span> )</div>
+          <div class="f1" />
+          <div v-if="type !== 'view'" class="btn ok default" @click="changeBtn('batch')">Batch Selection</div>
+        </div>
+
+        <div id="signal_list" class="common"></div>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="start">
+      <div class="start_title">
+        <div class="el-step__icon is-text mr6"><div class="el-step__icon-inner">3</div></div>
+        <strong class="bg f16 not-select pl6 pr6" @click="toggleMain('#tiger_main')">Create Trigger</strong>
+      </div>
+
+      <div id="tiger_main">
+        <div v-show="type !== 'view'" class="common_btn flex aic white blue_bg">
+          <img :src="add" class="icon mr6 ml6" @click="changeBtn('triggerAdd')">
+          <!-- <div>Add Trigger</div> -->
+          <div>( {{ config.triggerList.length }}/10 )</div>
+          <div class="f1" />
+          <!-- <div class="mr6">compare ( <span id="compare">0</span> )</div> -->
+          <!-- <div class="mr6">evaluate ( <span id="evaluate">0</span> )</div> -->
+          <!-- <div class="mr12">default ( <span ref="eventType">0</span> )</div> -->
+          <!-- <el-button style="padding: 3px;" class="mr6" icon="el-icon-refresh" circle @click="changeBtn('sort')" /> -->
+        </div>
+
+        <div v-for="(trigger, triggerIndex) in config.triggerList" :key="triggerIndex" :class="{ 'red_bg': trigger.eventType === 'evaluate', 'green_bg': trigger.eventType === 'compare' }" :data-text="(triggerIndex + 1)" class="table pr show mb12 pl12" style="width: auto;">
+          <img v-show="type !== 'view'" no="config.triggerList.length !== 1" style="top: 48px" class="icon del" :src="del" @click="changeBtn('triggerDelCheck', trigger)" />
+          <el-form ref="trigger" size="small" label-position="top" :model="config" :inline="true" :disabled="type === 'view'">
+            <!-- trigger name -->
+            <el-form-item
+              label="Trigger Name"
+              :prop="'triggerList.' + triggerIndex + '.triggerName'"
+              :rules="{ required: true, message: 'Cannot be empty', trigger: 'blur' }">
+              <el-input v-model="trigger.triggerName" maxlength="10" show-word-limit placeholder="Please enter" @blur="triggerCheckName" />
+            </el-form-item>
+
+            <!-- event type -->
+            <el-form-item
+              label="Event Type"
+              style="width: 110px"
+              :prop="'triggerList.' + triggerIndex + '.eventType'"
+              :rules="{ required: true, message: 'Cannot be empty', trigger: 'change' }">
+              <el-select v-model="trigger.eventType" placeholder="Please select event type" @change="changeEventType(trigger)" @focus="changeBtn('focus', trigger)">
+                <el-option v-for="(item, index) in eventTypeList" :key="index" :disabled="item.__disabled" :label="item.label" :value="item.value" />
+              </el-select>
+            </el-form-item>
+
+            <!-- signal name -->
+            <el-form-item
+              v-if="trigger.eventType === 'compare'"
+              label="Signal Name"
+              :prop="'triggerList.' + triggerIndex + '.registerId'"
+              :rules="{ required: true, message: 'Cannot be empty', trigger: 'change' }">
+              <el-select v-model="trigger.registerId" :disabled="config.signals.length === 0" placeholder="Please select signa name" @change="changeBtn('triggerSignal', trigger)">
+                <el-option v-for="(item, index) in config.signals" :key="index" :label="item.signalName" :value="item.signalRegisterId" />
+              </el-select>
+            </el-form-item>
+
+            <!-- operators -->
+            <el-form-item
+              v-if="trigger.eventType === 'compare'"
+              style="width: 100px"
+              label="Operators"
+              :prop="'triggerList.' + triggerIndex + '.triggerOperators'"
+              :rules="{ required: true, message: 'Cannot be empty', trigger: 'change' }">
+              <el-select v-model="trigger.triggerOperators" placeholder="Please select signa name">
+                <el-option v-for="(item, index) in unitList" :key="index" :label="item.label" :value="item.value">
+                  <span class="fl">{{ item.label }}</span>
+                  <span class="fr">{{ item.value }}</span>
+                </el-option>
+              </el-select>
+            </el-form-item>
+
+            <!-- trigger value -->
+            <el-form-item
+              v-if="trigger.eventType === 'compare' && trigger.signal"
+              style="width: 138px"
+              label="Value"
+              :prop="'triggerList.' + triggerIndex + '.triggerValue'"
+              :rules="triggerValue">
+              <el-input
+                v-if="trigger.signal && trigger.signal.__lBaseListPhysicalValueList && trigger.signal.__lBaseListPhysicalValueList.length"
+                v-model="trigger.triggerValue"
+                :placeholder="trigger.signal.__lBaseListPhysicalValueList[0].pvPhysicalValue"
+                @input="changeBtn('physical', trigger)" />
+                <!--
+                  物理值
+                  pvId: 76
+                  pvListId: 76
+                  pvMaximumValue: "65532"
+                  pvsmallmumValue: "0"
+                  pvOffset: "0"
+                  pvPhysicalValue: "0 .. 491.49"
+                  pvRegisterId: "101"
+                  pvScale: "0.0075"
+                  pvUnit: "Unit_KiloMeterPerHour"
+                -->
+              <el-select
+                v-else-if="trigger.signal && trigger.signal.__lBaseListLogicalValueList && trigger.signal.__lBaseListLogicalValueList.length"
+                v-model="trigger.triggerValue"
+                placeholder="Pleasr Select"
+                @change="changeBtn('logical', trigger)">
+                <el-option v-for="(item, index) in trigger.signal.__lBaseListLogicalValueList" :key="index" :label="item.lvOriginalValue" :value="item.lvOriginalValue" />
+                <!--
+                  逻辑值
+                  lvDescription: "Unterspannung"
+                  lvId: 268
+                  lvListId: 76
+                  lvOriginalValue: 65533
+                  lvRegisterId: "101"
+                -->
+              </el-select>
+
+              <span v-else>
+                <el-input v-model="trigger.triggerValue" />
+              </span>
+            </el-form-item>
+
+            <!-- description -->
+            <el-form-item v-if="trigger.description" label="Description">
+              <el-input v-model="trigger.description" :disabled="true" />
+            </el-form-item>
+
+            <!-- evaluate -->
+            <el-form-item
+              v-if="trigger.eventType === 'evaluate'"
+              style="width: 100px"
+              label="Operators"
+              :prop="'triggerList.' + triggerIndex + '.triggerOperators'"
+              :rules="{ required: true, message: 'Cannot be empty', trigger: 'change' }">
+              <el-select v-model="trigger.triggerOperators" placeholder="Please select operators">
+                <el-option v-for="(item, index) in operatorList" :disabled="item.disabled" :key="index" :label="item.label" :value="item.value" />
+              </el-select>
+            </el-form-item>
+
+            <el-form-item v-if="trigger.eventType === 'evaluate'" style="width: 300px" label="Trigger List">
+              <div v-for="(item, index) in trigger.compareTriggerList" :data-index="(index + 1)" :key="index" class="flex mb6 tips">
+                <!-- triggerList-->
+                <el-select v-model="item._id" placeholder="Please select operators" @change="changeTrigger(trigger)">
+                  <el-option v-for="(target, key) in trigger.__triggerList" :disabled="target.disabled" :key="key" :label="target.triggerName" :value="target._id">
+                    <span class="fl">{{ target.triggerName }}</span>
+                    <!-- <span class="fr">{{ target._id }}</span> -->
+                  </el-option>
+                </el-select>
+                <el-button class="ml6" :disabled="trigger.compareTriggerList.length === 1 || type === 'view'" icon="el-icon-bottom" @click="changeBtn('backward', item, trigger.compareTriggerList)" />
+                <el-button style="margin-left: 6px;" :disabled="trigger.compareTriggerList.length === 1 || type === 'view'" icon="el-icon-top" @click="changeBtn('forward', item, trigger.compareTriggerList)" />
+                <el-button style="margin-left: 6px;" :disabled="trigger.compareTriggerList.length === 1 || type === 'view'" icon="el-icon-delete" @click="changeBtn('delEvaluate', item, trigger)" />
+              </div>
+             <!--
+             <div class="flex">
+                <div style="width: 176px;text-align: right;padding-right: 10px;color: #999">( {{ trigger.compareTriggerList.length }} / {{ triggerList.length }} )</div>
+                <el-button style="width: 158px" class="mt6" icon="el-icon-plus" :disabled="(trigger.compareTriggerList && trigger.compareTriggerList.length >= triggerList.length) || type === 'view'" @click="changeBtn('addEvaluate', trigger)">
+                </el-button>
+              </div>
+              -->
+              <div style="position: absolute;margin-left: 110%;top: 1px;width: 160px;display: flex;align-items: center;">
+                <i class="el-icon-circle-plus-outline mt6 cp" style="font-size: 24px;padding-right: 4px" :class="{ 'c9': (trigger.compareTriggerList && trigger.compareTriggerList.length >= triggerList.length) || type === 'view' }" @click="changeBtn('addEvaluate', trigger)"></i>
+                <span class="c9">( {{ trigger.compareTriggerList.length }}/{{ triggerList.length }} )</span>
+              </div>
+            </el-form-item>
+            <!-- <el-form-item v-if="trigger.eventType === 'evaluate'" label="_" style="width: 300px;margin-left: 24px;line-height: 30px;">
+            </el-form-item> -->
+          </el-form>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="start">
+      <div class="start_title"><div class="el-step__icon is-text mr6"><div class="el-step__icon-inner">4</div></div><strong class="bg f16 not-select pl12 pr6" @click="toggleMain('#controlset_main')">Create Report</strong></div>
+
+      <div id="controlset_main">
+        <div v-show="type !== 'view'" class="common_btn flex aic white blue_bg">
+          <img :src="add" class="icon mr6 ml6" @click="changeBtn('addControlSet')">
+          <!-- <div>Add Report</div> -->
+          <div>( {{ config.controlSets.length }}/32 )</div>
+          <div class="f1" />
+          <!-- <div>（ Maximal reports = Clock [second] / 20 [second] ）</div> -->
+        </div>
+
+        <div v-for="(v, i) in config.controlSets" :key="i" class="table pr show mb12 pl6 pr6 pb6" :data-text="(i + 1)" style="width: auto;">
+          <img v-if="config.controlSets.length !== 1" style="top: 18px" class="icon del" :src="del" @click="changeBtn('controlSetDelOpen', v)" />
+          <div class="flex aic pt12 pl6">
+            <el-form ref="report" :model="config" :disabled="type === 'view'" :inline="true">
+              <el-form-item
+                label="ControlSet Name:"
+                :key="v.key"
+                :prop="'controlSets.' + i + '.controlSetName'"
+                :rules="{ required: true, message: 'The Data Package Name cannot be empty', trigger: 'blur' }">
+                <el-input v-model="v.controlSetName" style="width: 150px" size="small" placeholder="Please enter" />
+              </el-form-item>
+
+              <el-form-item label="Signal Type:" required>
+                <el-select v-model="v.privacyMode" style="width: 180px" size="small" placeholder="Please select privacy" @change="handleReportSignal(v)">
+                  <el-option v-for="(item, index) in privacyList" :key="index" :label="v.privacyName" :value="item.privacyName" />
+                </el-select>
+              </el-form-item>
+
+              <el-form-item label="Package Frequency:" required>
+                <el-select v-model="v.triggerTypeName" style="width: 160px" placeholder="Please select privacy" @change="changeBtn('frequency', v)">
+                  <el-option v-for="(item, index) in frequencyList" :key="index" :label="item.triggerTypeName" :value="item.triggerTypeName">
+                    <span style="float: left">{{ item.triggerTypeName }}</span>
+                    <span style="float: right;">{{ item.id }}</span>
+                  </el-option>
+                </el-select>
+              </el-form-item>
+
+              <el-form-item v-show="v.id" label="ControlSet ID:">
+                <div>{{ v.id }}</div>
+              </el-form-item>
+            </el-form>
+          </div>
+
+          <!-- Time interval -->
+          <div v-if="v.triggerTypeName === 'By Time Interval'">
+            <table style="width: 100%" title="trigger">
+              <thead>
+                <tr>
+                  <th class="nobor">
+                    <div class="flex aic">
+                      <div class="white">*Package Time Interval</div>
+                      <div class="f1"></div>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="pb12 pt12 pl12 pr12 nobor">
+                    <el-input v-model="v.configFrequency" type="text" :disabled="type === 'view'" style="width: 200px" size="small" placeholder="Please enter number" @input="changeTime(v)" />
+                    <span class="ml6">Sencond（Integer Only）</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- trigger -->
+          <table v-else style="width: 100%" title="trigger">
+            <thead>
+              <tr>
+                <th class="nobor">
+                  <div class="flex aic">
+                    <div class="white">Select Trigger</div>
+                    <div class="f1"></div>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="pl12 pr12 nobor">
+                  <el-radio-group v-if="config.triggerList && config.triggerList.length >= 1" :disabled="type === 'view'" v-model="v.triggerList">
+                    <el-radio v-for="(item, key) in config.triggerList" :key="key" :label="item.triggerName">{{ item.triggerName }}</el-radio>
+                  </el-radio-group>
+                  <div v-else class="tac">No data</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- signals -->
+          <table style="width: 100%" title="Signals">
+            <thead>
+              <tr>
+                <th class="nobor">
+                  <div class="flex aic">
+                    <div class="white">*Select Signals</div>
+                    <div class="ml12">( {{ v.signalList.length }}/{{ (v.__signalList && v.__signalList.length) || 0 }} )</div>
+                    <div class="f1"></div>
+                    <div v-if="v.__signalList && v.__signalList.length && type !== 'view'" class="mr6 parent_none" @click="changeRadio('signal', v)">
+                      <span>{{ v.signalList.length === v.__signalList.length ? 'Cancel All' : 'Select All' }}</span>
+                      <el-switch v-if="v.__signalList.length" v-model="v.signalList.length >= v.__signalList.length" active-color="#33EE9A" inactive-color="#EC4E46" />
+                    </div>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="pl12 pr12 nobor pt12">
+                  <el-checkbox-group v-if="v.__signalList && v.__signalList.length >= 1" v-model="v.signalList" :disabled="type === 'view'">
+                    <el-checkbox v-for="(item, key) in v.__signalList" :key="key" :label="item.signalRegisterId" :title="item.signalName">
+                      {{ item.signalName || 'undefined' }}
+                    </el-checkbox>
+                  </el-checkbox-group>
+                  <div v-else class="tac">No data</div>
+                  <div id="controlset_signal"></div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- register -->
+          <table style="width: 100%" title="register">
+            <thead>
+              <tr>
+                <th class="nobor">
+                  <div class="flex aic">
+                    <div>Other Registers</div>
+                    <div class="ml12">( {{ v.registerList.length }}/{{ registerList.length }} )</div>
+                    <div class="f1" />
+                    <div v-show="registerList.length && type !== 'view'" class="mr6 parent_none" @click="changeRadio('register', v)">
+                      <span>{{ v.registerList.length === registerList.length ? 'Cancel All' : 'Select All' }}</span>
+                      <el-switch v-model="v.registerList.length === registerList.length" :disabled="idDisabledRegisters" active-color="#33EE9A" inactive-color="#EC4E46" />
+                    </div>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="min-height: 60px" class="pl12 pr12 pt12 nobor">
+                  <el-checkbox-group v-if="registerList.length" v-model="v.registerList" :disabled="type === 'view'">
+                    <el-checkbox v-for="(item, key) in registerList" :key="key" :label="item.operationCode">{{ item.controlName }}</el-checkbox>
+                  </el-checkbox-group>
+                  <div v-else class="tac">No data</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </el-form>
+
+  <!-- dialog del -->
+  <el-dialog title="Delete Signal" width="38%" :visible.sync="dialogDelete">
+    <span>{{ dialogContent }}</span>
+    <span slot="footer" class="dialog-footer">
+      <el-button @click="dialogDelete = false">Cancel</el-button>
+      <el-button type="primary" @click="changeBtn('delete')">Delete</el-button>
+    </span>
+  </el-dialog>
+
+  <!-- dialog signal -->
+  <el-dialog title="Signal Detail" top="10vh" width="50%" :visible.sync="dialogDetail">
+    <el-tabs v-model="activeDetail">
+      <el-tab-pane v-if="lBaseListPhysicalValueList.length" label="Physical" name="Physical">
+        <div class="el-dialog__body2">
+          <table class="table tac">
+            <thead>
+              <tr>
+                <th v-for="(v, i) in ['Value Range', 'Off Set', 'Unit', 'Scalling']" :key="i">{{ v }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(v, i) in lBaseListPhysicalValueList" :key="i">
+                <td>{{ v.pvPhysicalValue }}</td>
+                <td>{{ v.pvOffset }}</td>
+                <td>{{ v.pvUnit }}</td>
+                <td>{{ v.pvScale }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </el-tab-pane>
+      <el-tab-pane v-if="lBaseListLogicalValueList.length" label="Logical" name="Logical">
+        <div class="el-dialog__body2">
+          <table class="table tac">
+            <thead>
+              <tr>
+                <th v-for="(v, i) in ['Reserved Value', 'Description']" :key="i">{{ v }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(v, i) in lBaseListLogicalValueList" :key="i">
+                <td>{{ v.lvOriginalValue }}</td>
+                <td>{{ v.lvDescription }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </el-tab-pane>
+    </el-tabs>
+
+    <span slot="footer" class="dialog-footer">
+      <el-button type="primary" @click="dialogDetail = false">OK</el-button>
+    </span>
+  </el-dialog>
+
+  <!-- dialog common -->
+  <el-dialog :title="dialogTitle" :width="commonWidth" :visible.sync="dialogComment">
+    {{ dialogContent }}
+    <div v-if="!dialogContent" id="drag" class="flex upload jcc aic">
+      <i style="font-size: 130px;color: #ddd;" class="el-icon-upload" />
+      <div>
+        <div class="pb6">Drop files here，or <span class="blue cp" @click="$refs.file.click()">Click upload</span></div>
+        <div>Only json files can be uploaded, and no more than 500kb</div>
+        <input ref="file" style="position: fixed;right: 0;top: -500px" type="file" name="file" @change="importConf" />
+      </div>
+    </div>
+    <span v-if="dialogContent" slot="footer" class="dialog-footer">
+      <el-button type="primary" @click="dialogComment = false">OK</el-button>
+    </span>
+  </el-dialog>
+
+  <!-- dialog common -->
+  <el-dialog title="Confirm" width="50%" :visible.sync="dialogStatus">
+    The [report frequency]>10 min, that might cause the report file size is too big to be processed in BE, do you want to continue?
+    <span slot="footer" class="dialog-footer">
+      <el-button type="primary" @click="submitConfig">Submit</el-button>
+      <el-button @click="cancelConfig">Cancel</el-button>
+    </span>
+  </el-dialog>
+  <!-- <textarea v-model="JSON.stringify(config, null, 4)" style="width: 100%;height: 1500px" /> -->
+</div>

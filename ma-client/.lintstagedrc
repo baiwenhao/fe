@@ -1,0 +1,12 @@
+{ 
+  "linters":{
+    "src/**/*.{js,vue}": [
+      "eslint --fix", 
+      "git add"
+    ],
+    "*.{html,vue,css,sass,scss}": [
+        "stylelint --fix",
+        "git add",
+    ]
+  }
+}

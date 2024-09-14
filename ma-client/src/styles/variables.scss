@@ -1,0 +1,42 @@
+/* 参考element分类  */
+// color
+$color-primary: #283443;
+$color-secondary: #28B78D;
+$color-white: #FFF;
+$color-black: #000;
+$color-gray: #eee;
+$color-primary-light-1: mix($color-white, $color-primary, 10%);
+$color-primary-light-2: mix($color-white, $color-primary, 20%);
+
+/* Link
+-------------------------- */
+$link-color: $color-primary-light-2;
+$link-hover-color: $color-primary;
+
+/* Border
+-------------------------- */
+$border-radius-base: 4px;
+$border-radius-small: 2px;
+$border-radius-circle: 100%;
+
+/* Typography
+-------------------------- */
+$font-size-extra-small: 12px;
+$font-size-small: 13px;
+$font-font-base: 14px;
+$font-size-medium: 16px;
+$font-size-large: 18px;
+$font-size-extra-large: 20px;
+
+$font-weight-primary: 500;
+$font-weight-secondary: 100;
+
+$font-line-height-primary: 24px;
+$font-line-height-secondary: 16px;
+
+/* z-index
+-------------------------- */
+$index-normal: 1;
+$index-top: 1000;
+$index-popper: 2000;
+
